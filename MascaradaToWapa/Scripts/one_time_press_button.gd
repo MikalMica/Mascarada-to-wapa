@@ -17,6 +17,7 @@ func _player_enters_area(_area) -> void:
 	#El botón se pulsa, manda una señal para avisar de que se ha pulsado y se reproduce la animación
 	if(buttonHasBeenPressed == false):
 		buttonHasBeenPressed = true
+		_activate_obstacles()
 		OneTimePressButtonON.emit();
 		$AnimatedSprite2D.frame = 1;
 	else:
