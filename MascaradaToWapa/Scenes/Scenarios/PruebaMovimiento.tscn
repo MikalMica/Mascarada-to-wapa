@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://befj3bh6vwohk"]
+
+[ext_resource type="PackedScene" uid="uid://t75i14pnofd5" path="res://Scenes/Objects/player.tscn" id="1_5e7gu"]
+
+[node name="PruebaMovimiento" type="Node2D" unique_id=810907141]
+
+[node name="Player" parent="." unique_id=1000121688 instance=ExtResource("1_5e7gu")]
+position = Vector2(562, 181)
+speed = 5001.0
