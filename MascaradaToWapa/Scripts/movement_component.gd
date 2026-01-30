@@ -10,7 +10,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	velocity = _dir * speed * delta;
-	print(velocity)
 	move_and_slide()
 
 func move(direction: Vector2) -> void:
