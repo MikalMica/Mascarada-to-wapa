@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://uyj031g7uhtw"]
+
+[ext_resource type="Texture2D" uid="uid://d3o7e72kuhibs" path="res://Assets/Images/PBP-Blank button.png" id="2_oxvwj"]
+[ext_resource type="Script" uid="uid://b3qn1dmcs0d7u" path="res://Scripts/area_2d.gd" id="5_fkiym"]
+[ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="6_dy3vq"]
+
+[sub_resource type="GDScript" id="GDScript_gybfd"]
+script/source = "extends Area2D
+signal OneTimePressButtonON
+var wasPressed = false
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	area_entered.connect(_player_enters_area)
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+
+func _player_enters_area(_area) -> void:
+	#El botón se pulsa, manda una señal para avisar de que se ha pulsado y se reproduce la animación
+	if(wasPressed == false):
+		wasPressed = true
+		OneTimePressButtonON.emit();
+		$AnimatedSprite2D.frame = 1;
+	else:
+		pass
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xphxm"]
+atlas = ExtResource("2_oxvwj")
+region = Rect2(6, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwwsy"]
+atlas = ExtResource("2_oxvwj")
+region = Rect2(54, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xqrtf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xphxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwwsy")
+}],
+"loop": true,
+"name": &"Click",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwwsy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xphxm")
+}],
+"loop": true,
+"name": &"Unclick",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_314ca"]
+size = Vector2(32, 16)
+
+[sub_resource type="GDScript" id="GDScript_pfren"]
+script/source = "extends Area2D
+signal TimerButtonON
+signal TimerButtonOFF
+@export var isTimerOn = false
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	area_entered.connect(_player_enters_area)
+	pass; # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass;
+
+
+func _player_enters_area(_area) -> void:
+	#El botón se pulsa, manda una señal para avisar de que se ha pulsado y se reproduce la animación
+	if(isTimerOn == false):
+		isTimerOn = true
+		TimerButtonON.emit();
+		$AnimatedSprite2D.frame = 1;
+		await get_tree().create_timer(1).timeout
+		isTimerOn = false
+		TimerButtonOFF.emit();
+		$AnimatedSprite2D.frame = 0;
+	else:
+		pass
+"
+
+[sub_resource type="GDScript" id="GDScript_jbloj"]
+script/source = "extends Area2D
+signal HoldButtonON
+signal HoldButtonOFF
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	area_entered.connect(_player_enters_area)
+	area_exited.connect(_player_exits_area)
+	pass; # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass;
+
+
+func _player_enters_area(_area) -> void:
+	#El botón se pulsa, manda una señal para avisar de que se ha pulsado y se reproduce la animación
+	HoldButtonON.emit();
+	$AnimatedSprite2D.frame = 1;
+
+
+func _player_exits_area(_area) -> void:
+	#El botón se pulsa, manda una señal para avisar de que se ha pulsado y se reproduce la animación
+	HoldButtonOFF.emit();
+	$AnimatedSprite2D.frame = 0;
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1rvia"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_dy3vq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgsdk"]
+size = Vector2(26, 26)
+
+[node name="TriggersAlec" type="Node2D" unique_id=1541308786]
+
+[node name="OneTimePressButton" type="Area2D" parent="." unique_id=2049339381]
+position = Vector2(153, 140)
+script = SubResource("GDScript_gybfd")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="OneTimePressButton" unique_id=1293727281]
+sprite_frames = SubResource("SpriteFrames_xqrtf")
+animation = &"Click"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OneTimePressButton" unique_id=1718557052]
+shape = SubResource("RectangleShape2D_314ca")
+
+[node name="TimerButton" type="Area2D" parent="." unique_id=247933037]
+position = Vector2(155, 94)
+script = SubResource("GDScript_pfren")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TimerButton" unique_id=1176237882]
+sprite_frames = SubResource("SpriteFrames_xqrtf")
+animation = &"Click"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TimerButton" unique_id=538268503]
+shape = SubResource("RectangleShape2D_314ca")
+
+[node name="HoldButton" type="Area2D" parent="." unique_id=703309703]
+position = Vector2(154, 47)
+script = SubResource("GDScript_jbloj")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HoldButton" unique_id=1972224066]
+sprite_frames = SubResource("SpriteFrames_xqrtf")
+animation = &"Click"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoldButton" unique_id=1933613162]
+shape = SubResource("RectangleShape2D_314ca")
+
+[node name="TestCharacter" type="Area2D" parent="." unique_id=1046774810]
+position = Vector2(78, 96)
+script = ExtResource("5_fkiym")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TestCharacter" unique_id=1587026667]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_1rvia")
+frame_progress = 0.98888505
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestCharacter" unique_id=1697949578]
+shape = SubResource("RectangleShape2D_hgsdk")
+
+[connection signal="area_entered" from="OneTimePressButton" to="OneTimePressButton" method="_on_area_entered"]
+[connection signal="area_entered" from="TimerButton" to="OneTimePressButton" method="_on_boton_tiempo_area_entered"]
+[connection signal="area_entered" from="TimerButton" to="TimerButton" method="_on_area_entered"]
+[connection signal="area_exited" from="TimerButton" to="HoldButton" method="_on_boton_tiempo_area_exited"]
+[connection signal="area_entered" from="HoldButton" to="HoldButton" method="_on_area_entered"]
