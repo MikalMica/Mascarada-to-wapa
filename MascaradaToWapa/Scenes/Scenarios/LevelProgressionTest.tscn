@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dqofdoseuicjk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfdy1"]
+size = Vector2(153, 151)
+
+[node name="LevelProgressionTest" type="Node2D" unique_id=1573407029]
+
+[node name="Portal" type="Area2D" parent="." unique_id=794038563]
+position = Vector2(544, 167)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal" unique_id=892255306]
+shape = SubResource("RectangleShape2D_tfdy1")
