@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dxdm0u0u5ut4o"]
+
+[ext_resource type="Script" uid="uid://17gvb1y11qe5" path="res://Scripts/SpriteHider.gd" id="1_6ft6m"]
+[ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="1_t84th"]
+[ext_resource type="Script" uid="uid://cs6iustmvpqay" path="res://Scripts/MaskHandler.gd" id="3_y6uny"]
+
+[node name="TheGuaguaTrials" type="Node2D" unique_id=1422365769]
+
+[node name="ColegonDefault" type="Node2D" parent="." unique_id=2112221870]
+position = Vector2(359, 344)
+script = ExtResource("1_6ft6m")
+default = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ColegonDefault" unique_id=1303658684]
+texture = ExtResource("1_t84th")
+
+[node name="Caja" type="Node2D" parent="." unique_id=925818862]
+position = Vector2(784, 337)
+script = ExtResource("1_6ft6m")
+object = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Caja" unique_id=1470760191]
+modulate = Color(0.41568628, 0.42352942, 0.3019608, 1)
+texture = ExtResource("1_t84th")
+
+[node name="JugadorTeorico" type="Node" parent="." unique_id=1911534809]
+script = ExtResource("3_y6uny")
