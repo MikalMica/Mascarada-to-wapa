@@ -8,6 +8,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+func _activate() -> void:
+	_open()
+	
+func _deactivate() -> void:
+	_close()
 
 func _close()-> void:
 	#Cambia sprite y activa el collider

@@ -16,11 +16,13 @@ func _process(_delta: float) -> void:
 
 func _player_enters_area(_area) -> void:
 	#El botón se pulsa, manda una señal para avisar de que se ha pulsado y se reproduce la animación
+	_activate_obstacles()
 	HoldButtonON.emit();
 	$AnimatedSprite2D.frame = 1;
 
 
 func _player_exits_area(_area) -> void:
 	#El botón se pulsa, manda una señal para avisar de que se ha pulsado y se reproduce la animación
+	_deactivate_obstacles()
 	HoldButtonOFF.emit();
 	$AnimatedSprite2D.frame = 0;

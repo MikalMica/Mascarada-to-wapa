@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ddta1ncj3rn3w" path="res://Scripts/one_time_press_button.gd" id="1_pfren"]
 [ext_resource type="Texture2D" uid="uid://d3o7e72kuhibs" path="res://Assets/Images/PBP-Blank button.png" id="2_oxvwj"]
 [ext_resource type="Script" uid="uid://bgbcts1jgip3a" path="res://Scripts/timer_button.gd" id="3_oxvwj"]
-[ext_resource type="Script" uid="uid://cspa0cnbngf10" path="res://Scripts/puerta_levadiza.gd" id="4_gybfd"]
+[ext_resource type="Script" uid="uid://cspa0cnbngf10" path="res://Scripts/door.gd" id="4_gybfd"]
 [ext_resource type="Script" uid="uid://dqh8eov60sjek" path="res://Scripts/hold_button.gd" id="4_ow35p"]
 [ext_resource type="Script" uid="uid://b3qn1dmcs0d7u" path="res://Scripts/playerTest.gd" id="5_fkiym"]
 [ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="6_dy3vq"]

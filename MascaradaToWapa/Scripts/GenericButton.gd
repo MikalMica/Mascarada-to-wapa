@@ -10,3 +10,11 @@ func _ready() -> void:
 	# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func _activate_obstacles() -> void:
+	for obstacle in TriggeredObstacle:
+		obstacle.activate
+
+func _deactivate_obstacles() -> void:
+	for obstacle in TriggeredObstacle:
+		obstacle.deactivate

@@ -11,9 +11,7 @@ config_version=5
 [application]
 
 config/name="Mascarada-to-wapa"
-
 run/main_scene="uid://s6xci46fm7ne"
-
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
