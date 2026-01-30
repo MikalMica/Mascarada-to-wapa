@@ -8,9 +8,9 @@ var mask = masks.NONE
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _input(event: InputEvent) -> void:
-	if event.is_action_just_pressed("default_mask"):
+	if event.is_action_pressed("default_mask"):
 		mask_change(masks.DEFAULT)
-	elif event.is_action_just_pressed("object_mask"):
+	elif event.is_action_pressed("object_mask"):
 		mask_change(masks.OBJECT)
 
 func mask_change(nMask: masks) -> void:
