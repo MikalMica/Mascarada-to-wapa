@@ -1,9 +1,9 @@
 extends GenericButton
-signal OneTimePressButtonON
-var buttonHasBeenPressed = false;
+signal TimerButtonON
+signal TimerButtonOFF
+@export var isTimerOn = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$AnimatedSprite2D.frame = 0;
 	area_entered.connect(_player_enters_area)
 	pass; # Replace with function body.
 
@@ -15,9 +15,13 @@ func _process(_delta: float) -> void:
 
 func _player_enters_area(_area) -> void:
 	#El botón se pulsa, manda una señal para avisar de que se ha pulsado y se reproduce la animación
-	if(buttonHasBeenPressed == false):
-		buttonHasBeenPressed = true
-		OneTimePressButtonON.emit();
+	if(isTimerOn == false):
+		isTimerOn = true
+		TimerButtonON.emit();
 		$AnimatedSprite2D.frame = 1;
+		await get_tree().create_timer(1).timeout
+		isTimerOn = false
+		TimerButtonOFF.emit();
+		$AnimatedSprite2D.frame = 0;
 	else:
 		pass

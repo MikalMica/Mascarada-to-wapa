@@ -1,28 +1,11 @@
 extends Area2D
 
-@export var speed = 400 # How fast the player will move (pixels/sec).
-var screen_size # Size of the game window.
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	screen_size = get_viewport_rect().size
+func _ready() -> void:
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var velocity = Vector2.ZERO # The player's movement vector.
-	if Input.is_action_pressed("derecha"):
-		velocity.x += 1
-	if Input.is_action_pressed("izquierda"):
-		velocity.x -= 1
-	if Input.is_action_pressed("abajo"):
-		velocity.y += 1
-	if Input.is_action_pressed("arriba"):
-		velocity.y -= 1
-
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-	else:
-		pass
-	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
+func _process(delta: float) -> void:
+	pass
