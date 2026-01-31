@@ -29,6 +29,7 @@ enabled=PackedStringArray("res://addons/scene_manager/plugin.cfg")
 
 checkpoint=""
 player=""
+cam_target=""
 
 [input]
 
@@ -78,5 +79,6 @@ object_mask={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"

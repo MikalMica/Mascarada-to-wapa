@@ -4,3 +4,4 @@
 
 [node name="Camera2D" type="Camera2D" unique_id=1676999046]
 script = ExtResource("1_p763x")
+_follow = true

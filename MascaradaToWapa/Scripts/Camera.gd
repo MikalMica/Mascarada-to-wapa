@@ -13,7 +13,7 @@ var zoom_recov_factor:float = 2.0
 @export var vertical_margin:float = 80.0
 @export var follow_speed:float = 5.0
 
-var GROUP_NAME:StringName = &"player"
+@export var GROUP_NAME:StringName = &"player"
 
 @onready var target:Node2D = get_tree().get_first_node_in_group(GROUP_NAME)
 
