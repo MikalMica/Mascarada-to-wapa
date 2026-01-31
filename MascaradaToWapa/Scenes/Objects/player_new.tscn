@@ -96,7 +96,7 @@ _data = {
 &"walk_d": SubResource("Animation_81akd")
 }
 
-[node name="Player" type="RigidBody2D" unique_id=1647835319]
+[node name="Player" type="RigidBody2D" unique_id=1647835319 groups=["player"]]
 position = Vector2(0, -1)
 collision_layer = 129
 gravity_scale = 0.0
