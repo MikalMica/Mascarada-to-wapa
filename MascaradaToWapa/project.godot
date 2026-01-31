@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 SignalBus="*uid://c73f8sxuqoqxv"
 SceneManager="*uid://j20v4cg7v8m1"
 LevelManager="*uid://b6cwot4ilk8sh"
+CheckpointHandler="*uid://c771x3k1coh78"
 
 [editor_plugins]
 
@@ -29,7 +30,7 @@ enabled=PackedStringArray("res://addons/scene_manager/plugin.cfg")
 checkpoint=""
 player=""
 cam_target=""
-level=""
+Level="Solo puede haber una escena de Level en este grupo!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 
 [input]
 

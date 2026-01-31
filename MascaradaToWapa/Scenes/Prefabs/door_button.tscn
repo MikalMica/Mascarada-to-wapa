@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://dw2qj3cts27tn"]
+[gd_scene format=3 uid="uid://bbfx3d5nnbuw0"]
 
-[ext_resource type="Script" uid="uid://cspa0cnbngf10" path="res://Scripts/door.gd" id="1_3c8rj"]
-[ext_resource type="Texture2D" uid="uid://fsnppiq73tvh" path="res://Assets/Images/door_spritesheet.png" id="4_nxy12"]
+[ext_resource type="Script" uid="uid://cspa0cnbngf10" path="res://Scripts/door.gd" id="1_t8ms2"]
+[ext_resource type="Texture2D" uid="uid://ck3c7ean0g2vf" path="res://Assets/Images/red-door-spritesheet.png" id="2_0ehjh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbloj"]
 size = Vector2(103, 110)
@@ -73,7 +73,7 @@ _data = {
 gravity_scale = 0.0
 lock_rotation = true
 freeze = true
-script = ExtResource("1_3c8rj")
+script = ExtResource("1_t8ms2")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=460961968]
@@ -89,7 +89,7 @@ debug_color = Color(0.7112458, 0.40015057, 0.7170498, 0.41960785)
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1572283670]
 position = Vector2(0, 12)
-texture = ExtResource("4_nxy12")
+texture = ExtResource("2_0ehjh")
 region_enabled = true
 region_rect = Rect2(7, 27, 116, 101)
 
