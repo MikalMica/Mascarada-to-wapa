@@ -179,6 +179,7 @@ script = ExtResource("4_m4g67")
 player_parent_node = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox" unique_id=899700171]
+position = Vector2(0, 21)
 shape = SubResource("RectangleShape2D_n3sv7")
 debug_color = Color(0.9321408, 2.6375652e-05, 0.65197235, 0.41960785)
 

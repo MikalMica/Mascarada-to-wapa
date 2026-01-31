@@ -8,9 +8,6 @@ _data = {
 }
 point_count = 4
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggdqk"]
-size = Vector2(132, 129)
-
 [sub_resource type="Animation" id="Animation_0vd5f"]
 length = 0.001
 tracks/0/type = "value"
@@ -49,27 +46,26 @@ _data = {
 &"patrol": SubResource("Animation_w7pa2")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggdqk"]
+size = Vector2(132, 129)
+
 [node name="Enemy" type="Path2D" unique_id=1299381547]
 curve = SubResource("Curve2D_dqui2")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=733210764]
 rotates = false
 
-[node name="RigidBody2D" type="RigidBody2D" parent="PathFollow2D" unique_id=371129700]
+[node name="Node2D" type="Node2D" parent="PathFollow2D" unique_id=1865544334]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/RigidBody2D" unique_id=259400183]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_ggdqk")
-
-[node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/RigidBody2D" unique_id=1527395661]
+[node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/Node2D" unique_id=1527395661]
 texture = ExtResource("1_7ifby")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PathFollow2D/RigidBody2D" unique_id=1913990509]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PathFollow2D/Node2D" unique_id=1913990509]
 libraries/ = SubResource("AnimationLibrary_qmp1y")
 
-[node name="Area2D" type="Area2D" parent="PathFollow2D/RigidBody2D" unique_id=724788736]
+[node name="Area2D" type="Area2D" parent="PathFollow2D/Node2D" unique_id=724788736]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/RigidBody2D/Area2D" unique_id=1827544268]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Node2D/Area2D" unique_id=1827544268]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ggdqk")
