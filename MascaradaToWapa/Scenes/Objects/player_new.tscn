@@ -178,8 +178,10 @@ collision_layer = 133
 physics_material_override = SubResource("PhysicsMaterial_6dlr3")
 gravity_scale = 0.0
 lock_rotation = true
+linear_damp = 4.0
 script = ExtResource("1_n4sih")
 maxSpeed = 400.0
+force = 80000.0
 
 [node name="walk_particles" type="GPUParticles2D" parent="." unique_id=2065340774 node_paths=PackedStringArray("movement")]
 position = Vector2(3, 37)

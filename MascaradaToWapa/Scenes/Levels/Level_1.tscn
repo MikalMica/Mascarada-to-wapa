@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cnthefjt8adju" path="res://Scenes/Levels/level_template.tscn" id="1_cp10e"]
 [ext_resource type="PackedScene" uid="uid://bbfx3d5nnbuw0" path="res://Scenes/Prefabs/door_button.tscn" id="2_7pr3o"]
 [ext_resource type="PackedScene" uid="uid://b002m70456tiw" path="res://Scenes/Objects/box.tscn" id="3_q8yj7"]
-[ext_resource type="PackedScene" uid="uid://by2guhi3332mv" path="res://Scenes/Prefabs/hold_button.tscn" id="4_87l2y"]
+[ext_resource type="PackedScene" uid="uid://c7ftdk6b7fa80" path="res://Scenes/Prefabs/hold_button.tscn" id="4_87l2y"]
 [ext_resource type="Script" uid="uid://17gvb1y11qe5" path="res://Scripts/SpriteHider.gd" id="4_qpfou"]
 
 [node name="LevelTemplate" unique_id=1832597160 instance=ExtResource("1_cp10e")]
