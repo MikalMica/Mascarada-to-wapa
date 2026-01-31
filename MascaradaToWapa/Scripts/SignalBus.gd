@@ -11,3 +11,7 @@ signal default_mask_on
 signal object_mask_on
 
 signal deactivate_input
+
+# signals to indicate wether the timer is running or not
+signal mask_timer_started
+signal mask_timer_stopped
