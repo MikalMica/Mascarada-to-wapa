@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://qb4lvft6bvq0"]
 
+[ext_resource type="Script" uid="uid://d78kjilpwhpr" path="res://Scripts/PauseLogic.gd" id="1_76vfl"]
 [ext_resource type="Shader" uid="uid://g0e1blos454q" path="res://Scripts/Shaders/rainbow.gdshader" id="1_kud7c"]
 [ext_resource type="Texture2D" uid="uid://qfqiv87acg88" path="res://PlaceHolders/circusBack.jpg" id="2_4o3s6"]
 [ext_resource type="FontFile" uid="uid://qdabb32dedsd" path="res://Assets/Fonts/KiriFont.otf" id="3_4o3s6"]
@@ -61,7 +62,11 @@ font = ExtResource("3_4o3s6")
 font_size = 160
 font_color = Color(0.8627451, 0.5372549, 0.1882353, 1)
 
-[node name="PauseMenu" type="Control" unique_id=1764534411]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1973575900]
+process_mode = 2
+script = ExtResource("1_76vfl")
+
+[node name="PauseMenu" type="Control" parent="." unique_id=1764534411]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,7 +74,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=177534523]
+[node name="TextureRect" type="TextureRect" parent="PauseMenu" unique_id=177534523]
 modulate = Color(0.9764706, 0.42352942, 0.28627452, 0.41960785)
 material = SubResource("ShaderMaterial_xg7my")
 layout_mode = 0
@@ -78,7 +83,7 @@ offset_bottom = 648.0
 texture = ExtResource("2_4o3s6")
 expand_mode = 1
 
-[node name="Main_menu" type="Button" parent="." unique_id=1936350335]
+[node name="Main_menu" type="Button" parent="PauseMenu" unique_id=1936350335]
 layout_mode = 0
 offset_left = 408.0
 offset_top = 510.0
@@ -94,7 +99,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_76vfl")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4o3s6")
 text = "Main Menu"
 
-[node name="Continue" type="Button" parent="." unique_id=2046929643]
+[node name="Continue" type="Button" parent="PauseMenu" unique_id=2046929643]
 layout_mode = 0
 offset_left = 408.0
 offset_top = 367.0
@@ -110,7 +115,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_76vfl")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4o3s6")
 text = "Continue"
 
-[node name="Label" type="Label" parent="." unique_id=1639990265]
+[node name="Label" type="Label" parent="PauseMenu" unique_id=1639990265]
 layout_mode = 0
 offset_left = 276.0
 offset_top = 148.0
@@ -118,3 +123,6 @@ offset_right = 917.0
 offset_bottom = 348.0
 text = "PAUSE"
 label_settings = SubResource("LabelSettings_4o3s6")
+
+[connection signal="pressed" from="PauseMenu/Main_menu" to="." method="_main_menu_pressed"]
+[connection signal="pressed" from="PauseMenu/Continue" to="." method="_continue_pressed"]

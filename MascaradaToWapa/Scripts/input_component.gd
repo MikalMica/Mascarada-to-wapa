@@ -1,7 +1,7 @@
 extends Node
 @export var movementNode : Character
 var disconnected:bool
-var pause = load("res://Scenes/Levels/pause_menu.tscn")
+var pause = preload("res://Scenes/Levels/pause_menu.tscn")
 
 func _ready() -> void:
 	SignalBus.deactivate_input.connect(func(): 
@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Pause"):
-		get_tree().root.add_child(pause)
+		get_tree().root.add_child(pause.instantiate())
 		get_tree().paused = true
 		return
 	if disconnected: return
