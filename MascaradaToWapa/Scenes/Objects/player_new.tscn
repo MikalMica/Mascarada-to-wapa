@@ -86,10 +86,14 @@ tracks/2/keys = {
 "values": [Vector2(0.2247186, 0.2247186), Vector2(0.2247186, 0.19877905), Vector2(0.2247186, 0.2247186)]
 }
 
+[sub_resource type="Animation" id="Animation_81akd"]
+resource_name = "walk_d"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_81akd"]
 _data = {
 &"RESET": SubResource("Animation_m4g67"),
-&"idle": SubResource("Animation_6dlr3")
+&"idle": SubResource("Animation_6dlr3"),
+&"walk_d": SubResource("Animation_81akd")
 }
 
 [node name="Player" type="RigidBody2D" unique_id=1647835319]
@@ -105,7 +109,6 @@ region_enabled = true
 region_rect = Rect2(80, 212, 60, 81)
 
 [node name="Shape" type="CollisionShape2D" parent="." unique_id=1132779650]
-visible = false
 position = Vector2(0, 2)
 scale = Vector2(0.3717273, 0.66098726)
 shape = SubResource("RectangleShape2D_81akd")
@@ -116,7 +119,6 @@ script = ExtResource("3_6dlr3")
 movementNode = NodePath("..")
 
 [node name="PlayerHitbox" parent="." unique_id=97422374 instance=ExtResource("4_m4g67")]
-visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=163794158]
 libraries/ = SubResource("AnimationLibrary_81akd")
