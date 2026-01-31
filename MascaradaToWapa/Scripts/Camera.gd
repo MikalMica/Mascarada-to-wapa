@@ -1,6 +1,7 @@
 extends Camera2D
+class_name Camera
 
-var INIT_ZOOM:Vector2 = Vector2(1,1)
+@export var INIT_ZOOM:Vector2 = Vector2(1,1)
 const INIT_OFFSET:Vector2 = Vector2.ZERO
 
 var cur_zoom:Vector2 = INIT_ZOOM
