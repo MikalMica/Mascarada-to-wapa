@@ -3,15 +3,20 @@
 [ext_resource type="Script" uid="uid://bpkfdtxuljsk1" path="res://Scripts/movement_component.gd" id="1_n4sih"]
 [ext_resource type="Texture2D" uid="uid://b2l3slpiahih5" path="res://Assets/Images/Player/player_spritesheet.png" id="2_n4sih"]
 [ext_resource type="Script" uid="uid://do3bcxekdkuln" path="res://Scripts/input_component.gd" id="3_6dlr3"]
+[ext_resource type="Script" uid="uid://buh1aqoi82x4i" path="res://Scripts/walk_particles.gd" id="4_80g1v"]
 [ext_resource type="Script" uid="uid://cq2xhal270ups" path="res://Scripts/player_on_hit.gd" id="4_m4g67"]
 [ext_resource type="Script" uid="uid://ca6nd0axt7alj" path="res://Scripts/player_animation_handler.gd" id="5_6dlr3"]
+[ext_resource type="Material" uid="uid://dw8uvysv1vojn" path="res://Particles/walk_particles.tres" id="6_81akd"]
+[ext_resource type="Texture2D" uid="uid://ylof3qkqvinr" path="res://Assets/Images/smoke.png" id="6_hgy4n"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6dlr3"]
 friction = 0.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hgy4n"]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6dlr3"]
-radius = 25.719105
-height = 54.46398
+radius = 29.591587
+height = 60.51554
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3sv7"]
 
@@ -175,7 +180,16 @@ lock_rotation = true
 script = ExtResource("1_n4sih")
 maxSpeed = 400.0
 
+[node name="walk_particles" type="GPUParticles2D" parent="." unique_id=2065340774 node_paths=PackedStringArray("movement")]
+position = Vector2(3, 37)
+texture = ExtResource("6_hgy4n")
+lifetime = 0.25
+process_material = ExtResource("6_81akd")
+script = ExtResource("4_80g1v")
+movement = NodePath("..")
+
 [node name="Sprite" type="Sprite2D" parent="." unique_id=973427504]
+material = SubResource("ShaderMaterial_hgy4n")
 rotation = -0.12898421
 texture = ExtResource("2_n4sih")
 region_enabled = true

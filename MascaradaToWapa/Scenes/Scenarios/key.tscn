@@ -1,10 +1,11 @@
-[gd_scene format=3 uid="uid://y3no1pbf5mag"]
+[gd_scene format=3 uid="uid://s6xci46fm7ne"]
 
 [ext_resource type="Script" uid="uid://17gvb1y11qe5" path="res://Scripts/SpriteHider.gd" id="1_c38dr"]
 [ext_resource type="Script" uid="uid://bi4jkqna36pbn" path="res://Scripts/key.gd" id="1_tw4fw"]
 [ext_resource type="Texture2D" uid="uid://f4y7jbtkcbdx" path="res://PlaceHolders/key_ph.png" id="2_tw4fw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tw4fw"]
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_c38dr"]
+points = PackedVector2Array(-2.4090722, -6.1314664, 4.175725, -5.6474032, 6.906007, -0.9681263, 6.745402, 1.9362526, 3.8545153, 6.1314664, -4.6575394, 6.1314664, -6.745402, 3.388442, -6.4241924, -2.904379)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3w12"]
 size = Vector2(160, 144)
@@ -25,7 +26,7 @@ texture = ExtResource("2_tw4fw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Key" unique_id=937241041]
 scale = Vector2(-6.226464, -6.197539)
-shape = SubResource("RectangleShape2D_tw4fw")
+shape = SubResource("ConvexPolygonShape2D_c38dr")
 
 [node name="Area2D" type="Area2D" parent="Key" unique_id=66112114]
 

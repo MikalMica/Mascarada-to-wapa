@@ -1,4 +1,5 @@
 extends Node2D
+class_name SpriteHider
 
 # Booleans to set with which masks will the object turn visible
 @export var default: bool

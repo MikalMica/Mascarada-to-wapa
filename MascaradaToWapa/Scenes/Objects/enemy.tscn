@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://xumoqssj3r73"]
 
 [ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="1_7ifby"]
+[ext_resource type="Script" uid="uid://dvd0qjmgf7j7k" path="res://Scripts/enemy.gd" id="1_i2hje"]
 
 [sub_resource type="Curve2D" id="Curve2D_dqui2"]
 _data = {
@@ -49,8 +50,10 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ggdqk"]
 size = Vector2(132, 129)
 
-[node name="Enemy" type="Path2D" unique_id=1299381547]
+[node name="Enemy" type="Path2D" unique_id=1299381547 node_paths=PackedStringArray("anim_player")]
 curve = SubResource("Curve2D_dqui2")
+script = ExtResource("1_i2hje")
+anim_player = NodePath("PathFollow2D/Node2D/AnimationPlayer")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=733210764]
 rotates = false

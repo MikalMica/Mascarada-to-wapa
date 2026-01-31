@@ -4,14 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://cn6y4huihon4n" path="res://Scenes/Objects/projectile.tscn" id="2_pb8hd"]
 [ext_resource type="Texture2D" uid="uid://blmc6cycjmxg" path="res://Assets/Images/Cannon/canon.png" id="3_0hyga"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3jqc"]
-
 [sub_resource type="Animation" id="Animation_nbxs4"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RigidBody2D/Sprite2D:scale")
+tracks/0/path = NodePath("Sprite2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -27,7 +25,7 @@ length = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RigidBody2D/Sprite2D:scale")
+tracks/0/path = NodePath("Sprite2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -49,18 +47,7 @@ rotation = 1.5707964
 script = ExtResource("1_nbxs4")
 projectile = ExtResource("2_pb8hd")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=90595170]
-collision_layer = 2
-collision_mask = 0
-gravity_scale = 0.0
-freeze = true
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=717997886]
-scale = Vector2(5.6000004, 5.6000004)
-shape = SubResource("RectangleShape2D_a3jqc")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=1571520089]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1571520089]
 z_index = 1
 rotation = -0.9878563
 texture = ExtResource("3_0hyga")

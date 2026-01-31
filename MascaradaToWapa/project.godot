@@ -21,6 +21,10 @@ SceneManager="*uid://j20v4cg7v8m1"
 LevelManager="*uid://b6cwot4ilk8sh"
 CheckpointHandler="*uid://c771x3k1coh78"
 
+[display]
+
+window/stretch/aspect="expand"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/scene_manager/plugin.cfg")
@@ -76,6 +80,7 @@ object_mask={
 2d_physics/layer_2="Enemy"
 2d_physics/layer_3="Player"
 2d_physics/layer_4="Checkpoint"
+2d_physics/layer_8="Player"
 
 [physics]
 

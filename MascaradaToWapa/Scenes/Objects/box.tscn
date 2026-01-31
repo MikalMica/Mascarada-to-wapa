@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dhaxcrd4702ts" path="res://Scripts/draggable.gd" id="1_kgpns"]
 [ext_resource type="Texture2D" uid="uid://by8np7a5xdc87" path="res://PlaceHolders/diego_cube.png" id="2_kgpns"]
+[ext_resource type="Shape2D" uid="uid://7rcj3sggs5a7" path="res://Scenes/Levels/new_convex_polygon_shape_2d.tres" id="3_8s7be"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ow35p"]
 animations = [{
@@ -14,9 +15,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mktxh"]
-size = Vector2(114, 100)
-
 [node name="Box" type="RigidBody2D" unique_id=161731881]
 gravity_scale = 0.0
 lock_rotation = true
@@ -28,5 +26,5 @@ metadata/_edit_group_ = true
 sprite_frames = SubResource("SpriteFrames_ow35p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=333379510]
-position = Vector2(3, 0)
-shape = SubResource("RectangleShape2D_mktxh")
+position = Vector2(1, -1)
+shape = ExtResource("3_8s7be")
