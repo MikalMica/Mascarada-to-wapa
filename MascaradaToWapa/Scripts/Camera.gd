@@ -1,7 +1,7 @@
 extends Camera2D
 class_name Camera
 
-@export var INIT_ZOOM:Vector2 = Vector2(1,1)
+var INIT_ZOOM:Vector2 = Vector2(1,1)
 const INIT_OFFSET:Vector2 = Vector2.ZERO
 
 var cur_zoom:Vector2 = INIT_ZOOM
@@ -20,7 +20,7 @@ var zoom_recov_factor:float = 2.0
 
 
 func _ready():
-	zoom = INIT_ZOOM
+	INIT_ZOOM = zoom
 	offset = INIT_OFFSET
 	
 	SceneManager.fade_complete.connect(func(): 

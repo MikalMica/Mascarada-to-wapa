@@ -12,7 +12,6 @@
 
 [node name="Player" parent="." unique_id=1647835319 instance=ExtResource("1_7e6j3")]
 position = Vector2(0, 0)
-lock_rotation = false
 maxSpeed = 500.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1896111905]
@@ -39,7 +38,5 @@ metadata/_custom_type_script = "uid://cs6iustmvpqay"
 
 [node name="Camera2D" parent="." unique_id=1676999046 instance=ExtResource("7_qosk0")]
 position = Vector2(1200, -97)
-zoom = Vector2(0.4, 0.4)
-INIT_ZOOM = Vector2(0.4, 0.4)
 
 [editable path="Llave"]
