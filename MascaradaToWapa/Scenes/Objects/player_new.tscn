@@ -1,11 +1,96 @@
 [gd_scene format=3 uid="uid://3xdvejjvv1hs"]
 
 [ext_resource type="Script" uid="uid://bpkfdtxuljsk1" path="res://Scripts/movement_component.gd" id="1_n4sih"]
-[ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="2_m4g67"]
+[ext_resource type="Texture2D" uid="uid://b2l3slpiahih5" path="res://Assets/Images/Player/player_spritesheet.png" id="2_n4sih"]
 [ext_resource type="Script" uid="uid://do3bcxekdkuln" path="res://Scripts/input_component.gd" id="3_6dlr3"]
 [ext_resource type="PackedScene" uid="uid://do2iq72ya3lyt" path="res://Scenes/Objects/player_hitbox.tscn" id="4_m4g67"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81akd"]
+
+[sub_resource type="Animation" id="Animation_m4g67"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(80, 212, 60, 81)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2247186, 0.2247186)]
+}
+
+[sub_resource type="Animation" id="Animation_6dlr3"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(80, 212, 60, 81)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1.0505512), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.2247186, 0.2247186), Vector2(0.2247186, 0.19877905), Vector2(0.2247186, 0.2247186)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_81akd"]
+_data = {
+&"RESET": SubResource("Animation_m4g67"),
+&"idle": SubResource("Animation_6dlr3")
+}
 
 [node name="Player" type="RigidBody2D" unique_id=1647835319]
 position = Vector2(0, -1)
@@ -15,10 +100,14 @@ script = ExtResource("1_n4sih")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=973427504]
 scale = Vector2(0.2247186, 0.2247186)
-texture = ExtResource("2_m4g67")
+texture = ExtResource("2_n4sih")
+region_enabled = true
+region_rect = Rect2(80, 212, 60, 81)
 
 [node name="Shape" type="CollisionShape2D" parent="." unique_id=1132779650]
-scale = Vector2(1.416298, 1.416298)
+visible = false
+position = Vector2(0, 2)
+scale = Vector2(0.3717273, 0.66098726)
 shape = SubResource("RectangleShape2D_81akd")
 
 [node name="InputProvider" type="Node2D" parent="." unique_id=946689675 node_paths=PackedStringArray("movementNode")]
@@ -27,3 +116,7 @@ script = ExtResource("3_6dlr3")
 movementNode = NodePath("..")
 
 [node name="PlayerHitbox" parent="." unique_id=97422374 instance=ExtResource("4_m4g67")]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=163794158]
+libraries/ = SubResource("AnimationLibrary_81akd")
