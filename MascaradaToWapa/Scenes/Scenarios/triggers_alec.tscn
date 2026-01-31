@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dqh8eov60sjek" path="res://Scripts/hold_button.gd" id="4_ow35p"]
 [ext_resource type="Script" uid="uid://b3qn1dmcs0d7u" path="res://Scripts/playerTest.gd" id="5_fkiym"]
 [ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="6_dy3vq"]
+[ext_resource type="PackedScene" uid="uid://cnbggcpyxrnch" path="res://Scenes/Objects/player.tscn" id="8_ow35p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xphxm"]
 atlas = ExtResource("2_oxvwj")
@@ -28,17 +29,6 @@ animations = [{
 "loop": true,
 "name": &"Click",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pwwsy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xphxm")
-}],
-"loop": true,
-"name": &"Unclick",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_314ca"]
@@ -58,13 +48,30 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgsdk"]
 size = Vector2(26, 26)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow35p"]
+atlas = ExtResource("2_oxvwj")
+region = Rect2(6, 0, 32, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_pfren"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_dy3vq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ow35p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbloj"]
 
 [node name="TriggersAlec" type="Node2D" unique_id=1541308786]
 
 [node name="OneTimePressButton" type="Area2D" parent="." unique_id=2049339381]
+visible = false
 position = Vector2(153, 140)
 script = ExtResource("1_pfren")
 metadata/_edit_group_ = true
@@ -77,6 +84,7 @@ animation = &"Click"
 shape = SubResource("RectangleShape2D_314ca")
 
 [node name="TimerButton" type="Area2D" parent="." unique_id=247933037]
+visible = false
 position = Vector2(155, 94)
 script = ExtResource("3_oxvwj")
 metadata/_edit_group_ = true
@@ -88,9 +96,10 @@ animation = &"Click"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TimerButton" unique_id=538268503]
 shape = SubResource("RectangleShape2D_314ca")
 
-[node name="HoldButton" type="Area2D" parent="." unique_id=703309703]
+[node name="HoldButton" type="Area2D" parent="." unique_id=703309703 node_paths=PackedStringArray("TriggeredObstacle")]
 position = Vector2(154, 47)
 script = ExtResource("4_ow35p")
+TriggeredObstacle = [NodePath("../PuertaLevadiza")]
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HoldButton" unique_id=1972224066]
@@ -101,6 +110,7 @@ animation = &"Click"
 shape = SubResource("RectangleShape2D_314ca")
 
 [node name="TestCharacter" type="Area2D" parent="." unique_id=1046774810]
+visible = false
 position = Vector2(78, 96)
 script = ExtResource("5_fkiym")
 metadata/_edit_group_ = true
@@ -114,14 +124,20 @@ frame_progress = 0.98888505
 shape = SubResource("RectangleShape2D_hgsdk")
 
 [node name="PuertaLevadiza" type="Area2D" parent="." unique_id=207826114]
+position = Vector2(50, 25)
 script = ExtResource("4_gybfd")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PuertaLevadiza" unique_id=859189861]
+scale = Vector2(0.16, 0.16)
 sprite_frames = SubResource("SpriteFrames_pfren")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PuertaLevadiza" unique_id=1148402095]
 shape = SubResource("RectangleShape2D_jbloj")
+
+[node name="Player" parent="." unique_id=1989580064 instance=ExtResource("8_ow35p")]
+position = Vector2(52, 111)
+speed = 3000.0
 
 [connection signal="area_entered" from="OneTimePressButton" to="OneTimePressButton" method="_on_area_entered"]
 [connection signal="area_entered" from="TimerButton" to="OneTimePressButton" method="_on_boton_tiempo_area_entered"]

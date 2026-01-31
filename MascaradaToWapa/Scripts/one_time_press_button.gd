@@ -4,7 +4,7 @@ var buttonHasBeenPressed = false;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimatedSprite2D.frame = 0;
-	area_entered.connect(_player_enters_area)
+	body_entered.connect(_player_enters_area)
 	pass; # Replace with function body.
 
 
@@ -16,6 +16,7 @@ func _process(_delta: float) -> void:
 func _player_enters_area(_area) -> void:
 	#El botón se pulsa, manda una señal para avisar de que se ha pulsado y se reproduce la animación
 	if(buttonHasBeenPressed == false):
+		print_debug("one")
 		buttonHasBeenPressed = true
 		_activate_obstacles()
 		OneTimePressButtonON.emit();

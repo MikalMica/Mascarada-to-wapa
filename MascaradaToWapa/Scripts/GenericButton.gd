@@ -13,8 +13,8 @@ func _process(delta: float) -> void:
 
 func _activate_obstacles() -> void:
 	for obstacle in TriggeredObstacle:
-		obstacle.activate
+		obstacle._activate()
 
 func _deactivate_obstacles() -> void:
 	for obstacle in TriggeredObstacle:
-		obstacle.deactivate
+		obstacle._deactivate()
