@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cnthefjt8adju"]
 
+[ext_resource type="TileSet" uid="uid://dbfjxajsl464h" path="res://Tilemaps/circus_tilemap/circus_tilemap.tres" id="1_aibml"]
 [ext_resource type="PackedScene" uid="uid://3xdvejjvv1hs" path="res://Scenes/Objects/player_new.tscn" id="1_ebu0d"]
 [ext_resource type="TileSet" uid="uid://dbigu3i4b0uvj" path="res://Tilemaps/bw_tilemap/tileset_bw_tilemap.tres" id="2_6epvh"]
 [ext_resource type="PackedScene" uid="uid://lf18byvqd0t4" path="res://Scenes/Prefabs/check_point.tscn" id="3_aibml"]
@@ -11,6 +12,10 @@
 
 [node name="LevelTemplate" type="Node2D" unique_id=1832597160 groups=["Level"]]
 y_sort_enabled = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=657622213]
+z_index = -1
+tile_set = ExtResource("1_aibml")
 
 [node name="CollisionLayer" type="TileMapLayer" parent="." unique_id=159347708]
 tile_set = ExtResource("2_6epvh")

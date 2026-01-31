@@ -33,7 +33,7 @@ shader_parameter/roationSpeed = 0.1
 
 [node name="ChangeLevelOnTrigger" type="Area2D" parent="." unique_id=38857801]
 collision_layer = 0
-collision_mask = 128
+collision_mask = 4
 script = ExtResource("1_2xl4n")
 levelID = 1
 metadata/_custom_type_script = "uid://delem76apguvo"

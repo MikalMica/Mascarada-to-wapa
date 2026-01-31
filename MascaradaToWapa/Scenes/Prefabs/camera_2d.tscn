@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dyq8p3l4um33l"]
 
 [ext_resource type="Script" uid="uid://ceemdxnx1inr" path="res://Scripts/Camera.gd" id="1_p763x"]
+[ext_resource type="Shader" uid="uid://bqtuoa1d58an" path="res://Shaders/AAA.gdshader" id="2_gcye7"]
+[ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="3_tw5aw"]
 
 [sub_resource type="Gradient" id="Gradient_6dlr3"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -10,6 +12,23 @@ gradient = SubResource("Gradient_6dlr3")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gcye7"]
+shader = ExtResource("2_gcye7")
+shader_parameter/colour1 = Color(0.454112, 1.0408274e-06, 2.1658838e-07, 1)
+shader_parameter/colour2 = Color(2.5268645e-07, 0, 0.26795948, 1)
+shader_parameter/colour3 = Color(0, 0, 0, 1)
+shader_parameter/colour4 = Color(0.017020682, 0.017020678, 0.017020678, 1)
+shader_parameter/contrast = 5
+shader_parameter/gradual = 1.51999996602496
+shader_parameter/width1 = 0.20999999530608
+shader_parameter/width2 = 0.1
+shader_parameter/scale1 = 10.0
+shader_parameter/scale2 = 1.0
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/intensity = 2.70000004023324
+shader_parameter/spin_speed = 0.2
+shader_parameter/spin_amount = 1.5
+
 [node name="Camera2D" type="Camera2D" unique_id=1676999046]
 script = ExtResource("1_p763x")
 _follow = true
@@ -18,3 +37,10 @@ _follow = true
 position = Vector2(-10.5, 7.9999847)
 scale = Vector2(18.453125, 10.531251)
 texture = SubResource("GradientTexture2D_p763x")
+
+[node name="background" type="Sprite2D" parent="." unique_id=754986564]
+z_index = -3
+material = SubResource("ShaderMaterial_gcye7")
+position = Vector2(-9.499985, -16.000015)
+scale = Vector2(10.1484375, 6.109375)
+texture = ExtResource("3_tw5aw")
