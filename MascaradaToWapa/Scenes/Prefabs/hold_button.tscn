@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c7ftdk6b7fa80"]
+[gd_scene format=3 uid="uid://by2guhi3332mv"]
 
 [ext_resource type="Script" uid="uid://dqh8eov60sjek" path="res://Scripts/hold_button.gd" id="1_i5srf"]
 [ext_resource type="Texture2D" uid="uid://w0l64sq1fwta" path="res://Assets/Images/button.png" id="2_i5srf"]
@@ -26,19 +26,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_314ca"]
-size = Vector2(32, 16)
+size = Vector2(75, 57)
 
 [node name="HoldButton" type="Area2D" unique_id=1666575160 node_paths=PackedStringArray("TriggeredObstacle")]
-visible = false
+z_index = -1
 script = ExtResource("1_i5srf")
 TriggeredObstacle = [null]
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1620597611]
+position = Vector2(1, -22)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_xqrtf")
 animation = &"Click"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1101299110]
+position = Vector2(3.5, -38.5)
 shape = SubResource("RectangleShape2D_314ca")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
