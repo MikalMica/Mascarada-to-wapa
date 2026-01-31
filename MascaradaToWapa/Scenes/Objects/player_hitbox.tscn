@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cq2xhal270ups" path="res://Scripts/player_on_hit.gd" id="1_plp88"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3sv7"]
-size = Vector2(123.75, 127.26)
 
 [node name="PlayerHitbox" type="Area2D" unique_id=97422374]
 collision_mask = 2

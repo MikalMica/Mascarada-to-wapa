@@ -116,7 +116,6 @@ script = ExtResource("3_6dlr3")
 movementNode = NodePath("..")
 
 [node name="PlayerHitbox" parent="." unique_id=97422374 instance=ExtResource("4_m4g67")]
-visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=163794158]
 libraries/ = SubResource("AnimationLibrary_81akd")
