@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dqwdl6kchp78b"]
+[gd_scene format=3 uid="uid://3xdvejjvv1hs"]
 
 [ext_resource type="Script" uid="uid://bpkfdtxuljsk1" path="res://Scripts/movement_component.gd" id="1_n4sih"]
 [ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="2_m4g67"]
@@ -7,6 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81akd"]
 
 [node name="Player" type="RigidBody2D" unique_id=1647835319]
+collision_layer = 129
 gravity_scale = 0.0
 script = ExtResource("1_n4sih")
 

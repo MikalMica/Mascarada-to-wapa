@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 
 SignalBus="*uid://c73f8sxuqoqxv"
 SceneManager="*uid://j20v4cg7v8m1"
+LevelManager="*uid://b6cwot4ilk8sh"
 
 [editor_plugins]
 
