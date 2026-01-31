@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://s6xci46fm7ne"]
+[gd_scene format=3 uid="uid://y3no1pbf5mag"]
 
 [ext_resource type="Script" uid="uid://17gvb1y11qe5" path="res://Scripts/SpriteHider.gd" id="1_c38dr"]
 [ext_resource type="Script" uid="uid://bi4jkqna36pbn" path="res://Scripts/key.gd" id="1_tw4fw"]
