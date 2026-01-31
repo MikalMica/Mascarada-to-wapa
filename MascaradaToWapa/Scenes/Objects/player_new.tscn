@@ -6,7 +6,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81akd"]
 
-[node name="Player" type="RigidBody2D" unique_id=1647835319]
+[node name="Player" type="RigidBody2D" unique_id=1647835319 groups=["player"]]
 collision_layer = 129
 gravity_scale = 0.0
 script = ExtResource("1_n4sih")
