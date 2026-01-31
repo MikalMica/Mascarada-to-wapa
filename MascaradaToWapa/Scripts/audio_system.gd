@@ -53,7 +53,7 @@ func _change_main_theme(theme: MAIN_THEME) -> void:
 
 func _change_sfx_volume(volume: float):
 	for audioSP in _sfx.get_children():
-		audioSP.volume_linear = _sfx_volume
+		audioSP.volume_linear = volume
 
-func _change_volume_volume(volume: float):
-	_music.volume_linear = _music_volume
+func _change_music_volume(volume: float):
+	_music.volume_linear = volume
