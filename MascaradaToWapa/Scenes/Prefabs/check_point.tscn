@@ -1,3 +1,23 @@
 [gd_scene format=3 uid="uid://lf18byvqd0t4"]
 
-[node name="check_point" type="Node2D" unique_id=1018906685 groups=["checkpoint"]]
+[ext_resource type="Script" uid="uid://cpcd8orbjhnht" path="res://Scripts/check_point.gd" id="1_vanhk"]
+[ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="2_j4y0d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfnb0"]
+size = Vector2(125, 125)
+
+[node name="check_point" type="Node2D" unique_id=1018906685 node_paths=PackedStringArray("checkpointArea") groups=["checkpoint"]]
+script = ExtResource("1_vanhk")
+checkpointArea = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1014981667]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1282145558]
+shape = SubResource("RectangleShape2D_mfnb0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=704781135]
+visible = false
+modulate = Color(0.94481486, 0.4883709, 0.24377236, 1)
+texture = ExtResource("2_j4y0d")
