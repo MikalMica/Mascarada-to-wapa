@@ -6,8 +6,12 @@
 [ext_resource type="Script" uid="uid://cq2xhal270ups" path="res://Scripts/player_on_hit.gd" id="4_m4g67"]
 [ext_resource type="Script" uid="uid://ca6nd0axt7alj" path="res://Scripts/player_animation_handler.gd" id="5_6dlr3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_81akd"]
-size = Vector2(79.943756, 72.02843)
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6dlr3"]
+friction = 0.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6dlr3"]
+radius = 25.719105
+height = 54.46398
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3sv7"]
 
@@ -165,6 +169,7 @@ _data = {
 [node name="Player" type="RigidBody2D" unique_id=1647835319 groups=["player"]]
 position = Vector2(0, -1)
 collision_layer = 133
+physics_material_override = SubResource("PhysicsMaterial_6dlr3")
 gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_n4sih")
@@ -177,9 +182,9 @@ region_enabled = true
 region_rect = Rect2(80, 212, 60, 81)
 
 [node name="Shape" type="CollisionShape2D" parent="." unique_id=1132779650]
-position = Vector2(-0.85863495, 8.195063)
+position = Vector2(0, 22)
 scale = Vector2(0.3717273, 0.66098726)
-shape = SubResource("RectangleShape2D_81akd")
+shape = SubResource("CapsuleShape2D_6dlr3")
 
 [node name="InputProvider" type="Node2D" parent="." unique_id=946689675 node_paths=PackedStringArray("movementNode")]
 scale = Vector2(0.14623876, 0.14623876)

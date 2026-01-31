@@ -29,6 +29,7 @@ position = Vector2(1200, -97)
 
 [node name="Player" parent="." unique_id=1647835319 instance=ExtResource("1_ebu0d")]
 position = Vector2(0, 0)
+collision_layer = 1
 maxSpeed = 500.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1214302919]
