@@ -1,7 +1,7 @@
-[gd_scene format=4 uid="uid://bvuky60gnd5r6"]
+[gd_scene format=4 uid="uid://d24st4uf34lmu"]
 
 [ext_resource type="PackedScene" uid="uid://cnthefjt8adju" path="res://Scenes/Levels/level_template.tscn" id="1_dt10j"]
-[ext_resource type="PackedScene" uid="uid://xumoqssj3r73" path="res://Scenes/Objects/enemy.tscn" id="2_0bn43"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/enemy.tscn" id="2_0bn43"]
 
 [sub_resource type="Curve2D" id="Curve2D_pcf11"]
 _data = {
@@ -26,3 +26,5 @@ position = Vector2(1864, 235)
 [node name="Enemy" parent="." index="11" unique_id=1299381547 instance=ExtResource("2_0bn43")]
 position = Vector2(490, 309)
 curve = SubResource("Curve2D_pcf11")
+
+[editable path="Point_B"]
