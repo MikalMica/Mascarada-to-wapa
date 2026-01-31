@@ -8,5 +8,3 @@ script = ExtResource("1_hf15j")
 [node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=997477350]
 
 [node name="SFXs" type="Node2D" parent="." unique_id=2061928492]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1282326832]
