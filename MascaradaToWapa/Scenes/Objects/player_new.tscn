@@ -116,6 +116,7 @@ _data = {
 position = Vector2(0, -1)
 collision_layer = 129
 gravity_scale = 0.0
+lock_rotation = true
 script = ExtResource("1_n4sih")
 maxSpeed = 400.0
 
