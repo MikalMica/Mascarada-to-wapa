@@ -6,6 +6,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81akd"]
 
+<<<<<<< HEAD
 [sub_resource type="Animation" id="Animation_m4g67"]
 length = 0.001
 tracks/0/type = "value"
@@ -110,6 +111,9 @@ _data = {
 }
 
 [node name="Player" type="RigidBody2D" unique_id=1647835319]
+=======
+[node name="Player" type="RigidBody2D" unique_id=1647835319 groups=["player"]]
+>>>>>>> 2c10ae846a5134243878d0aa6e3af69c3dd868f3
 collision_layer = 129
 gravity_scale = 0.0
 script = ExtResource("1_n4sih")
