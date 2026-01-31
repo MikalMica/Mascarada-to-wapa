@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bj7j4rofdyqpo"]
+
+[ext_resource type="Script" uid="uid://bgbcts1jgip3a" path="res://Scripts/timer_button.gd" id="1_arimt"]
+[ext_resource type="Texture2D" uid="uid://w0l64sq1fwta" path="res://Assets/Images/button.png" id="2_arimt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yd5n2"]
+atlas = ExtResource("2_arimt")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1std0"]
+atlas = ExtResource("2_arimt")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xqrtf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yd5n2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1std0")
+}],
+"loop": true,
+"name": &"Click",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_314ca"]
+size = Vector2(32, 16)
+
+[node name="TimerButton" type="Area2D" unique_id=645655826]
+visible = false
+script = ExtResource("1_arimt")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1567601108]
+sprite_frames = SubResource("SpriteFrames_xqrtf")
+animation = &"Click"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2043487122]
+shape = SubResource("RectangleShape2D_314ca")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
