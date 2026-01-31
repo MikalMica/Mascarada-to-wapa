@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://3xdvejjvv1hs" path="res://Scenes/Objects/player_new.tscn" id="1_ebu0d"]
 [ext_resource type="TileSet" uid="uid://dbigu3i4b0uvj" path="res://Tilemaps/bw_tilemap/tileset_bw_tilemap.tres" id="2_6epvh"]
-[ext_resource type="TileSet" uid="uid://djx0b8tv3b716" path="res://Tilemaps/grass_tilemap/grass_tileset.tres" id="3_6epvh"]
 [ext_resource type="PackedScene" uid="uid://lf18byvqd0t4" path="res://Scenes/Prefabs/check_point.tscn" id="3_aibml"]
 [ext_resource type="Script" uid="uid://cs6iustmvpqay" path="res://Scripts/MaskHandler.gd" id="4_tvne3"]
 [ext_resource type="PackedScene" uid="uid://dyq8p3l4um33l" path="res://Scenes/Prefabs/camera_2d.tscn" id="5_ert0c"]
@@ -15,10 +14,6 @@ y_sort_enabled = true
 
 [node name="CollisionLayer" type="TileMapLayer" parent="." unique_id=159347708]
 tile_set = ExtResource("2_6epvh")
-
-[node name="RenderLayer" type="TileMapLayer" parent="." unique_id=173431134]
-z_index = -1
-tile_set = ExtResource("3_6epvh")
 
 [node name="check_point" parent="." unique_id=1018906685 instance=ExtResource("3_aibml")]
 
