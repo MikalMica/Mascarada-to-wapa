@@ -99,7 +99,7 @@ shape = SubResource("RectangleShape2D_314ca")
 [node name="HoldButton" type="Area2D" parent="." unique_id=703309703 node_paths=PackedStringArray("TriggeredObstacle")]
 position = Vector2(154, 47)
 script = ExtResource("4_ow35p")
-TriggeredObstacle = [NodePath("../PuertaLevadiza")]
+TriggeredObstacle = [NodePath("../Door")]
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HoldButton" unique_id=1972224066]
@@ -123,21 +123,22 @@ frame_progress = 0.98888505
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TestCharacter" unique_id=1697949578]
 shape = SubResource("RectangleShape2D_hgsdk")
 
-[node name="PuertaLevadiza" type="Area2D" parent="." unique_id=207826114]
-position = Vector2(50, 25)
-script = ExtResource("4_gybfd")
-metadata/_edit_group_ = true
+[node name="Player" parent="." unique_id=1989580064 instance=ExtResource("8_ow35p")]
+position = Vector2(52, 111)
+speed = 5000.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PuertaLevadiza" unique_id=859189861]
+[node name="Door" type="RigidBody2D" parent="." unique_id=994180869]
+gravity_scale = 0.0
+script = ExtResource("4_gybfd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Door" unique_id=859189861]
+position = Vector2(50, 25)
 scale = Vector2(0.16, 0.16)
 sprite_frames = SubResource("SpriteFrames_pfren")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PuertaLevadiza" unique_id=1148402095]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1148402095]
+position = Vector2(50, 25)
 shape = SubResource("RectangleShape2D_jbloj")
-
-[node name="Player" parent="." unique_id=1989580064 instance=ExtResource("8_ow35p")]
-position = Vector2(52, 111)
-speed = 3000.0
 
 [connection signal="area_entered" from="OneTimePressButton" to="OneTimePressButton" method="_on_area_entered"]
 [connection signal="area_entered" from="TimerButton" to="OneTimePressButton" method="_on_boton_tiempo_area_entered"]
