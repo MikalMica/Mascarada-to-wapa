@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://mrsssl14yp77"]
+
+[ext_resource type="Script" uid="uid://cf1r48ybwmoqq" path="res://Scripts/audio_system.gd" id="1_hf15j"]
+
+[node name="AudioSystem" type="Node2D" unique_id=880592922]
+script = ExtResource("1_hf15j")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=997477350]
+
+[node name="SFXs" type="Node2D" parent="." unique_id=2061928492]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1282326832]
