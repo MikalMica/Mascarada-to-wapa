@@ -2,6 +2,19 @@
 
 [ext_resource type="Script" uid="uid://ceemdxnx1inr" path="res://Scripts/Camera.gd" id="1_p763x"]
 
+[sub_resource type="Gradient" id="Gradient_6dlr3"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p763x"]
+gradient = SubResource("Gradient_6dlr3")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Camera2D" type="Camera2D" unique_id=1676999046]
 script = ExtResource("1_p763x")
 _follow = true
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1158776605]
+position = Vector2(-10.5, 7.9999847)
+scale = Vector2(18.453125, 10.531251)
+texture = SubResource("GradientTexture2D_p763x")

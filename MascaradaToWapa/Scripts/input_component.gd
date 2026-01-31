@@ -1,7 +1,14 @@
 extends Node
 @export var movementNode : Character
+var disconnected:bool
+
+func _ready() -> void:
+	SignalBus.deactivate_input.connect(func(): 
+		movementNode.stop()
+		disconnected = true)
 
 func _input(event: InputEvent) -> void:
+	if disconnected: return
 	if !event.is_pressed():
 		movementNode.stop()
 		

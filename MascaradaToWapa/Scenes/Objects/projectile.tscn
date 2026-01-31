@@ -8,6 +8,8 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m12d2"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7xkol"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dsciy"]
 size = Vector2(120, 120)
 
@@ -20,6 +22,7 @@ script = ExtResource("1_jobfh")
 speed = 500.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1999801302]
+texture = SubResource("PlaceholderTexture2D_7xkol")
 script = ExtResource("2_jobfh")
 sprites = Array[Texture]([ExtResource("3_7xkol"), ExtResource("4_3tpkl"), ExtResource("5_6dx0n")])
 
