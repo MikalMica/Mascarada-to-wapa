@@ -74,6 +74,7 @@ object_mask={
 
 2d_physics/layer_1="Default"
 2d_physics/layer_2="Enemy"
+2d_physics/layer_8="Player"
 
 [physics]
 

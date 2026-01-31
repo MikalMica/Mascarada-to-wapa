@@ -6,13 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://lf18byvqd0t4" path="res://Scenes/Prefabs/check_point.tscn" id="3_aibml"]
 [ext_resource type="Script" uid="uid://cs6iustmvpqay" path="res://Scripts/MaskHandler.gd" id="4_tvne3"]
 [ext_resource type="PackedScene" uid="uid://dyq8p3l4um33l" path="res://Scenes/Prefabs/camera_2d.tscn" id="5_ert0c"]
+[ext_resource type="PackedScene" uid="uid://p6xq2mdjp2yk" path="res://Scenes/Objects/point_b.tscn" id="7_aibml"]
+
+[sub_resource type="Environment" id="Environment_6epvh"]
 
 [node name="LevelTemplate" type="Node2D" unique_id=1832597160 groups=["Level"]]
+y_sort_enabled = true
 
 [node name="CollisionLayer" type="TileMapLayer" parent="." unique_id=159347708]
 tile_set = ExtResource("2_6epvh")
 
 [node name="RenderLayer" type="TileMapLayer" parent="." unique_id=173431134]
+z_index = -1
 tile_set = ExtResource("3_6epvh")
 
 [node name="check_point" parent="." unique_id=1018906685 instance=ExtResource("3_aibml")]
@@ -30,3 +35,13 @@ position = Vector2(1200, -97)
 [node name="Player" parent="." unique_id=1647835319 instance=ExtResource("1_ebu0d")]
 position = Vector2(0, 0)
 maxSpeed = 500.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1214302919]
+environment = SubResource("Environment_6epvh")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=899447024]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1803863886]
+color = Color(0, 0, 0, 1)
+
+[node name="Point_B" parent="." unique_id=1092435603 instance=ExtResource("7_aibml")]

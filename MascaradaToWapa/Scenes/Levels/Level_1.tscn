@@ -17,3 +17,9 @@ position = Vector2(2021, 55)
 
 [node name="Box" parent="." index="8" unique_id=161731881 instance=ExtResource("3_q8yj7")]
 position = Vector2(1389, 339)
+
+[node name="DirectionalLight2D" parent="." index="10" unique_id=899447024]
+energy = 0.5
+
+[node name="Point_B" parent="." index="12" unique_id=1092435603]
+position = Vector2(892, -33)

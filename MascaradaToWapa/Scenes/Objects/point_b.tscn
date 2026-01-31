@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://p6xq2mdjp2yk"]
+
+[ext_resource type="Script" uid="uid://delem76apguvo" path="res://Scripts/ChangeLevelOnTrigger.gd" id="1_2xl4n"]
+[ext_resource type="Shader" uid="uid://duus7pk03e8q5" path="res://Shaders/black_hole.gdshader" id="2_siv5y"]
+[ext_resource type="Texture2D" uid="uid://b2l3slpiahih5" path="res://Assets/Images/Player/player_spritesheet.png" id="3_xqu6c"]
+[ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="4_pluc3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvne3"]
+size = Vector2(22, 21)
+
+[sub_resource type="Gradient" id="Gradient_prqox"]
+colors = PackedColorArray(0, 0, 0, 1, 0.59741914, 0.10756446, 0.27823767, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_48ojh"]
+gradient = SubResource("Gradient_prqox")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ppm6g"]
+shader = ExtResource("2_siv5y")
+shader_parameter/resolution = Vector2(64, 64)
+shader_parameter/colorResolution = 100.0
+shader_parameter/distortionIntensity = 5.0000002235180006
+shader_parameter/spiralDistortionIntensity = 1.0
+shader_parameter/holeSize = 0.2
+shader_parameter/holeColor = SubResource("GradientTexture1D_48ojh")
+shader_parameter/image = ExtResource("3_xqu6c")
+shader_parameter/rotations = 1.0
+shader_parameter/depth = 0.5
+shader_parameter/spiralIntensity = 1.0
+shader_parameter/shrinkSpeed = 0.2
+shader_parameter/roationSpeed = 0.1
+
+[node name="Point_B" type="Node2D" unique_id=1092435603]
+
+[node name="ChangeLevelOnTrigger" type="Area2D" parent="." unique_id=38857801]
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("1_2xl4n")
+levelID = 1
+metadata/_custom_type_script = "uid://delem76apguvo"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChangeLevelOnTrigger" unique_id=1570164268]
+position = Vector2(2, 1.5)
+shape = SubResource("RectangleShape2D_tvne3")
+debug_color = Color(0.92291397, 0.54503924, 0.55607903, 0.41960785)
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1155979408]
+z_index = 2
+material = SubResource("ShaderMaterial_ppm6g")
+texture = ExtResource("4_pluc3")
