@@ -15,7 +15,8 @@ func _process(_delta: float) -> void:
 
 func _door_enters_area(_area) -> void:
 	#El botón se pulsa, manda una señal para avisar de que se ha pulsado y se reproduce la animación
-	if(_area.get_parent() is Door):
-		_area.get_parent()._activate()
+	var parent = _area.get_parent()
+	if(parent is Door):
+		parent._activate()
 	else:
 		pass
