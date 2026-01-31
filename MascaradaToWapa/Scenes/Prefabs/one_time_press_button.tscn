@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c7ta7ws2ikqnj"]
+
+[ext_resource type="Script" uid="uid://ddta1ncj3rn3w" path="res://Scripts/one_time_press_button.gd" id="1_krjip"]
+[ext_resource type="Texture2D" uid="uid://w0l64sq1fwta" path="res://Assets/Images/button.png" id="2_01ixp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry4ib"]
+atlas = ExtResource("2_01ixp")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd2ay"]
+atlas = ExtResource("2_01ixp")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xqrtf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ry4ib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dd2ay")
+}],
+"loop": true,
+"name": &"Click",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_314ca"]
+size = Vector2(32, 16)
+
+[node name="OneTimePressButton" type="Area2D" unique_id=1447056744]
+visible = false
+script = ExtResource("1_krjip")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1252744124]
+sprite_frames = SubResource("SpriteFrames_xqrtf")
+animation = &"Click"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1265040295]
+shape = SubResource("RectangleShape2D_314ca")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

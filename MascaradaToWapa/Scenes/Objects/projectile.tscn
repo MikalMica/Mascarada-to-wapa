@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cckqwibsplxc5"]
+
+[ext_resource type="Script" uid="uid://dhnrendghilwh" path="res://Scripts/projectile.gd" id="1_jobfh"]
+[ext_resource type="Script" uid="uid://depvoy4dciqx4" path="res://Scenes/Objects/projectile_sprite.gd" id="2_jobfh"]
+[ext_resource type="Texture2D" uid="uid://dommimugp4xms" path="res://Assets/Images/Cannon/nota1.png" id="3_7xkol"]
+[ext_resource type="Texture2D" uid="uid://cpvcbeq4in8pu" path="res://Assets/Images/Cannon/nota2.png" id="4_3tpkl"]
+[ext_resource type="Texture2D" uid="uid://xqhs5ogxv34m" path="res://Assets/Images/Cannon/nota3.png" id="5_6dx0n"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m12d2"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7xkol"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsciy"]
+size = Vector2(120, 120)
+
+[node name="Projectile" type="RigidBody2D" unique_id=171391029]
+collision_layer = 2
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_m12d2")
+gravity_scale = 0.0
+script = ExtResource("1_jobfh")
+speed = 500.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1999801302]
+texture = SubResource("PlaceholderTexture2D_7xkol")
+script = ExtResource("2_jobfh")
+sprites = Array[Texture]([ExtResource("3_7xkol"), ExtResource("4_3tpkl"), ExtResource("5_6dx0n")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1086263449]
+shape = SubResource("RectangleShape2D_dsciy")
