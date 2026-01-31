@@ -1,7 +1,8 @@
 extends draggable
 
 @export var doorObject : Node2D
-@export var area:Area2D
+@onready var area: Area2D = $Area2D
+
 
 func _ready() -> void:
 	area.area_entered.connect(_door_enters_area)
