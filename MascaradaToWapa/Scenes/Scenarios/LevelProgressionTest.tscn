@@ -1,7 +1,21 @@
 [gd_scene format=3 uid="uid://dqofdoseuicjk"]
 
+[ext_resource type="PackedScene" uid="uid://cnbggcpyxrnch" path="res://Scenes/Objects/player.tscn" id="1_rcdu8"]
+[ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="1_tfdy1"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfdy1"]
 size = Vector2(153, 151)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q3fj2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tfdy1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="LevelProgressionTest" type="Node2D" unique_id=1573407029]
 
@@ -10,3 +24,9 @@ position = Vector2(544, 167)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal" unique_id=892255306]
 shape = SubResource("RectangleShape2D_tfdy1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Portal" unique_id=1939861307]
+sprite_frames = SubResource("SpriteFrames_q3fj2")
+
+[node name="Player" parent="." unique_id=1989580064 instance=ExtResource("1_rcdu8")]
+position = Vector2(493, 431)
