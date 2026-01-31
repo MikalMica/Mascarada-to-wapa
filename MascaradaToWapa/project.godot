@@ -30,6 +30,7 @@ enabled=PackedStringArray("res://addons/scene_manager/plugin.cfg")
 checkpoint=""
 player=""
 cam_target=""
+Level="Solo puede haber una escena de Level en este grupo!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 
 [input]
 

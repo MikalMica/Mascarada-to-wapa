@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://cs6iustmvpqay" path="res://Scripts/MaskHandler.gd" id="6_jrgm3"]
 [ext_resource type="PackedScene" uid="uid://dyq8p3l4um33l" path="res://Scenes/Prefabs/camera_2d.tscn" id="7_qosk0"]
 
-[node name="test_scene" type="Node2D" unique_id=1938332153]
+[node name="test_scene" type="Node2D" unique_id=1938332153 groups=["Level"]]
 
 [node name="Player" parent="." unique_id=1647835319 instance=ExtResource("1_7e6j3")]
 position = Vector2(0, 0)
