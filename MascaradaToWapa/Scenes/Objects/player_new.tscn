@@ -1,132 +1,24 @@
 [gd_scene format=3 uid="uid://3xdvejjvv1hs"]
 
 [ext_resource type="Script" uid="uid://bpkfdtxuljsk1" path="res://Scripts/movement_component.gd" id="1_n4sih"]
-[ext_resource type="Texture2D" uid="uid://b2l3slpiahih5" path="res://Assets/Images/Player/player_spritesheet.png" id="2_n4sih"]
+[ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="2_m4g67"]
 [ext_resource type="Script" uid="uid://do3bcxekdkuln" path="res://Scripts/input_component.gd" id="3_6dlr3"]
+[ext_resource type="PackedScene" uid="uid://do2iq72ya3lyt" path="res://Scenes/Objects/player_hitbox.tscn" id="4_m4g67"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81akd"]
 
-<<<<<<< HEAD
-[sub_resource type="Animation" id="Animation_m4g67"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(80, 212, 60, 81)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.2247186, 0.2247186)]
-}
-
-[sub_resource type="Animation" id="Animation_6dlr3"]
-resource_name = "idle"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.99),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Rect2(80, 212, 60, 81), Rect2(80, 212, 60, 81)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.99),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0.5505513), Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.99),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.2247186, 0.2247186), Vector2(0.2247186, 0.21112473), Vector2(0.2247186, 0.2247186)]
-}
-
-[sub_resource type="Animation" id="Animation_81akd"]
-resource_name = "walk_d"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.19999999, 0.29999995, 0.39999998, 0.5, 0.5999999),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Rect2(79, 53, 61, 81), Rect2(241, 53, 61, 81), Rect2(405, 53, 61, 81), Rect2(80, 212, 60, 81), Rect2(242, 212, 61, 81), Rect2(403, 210, 61, 81), Rect2(79, 384, 61, 81)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hgy4n"]
-_data = {
-&"RESET": SubResource("Animation_m4g67"),
-&"idle": SubResource("Animation_6dlr3"),
-&"walk_d": SubResource("Animation_81akd")
-}
-
 [node name="Player" type="RigidBody2D" unique_id=1647835319]
-=======
-[node name="Player" type="RigidBody2D" unique_id=1647835319 groups=["player"]]
->>>>>>> 2c10ae846a5134243878d0aa6e3af69c3dd868f3
+position = Vector2(0, -1)
 collision_layer = 129
 gravity_scale = 0.0
 script = ExtResource("1_n4sih")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=973427504]
 scale = Vector2(0.2247186, 0.2247186)
-texture = ExtResource("2_n4sih")
-region_enabled = true
-region_rect = Rect2(80, 212, 60, 81)
+texture = ExtResource("2_m4g67")
 
 [node name="Shape" type="CollisionShape2D" parent="." unique_id=1132779650]
-position = Vector2(0, 1)
-scale = Vector2(0.4160625, 0.59780365)
+scale = Vector2(1.416298, 1.416298)
 shape = SubResource("RectangleShape2D_81akd")
 
 [node name="InputProvider" type="Node2D" parent="." unique_id=946689675 node_paths=PackedStringArray("movementNode")]
@@ -134,5 +26,4 @@ scale = Vector2(0.14623876, 0.14623876)
 script = ExtResource("3_6dlr3")
 movementNode = NodePath("..")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1067381454]
-libraries/ = SubResource("AnimationLibrary_hgy4n")
+[node name="PlayerHitbox" parent="." unique_id=97422374 instance=ExtResource("4_m4g67")]
