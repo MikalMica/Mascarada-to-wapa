@@ -43,4 +43,7 @@ position = Vector2(1200, -97)
 [node name="Enemy" parent="." unique_id=1299381547 instance=ExtResource("8_8753n")]
 position = Vector2(706, -98)
 
+[node name="check_point2" parent="." unique_id=1940970549 instance=ExtResource("3_px83w")]
+position = Vector2(434, 156)
+
 [editable path="Llave"]

@@ -164,6 +164,7 @@ _data = {
 
 [node name="Player" type="RigidBody2D" unique_id=1647835319 groups=["player"]]
 position = Vector2(0, -1)
+collision_layer = 133
 gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_n4sih")
@@ -186,7 +187,7 @@ script = ExtResource("3_6dlr3")
 movementNode = NodePath("..")
 
 [node name="PlayerHitbox" type="Area2D" parent="." unique_id=97422374 node_paths=PackedStringArray("player_parent_node")]
-collision_layer = 129
+collision_layer = 5
 collision_mask = 2
 script = ExtResource("4_m4g67")
 player_parent_node = NodePath("..")
