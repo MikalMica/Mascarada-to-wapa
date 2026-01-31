@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://lf18byvqd0t4" path="res://Scenes/Prefabs/check_point.tscn" id="3_px83w"]
 [ext_resource type="PackedScene" uid="uid://s6xci46fm7ne" path="res://Scenes/Scenarios/key.tscn" id="4_eiqly"]
 [ext_resource type="PackedScene" uid="uid://dw2qj3cts27tn" path="res://Scenes/Prefabs/door.tscn" id="5_xoht4"]
+[ext_resource type="Script" uid="uid://cs6iustmvpqay" path="res://Scripts/MaskHandler.gd" id="6_jrgm3"]
 
 [node name="test_scene" type="Node2D" unique_id=1938332153]
 
@@ -28,5 +29,9 @@ doorObject = NodePath("../../Door")
 
 [node name="Door" parent="." unique_id=1946632691 instance=ExtResource("5_xoht4")]
 position = Vector2(1786, -64)
+
+[node name="MaskHandler" type="Node" parent="." unique_id=1218519042]
+script = ExtResource("6_jrgm3")
+metadata/_custom_type_script = "uid://cs6iustmvpqay"
 
 [editable path="Llave"]

@@ -1,4 +1,5 @@
 extends Node
+class_name MaskHandler
 
 # to add a mask add an id to masks and the signal from the SignalBus
 # written as a String to maskSignals. BOTH OF THEM IN ORDER

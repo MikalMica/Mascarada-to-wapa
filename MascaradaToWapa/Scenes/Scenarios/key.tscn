@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://s6xci46fm7ne"]
 
+[ext_resource type="Script" uid="uid://17gvb1y11qe5" path="res://Scripts/SpriteHider.gd" id="1_c38dr"]
 [ext_resource type="Script" uid="uid://bi4jkqna36pbn" path="res://Scripts/key.gd" id="1_tw4fw"]
 [ext_resource type="Texture2D" uid="uid://f4y7jbtkcbdx" path="res://PlaceHolders/key_ph.png" id="2_tw4fw"]
 
@@ -9,6 +10,8 @@
 size = Vector2(160, 144)
 
 [node name="Llave" type="Node2D" unique_id=1405333240]
+script = ExtResource("1_c38dr")
+default = true
 
 [node name="Key" type="RigidBody2D" parent="." unique_id=1356946487 node_paths=PackedStringArray("area")]
 gravity_scale = 0.0
