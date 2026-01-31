@@ -1,21 +1,37 @@
-[gd_scene format=3 uid="uid://mrsssl14yp77"]
+[gd_scene format=3 uid="uid://cy6p3ftw2i0o"]
 
 [ext_resource type="Script" uid="uid://cf1r48ybwmoqq" path="res://Scripts/audio_system.gd" id="1_hf15j"]
-[ext_resource type="AudioStream" uid="uid://dj526mkfw2285" path="res://Assets/Audio/xylophon-loop-125-bpm-22-8964.mp3" id="2_87yli"]
-[ext_resource type="AudioStream" uid="uid://bj2jbqhukc0kb" path="res://Assets/Audio/hintergrund-bass-wave-11360.mp3" id="3_oef7a"]
+[ext_resource type="AudioStream" uid="uid://lnb0j7xhnfgq" path="res://Assets/Audio/Music/Inicio_Menu.wav" id="2_d2v7i"]
+[ext_resource type="AudioStream" uid="uid://brfjxwhhb3wmp" path="res://Assets/Audio/hintergrund-bass-wave-11360.mp3" id="3_oef7a"]
+[ext_resource type="AudioStream" uid="uid://20y3wbl1yorr" path="res://Assets/Audio/Music/Inicio_Menu sin.wav" id="3_vqx4m"]
+[ext_resource type="AudioStream" uid="uid://dj526mkfw2285" path="res://Assets/Audio/SFX/xylophon-loop-125-bpm-22-8964.mp3" id="5_vqx4m"]
+[ext_resource type="AudioStream" uid="uid://bj2jbqhukc0kb" path="res://Assets/Audio/SFX/hintergrund-bass-wave-11360.mp3" id="7_ysntu"]
 
-[node name="AudioSystem" type="Node2D" unique_id=880592922 node_paths=PackedStringArray("_sfx")]
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_ysntu"]
+stream_count = 3
+stream_0/stream = ExtResource("2_d2v7i")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("3_vqx4m")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("3_oef7a")
+stream_2/volume = 0.0
+
+[node name="AudioSystem" type="Node2D" unique_id=880592922 node_paths=PackedStringArray("_music", "_sfx")]
 script = ExtResource("1_hf15j")
+tracks = Array[AudioStream]([SubResource("AudioStreamSynchronized_ysntu"), ExtResource("3_vqx4m")])
+_music = NodePath("Music")
 _sfx = NodePath("SFXs")
 
-[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=997477350]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1229844347]
 
 [node name="SFXs" type="Node2D" parent="." unique_id=2061928492]
 
 [node name="Xilofono" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1008642173]
-stream = ExtResource("2_87yli")
+stream = ExtResource("5_vqx4m")
 max_polyphony = 10
 
 [node name="Bajo" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1998270794]
-stream = ExtResource("3_oef7a")
+stream = ExtResource("7_ysntu")
 max_polyphony = 10
+
+[node name="Node" type="Node" parent="." unique_id=605068500]
