@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b2l3slpiahih5" path="res://Assets/Images/Player/player_spritesheet.png" id="2_n4sih"]
 [ext_resource type="Script" uid="uid://do3bcxekdkuln" path="res://Scripts/input_component.gd" id="3_6dlr3"]
 [ext_resource type="Script" uid="uid://cq2xhal270ups" path="res://Scripts/player_on_hit.gd" id="4_m4g67"]
+[ext_resource type="Script" uid="uid://ca6nd0axt7alj" path="res://Scripts/player_animation_handler.gd" id="5_6dlr3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81akd"]
 size = Vector2(79.943756, 72.02843)
@@ -184,3 +185,9 @@ debug_color = Color(0.9321408, 2.6375652e-05, 0.65197235, 0.41960785)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=163794158]
 libraries/ = SubResource("AnimationLibrary_81akd")
+
+[node name="AnimationHandler" type="Node" parent="." unique_id=1889140874 node_paths=PackedStringArray("animation", "player_sprite", "player_rb")]
+script = ExtResource("5_6dlr3")
+animation = NodePath("../AnimationPlayer")
+player_sprite = NodePath("../Sprite")
+player_rb = NodePath("..")
