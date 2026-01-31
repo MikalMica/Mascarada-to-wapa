@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://uyj031g7uhtw"]
+
+[ext_resource type="Script" uid="uid://ddta1ncj3rn3w" path="res://Scripts/one_time_press_button.gd" id="1_pfren"]
+[ext_resource type="Texture2D" uid="uid://d3o7e72kuhibs" path="res://Assets/Images/PBP-Blank button.png" id="2_oxvwj"]
+[ext_resource type="Script" uid="uid://bgbcts1jgip3a" path="res://Scripts/timer_button.gd" id="3_oxvwj"]
+[ext_resource type="Script" uid="uid://cspa0cnbngf10" path="res://Scripts/door.gd" id="4_gybfd"]
+[ext_resource type="Script" uid="uid://dqh8eov60sjek" path="res://Scripts/hold_button.gd" id="4_ow35p"]
+[ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="6_dy3vq"]
+[ext_resource type="Script" uid="uid://dhaxcrd4702ts" path="res://Scripts/draggable.gd" id="7_ow35p"]
+[ext_resource type="PackedScene" uid="uid://dqwdl6kchp78b" path="res://Scenes/Objects/player_new.tscn" id="7_oxvwj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xphxm"]
+atlas = ExtResource("2_oxvwj")
+region = Rect2(6, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwwsy"]
+atlas = ExtResource("2_oxvwj")
+region = Rect2(54, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xqrtf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xphxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwwsy")
+}],
+"loop": true,
+"name": &"Click",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_314ca"]
+size = Vector2(32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow35p"]
+atlas = ExtResource("2_oxvwj")
+region = Rect2(6, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pfren"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_dy3vq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ow35p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbloj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ow35p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_dy3vq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mktxh"]
+
+[node name="TriggersAlec" type="Node2D" unique_id=1541308786]
+
+[node name="OneTimePressButton" type="Area2D" parent="." unique_id=2049339381]
+visible = false
+position = Vector2(153, 140)
+script = ExtResource("1_pfren")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="OneTimePressButton" unique_id=1293727281]
+sprite_frames = SubResource("SpriteFrames_xqrtf")
+animation = &"Click"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OneTimePressButton" unique_id=1718557052]
+shape = SubResource("RectangleShape2D_314ca")
+
+[node name="TimerButton" type="Area2D" parent="." unique_id=247933037]
+visible = false
+position = Vector2(155, 94)
+script = ExtResource("3_oxvwj")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TimerButton" unique_id=1176237882]
+sprite_frames = SubResource("SpriteFrames_xqrtf")
+animation = &"Click"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TimerButton" unique_id=538268503]
+shape = SubResource("RectangleShape2D_314ca")
+
+[node name="HoldButton" type="Area2D" parent="." unique_id=703309703 node_paths=PackedStringArray("TriggeredObstacle")]
+position = Vector2(154, 47)
+script = ExtResource("4_ow35p")
+TriggeredObstacle = [NodePath("../Door")]
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HoldButton" unique_id=1972224066]
+sprite_frames = SubResource("SpriteFrames_xqrtf")
+animation = &"Click"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoldButton" unique_id=1933613162]
+shape = SubResource("RectangleShape2D_314ca")
+
+[node name="Door" type="RigidBody2D" parent="." unique_id=994180869]
+visible = false
+gravity_scale = 0.0
+script = ExtResource("4_gybfd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Door" unique_id=859189861]
+position = Vector2(50, 25)
+scale = Vector2(0.16, 0.16)
+sprite_frames = SubResource("SpriteFrames_pfren")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1148402095]
+position = Vector2(50, 25)
+shape = SubResource("RectangleShape2D_jbloj")
+
+[node name="Box" type="RigidBody2D" parent="." unique_id=1728117386]
+position = Vector2(141, 112)
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("7_ow35p")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Box" unique_id=1779559505]
+scale = Vector2(0.16, 0.16)
+sprite_frames = SubResource("SpriteFrames_ow35p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box" unique_id=1554646952]
+shape = SubResource("RectangleShape2D_mktxh")
+
+[node name="Player" parent="." unique_id=1647835319 instance=ExtResource("7_oxvwj")]
+position = Vector2(45, 110)
+lock_rotation = true
+
+[node name="Key" type="RigidBody2D" parent="." unique_id=1978070907]
+position = Vector2(234, 113)
+rotation = 3.1415927
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("7_ow35p")
+friction = 0.05
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Key" unique_id=1608372748]
+scale = Vector2(0.16, 0.16)
+sprite_frames = SubResource("SpriteFrames_ow35p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key" unique_id=1941221018]
+shape = SubResource("RectangleShape2D_mktxh")
+
+[connection signal="area_entered" from="OneTimePressButton" to="OneTimePressButton" method="_on_area_entered"]
+[connection signal="area_entered" from="TimerButton" to="OneTimePressButton" method="_on_boton_tiempo_area_entered"]
+[connection signal="area_entered" from="TimerButton" to="TimerButton" method="_on_area_entered"]
+[connection signal="area_exited" from="TimerButton" to="HoldButton" method="_on_boton_tiempo_area_exited"]
+[connection signal="area_entered" from="HoldButton" to="HoldButton" method="_on_area_entered"]

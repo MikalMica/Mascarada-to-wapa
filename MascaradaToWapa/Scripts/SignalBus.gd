@@ -1,4 +1,5 @@
 extends Node
+class_name Signal_Bus
 
 #signal emitted whenever any mask is taken off
 signal mask_off()

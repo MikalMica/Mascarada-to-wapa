@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d2w1ks47gc252"]
+
+[ext_resource type="Script" uid="uid://17gvb1y11qe5" path="res://Scripts/SpriteHider.gd" id="1_dnm7f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dnm7f"]
+
+[node name="MaskVisibility" type="Node2D" unique_id=171068296]
+script = ExtResource("1_dnm7f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=550238550]
+sprite_frames = SubResource("SpriteFrames_dnm7f")
