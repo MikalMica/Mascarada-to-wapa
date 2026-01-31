@@ -6,12 +6,55 @@
 [ext_resource type="Texture2D" uid="uid://cfjlgqtsndlqg" path="res://Assets/Images/UI/1_cortina.png" id="3_pkgns"]
 [ext_resource type="Texture2D" uid="uid://xsuyvl0v2cxe" path="res://Assets/Images/UI/carpa.png" id="3_tv5cc"]
 [ext_resource type="Texture2D" uid="uid://d0h72c5xnento" path="res://Assets/Images/UI/2_cortina.png" id="4_b18w2"]
+[ext_resource type="Texture2D" uid="uid://b0qqsx81yosl6" path="res://Assets/Images/UI/botones_ui.png" id="4_bcgwr"]
 [ext_resource type="Texture2D" uid="uid://dkf4kvty6wcgq" path="res://Assets/Images/UI/3_cortina.png" id="5_bcgwr"]
 [ext_resource type="Texture2D" uid="uid://c7kio0wi1pc04" path="res://Assets/Images/UI/4_cortina.png" id="6_cvhcd"]
 [ext_resource type="Texture2D" uid="uid://xq7qp8dud2gp" path="res://Assets/Images/UI/5_cortina.png" id="7_wcsdy"]
 [ext_resource type="Texture2D" uid="uid://c4k8rrwairun3" path="res://Assets/Images/UI/6_cortina.png" id="8_ve2f8"]
 [ext_resource type="Texture2D" uid="uid://blursw2c31gfx" path="res://Assets/Images/UI/7_cortina.png" id="9_q1mx1"]
 [ext_resource type="Script" uid="uid://3pw5s507aljx" path="res://Scenes/Scenarios/CurtainOpensAtIni.gd" id="10_46aqs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ve2f8"]
+texture = ExtResource("4_bcgwr")
+region_rect = Rect2(68, 76, 451, 210)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q1mx1"]
+texture = ExtResource("4_bcgwr")
+region_rect = Rect2(68, 76, 451, 210)
+modulate_color = Color(0.34509805, 0.34509805, 0.34509805, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bcgwr"]
+texture = ExtResource("4_bcgwr")
+region_rect = Rect2(68, 76, 451, 210)
+modulate_color = Color(0.6862745, 0.6862745, 0.6862745, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cvhcd"]
+texture = ExtResource("4_bcgwr")
+region_rect = Rect2(56, 359, 649, 227)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_46aqs"]
+texture = ExtResource("4_bcgwr")
+region_rect = Rect2(56, 359, 649, 227)
+modulate_color = Color(0.34509805, 0.34509805, 0.34509805, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w1fe4"]
+texture = ExtResource("4_bcgwr")
+region_rect = Rect2(56, 359, 649, 227)
+modulate_color = Color(0.6862745, 0.6862745, 0.6862745, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wcsdy"]
+texture = ExtResource("4_bcgwr")
+region_rect = Rect2(73, 673, 455, 236)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6sp4k"]
+texture = ExtResource("4_bcgwr")
+region_rect = Rect2(73, 673, 455, 236)
+modulate_color = Color(0.34509805, 0.34509805, 0.34509805, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yf075"]
+texture = ExtResource("4_bcgwr")
+region_rect = Rect2(73, 673, 455, 236)
+modulate_color = Color(0.6862745, 0.6862745, 0.6862745, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pkgns"]
 
@@ -45,11 +88,26 @@ animations = [{
 }]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_smsqw"]
-bg_color = Color(0.07450981, 0.12941177, 0.3019608, 1)
+bg_color = Color(1, 1, 1, 1)
 border_width_left = 6
 border_width_top = 6
 border_width_right = 6
 border_width_bottom = 6
+border_color = Color(0.050980393, 0.30980393, 0.3882353, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hnfry"]
+texture = ExtResource("4_bcgwr")
+region_rect = Rect2(809, 347, 836, 228)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4jvud"]
+texture = ExtResource("4_bcgwr")
+region_rect = Rect2(809, 347, 836, 228)
+modulate_color = Color(0.34509805, 0.34509805, 0.34509805, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bwmxu"]
+texture = ExtResource("4_bcgwr")
+region_rect = Rect2(809, 347, 836, 228)
+modulate_color = Color(0.6862745, 0.6862745, 0.6862745, 1)
 
 [node name="UI" type="Control" unique_id=716059066 node_paths=PackedStringArray("iniMenu", "settingsMenu")]
 layout_mode = 3
@@ -99,14 +157,18 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_b18w2")
-text = "Play"
+theme_override_styles/normal = SubResource("StyleBoxTexture_ve2f8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q1mx1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bcgwr")
 
 [node name="Settings" type="Button" parent="Menu/VBoxContainer" unique_id=359129957]
-custom_minimum_size = Vector2(150, 50)
+custom_minimum_size = Vector2(170, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_b18w2")
-text = "Settings"
+theme_override_styles/normal = SubResource("StyleBoxTexture_cvhcd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_46aqs")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w1fe4")
 
 [node name="Exit" type="Button" parent="Menu/VBoxContainer" unique_id=1165548948]
 custom_minimum_size = Vector2(150, 50)
@@ -114,7 +176,9 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_b18w2")
-text = "Exit"
+theme_override_styles/normal = SubResource("StyleBoxTexture_wcsdy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6sp4k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yf075")
 
 [node name="HSeparator" type="HSeparator" parent="Menu/VBoxContainer" unique_id=286356503]
 layout_mode = 2
@@ -149,22 +213,27 @@ size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_smsqw")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Menu/SettingsContainer" unique_id=1347102329]
-custom_minimum_size = Vector2(450, 200)
+custom_minimum_size = Vector2(450, 175)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_font_sizes/normal_font_size = 30
+theme_override_colors/default_color = Color(0.5529412, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_b18w2")
+theme_override_font_sizes/normal_font_size = 25
 text = "Settings
 "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Menu/SettingsContainer" unique_id=1027430473]
-custom_minimum_size = Vector2(425, 100)
+custom_minimum_size = Vector2(450, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_font_sizes/normal_font_size = 20
+theme_override_colors/default_color = Color(0.5529412, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_b18w2")
+theme_override_font_sizes/normal_font_size = 17
 text = "Music volume:
-Sound effects volume:"
+
+SFX volume:"
 
 [node name="MarginContainer" type="MarginContainer" parent="Menu/SettingsContainer" unique_id=206552419]
 layout_mode = 2
@@ -177,7 +246,9 @@ custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Exit"
+theme_override_styles/normal = SubResource("StyleBoxTexture_hnfry")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4jvud")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bwmxu")
 
 [node name="MarginContainer2" type="MarginContainer" parent="Menu/SettingsContainer" unique_id=1078326123]
 layout_mode = 2

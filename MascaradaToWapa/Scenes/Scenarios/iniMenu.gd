@@ -10,7 +10,6 @@ func _ready() -> void:
 func toggle_visibility(object)->void:
 	object.visible = !object.visible
 
-
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Levels/Level_1.tscn")
 
@@ -21,14 +20,12 @@ func _on_settings_pressed() -> void:
 	toggle_visibility(iniMenu)
 	toggle_visibility(settingsMenu)
 
-
 func _on_settings_exit_pressed() -> void:
 	toggle_visibility(iniMenu)
 	toggle_visibility(settingsMenu)
 
 func _on_music_drag_ended(value_changed: bool) -> void:
 	AudioSystem._change_music_volume(musicVol.value)
-
 
 func _on_sfx_drag_ended(value_changed: bool) -> void:
 	AudioSystem._change_sfx_volume(sfxVol.value)
