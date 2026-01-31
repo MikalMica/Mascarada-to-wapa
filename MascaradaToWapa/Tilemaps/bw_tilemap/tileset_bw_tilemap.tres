@@ -1,9 +1,6 @@
-[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://dbigu3i4b0uvj"]
+[gd_resource type="TileSet" format=3 uid="uid://dbigu3i4b0uvj"]
 
 [ext_resource type="Texture2D" uid="uid://lg43rb8naknp" path="res://Tilemaps/bw_tilemap/tileset_bw_tilemap.png" id="1"]
-[ext_resource type="PackedScene" uid="uid://cnfjbr62snb4o" path="res://Prefabs/Elements/pogo_platform.tscn" id="2_6t30j"]
-[ext_resource type="PackedScene" uid="uid://fxhqwmo6vacf" path="res://Prefabs/Props/spikes.tscn" id="2_62iiw"]
-[ext_resource type="PackedScene" uid="uid://2dibxxlwee22" path="res://Prefabs/Props/prop_with_wind.tscn" id="3_ks68b"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ks68b"]
 vertices = PackedVector2Array(64, 64, -64, 64, -64, -64, 64, -64)
@@ -396,9 +393,6 @@ texture_region_size = Vector2i(128, 128)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_62iiw"]
 resource_name = "elements"
-scenes/1/scene = ExtResource("2_62iiw")
-scenes/3/scene = ExtResource("3_ks68b")
-scenes/4/scene = ExtResource("2_6t30j")
 
 [resource]
 tile_size = Vector2i(128, 128)

@@ -45,7 +45,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.2247186, 0.2247186)]
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_6dlr3"]
@@ -73,7 +73,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 1.0505512), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(0, 3.75), Vector2(0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -85,11 +85,25 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0.2247186, 0.2247186), Vector2(0.2247186, 0.19877905), Vector2(0.2247186, 0.2247186)]
+"values": [Vector2(1, 1), Vector2(1, 0.9074074), Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_81akd"]
 resource_name = "walk_d"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(79, 53, 61, 81), Rect2(241, 53, 61, 81), Rect2(405, 53, 61, 81), Rect2(80, 212, 60, 81), Rect2(242, 212, 61, 81), Rect2(403, 210, 61, 81), Rect2(403, 210, 61, 81)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_81akd"]
 _data = {
@@ -103,14 +117,15 @@ position = Vector2(0, -1)
 collision_layer = 129
 gravity_scale = 0.0
 script = ExtResource("1_n4sih")
+maxSpeed = 400.0
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=973427504]
-scale = Vector2(0.2247186, 0.2247186)
 texture = ExtResource("2_n4sih")
 region_enabled = true
 region_rect = Rect2(80, 212, 60, 81)
 
 [node name="Shape" type="CollisionShape2D" parent="." unique_id=1132779650]
+visible = false
 position = Vector2(0, 2)
 scale = Vector2(0.3717273, 0.66098726)
 shape = SubResource("RectangleShape2D_81akd")

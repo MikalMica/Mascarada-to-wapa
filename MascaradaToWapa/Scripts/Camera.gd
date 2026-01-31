@@ -1,6 +1,6 @@
 extends Camera2D
 
-var INIT_ZOOM:Vector2 = Vector2(0.7,0.7)
+var INIT_ZOOM:Vector2 = Vector2(1,1)
 const INIT_OFFSET:Vector2 = Vector2.ZERO
 
 var cur_zoom:Vector2 = INIT_ZOOM
@@ -13,7 +13,7 @@ var zoom_recov_factor:float = 2.0
 @export var vertical_margin:float = 80.0
 @export var follow_speed:float = 5.0
 
-var GROUP_NAME:StringName = &"player"
+@export var GROUP_NAME:StringName = &"player"
 
 @onready var target:Node2D = get_tree().get_first_node_in_group(GROUP_NAME)
 
