@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://1engu3nt6sut"]
 
 [ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="1_n3sv7"]
-[ext_resource type="PackedScene" uid="uid://dskniwiorige4" path="res://Scenes/Scenarios/last_checkpoint_node.tscn" id="3_e2wtl"]
+[ext_resource type="PackedScene" uid="uid://dyq8p3l4um33l" path="res://Scenes/Prefabs/camera_2d.tscn" id="3_e2wtl"]
 [ext_resource type="PackedScene" uid="uid://3xdvejjvv1hs" path="res://Scenes/Objects/player_new.tscn" id="3_x0emt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t75o8"]
@@ -27,7 +27,8 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D" unique_id=1595690403]
 shape = SubResource("RectangleShape2D_t75o8")
 
-[node name="LastCheckpointNode" parent="." unique_id=2098861267 instance=ExtResource("3_e2wtl")]
-
 [node name="Player" parent="." unique_id=1647835319 instance=ExtResource("3_x0emt")]
 position = Vector2(11, 160)
+
+[node name="Camera2D" parent="." unique_id=1676999046 instance=ExtResource("3_e2wtl")]
+position = Vector2(-147, 172)
