@@ -23,6 +23,9 @@ position = Vector2(-78, 468)
 [node name="Llave" parent="." index="10" unique_id=1405333240 instance=ExtResource("2_jixyi")]
 position = Vector2(689, 497)
 
+[node name="Key" parent="Llave" index="0" unique_id=1356946487 node_paths=PackedStringArray("doorObject")]
+doorObject = NodePath("../../Door")
+
 [node name="Box" parent="." index="11" unique_id=161731881 instance=ExtResource("3_n6t8q")]
 position = Vector2(712, 894)
 
@@ -34,11 +37,9 @@ position = Vector2(833, 703)
 rotation = -1.5707964
 shooting_cd = 5.0
 
-[node name="Sprite2D" parent="Cannon/RigidBody2D" parent_id_path=PackedInt32Array(616283611, 90595170) index="1" unique_id=1571520089]
-rotation = 0.39876896
-
 [node name="Point_B" parent="." index="14" unique_id=1092435603]
 position = Vector2(-71, 1203)
 
+[editable path="Llave"]
 [editable path="Cannon"]
 [editable path="Point_B"]
