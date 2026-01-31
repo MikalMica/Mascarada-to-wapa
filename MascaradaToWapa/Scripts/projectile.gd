@@ -10,3 +10,4 @@ func papearse(_o):
 
 func shoot(dir :Vector2) -> void:
 	linear_velocity = dir * speed
+	$AnimationPlayer.play("shoot_projectile")

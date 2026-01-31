@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cn6y4huihon4n"]
 
 [ext_resource type="Script" uid="uid://dhnrendghilwh" path="res://Scripts/projectile.gd" id="1_jobfh"]
-[ext_resource type="Script" path="res://Scenes/Objects/projectile_sprite.gd" id="2_jobfh"]
+[ext_resource type="Script" uid="uid://depvoy4dciqx4" path="res://Scripts/projectile_sprite.gd" id="2_jobfh"]
 [ext_resource type="Texture2D" uid="uid://dommimugp4xms" path="res://Assets/Images/Cannon/nota1.png" id="3_7xkol"]
 [ext_resource type="Texture2D" uid="uid://cpvcbeq4in8pu" path="res://Assets/Images/Cannon/nota2.png" id="4_3tpkl"]
 [ext_resource type="Texture2D" uid="uid://xqhs5ogxv34m" path="res://Assets/Images/Cannon/nota3.png" id="5_6dx0n"]
@@ -10,32 +10,62 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7xkol"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3tpkl"]
-radius = 38.327538
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsciy"]
+size = Vector2(120, 120)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7xkol"]
-radius = 54.147945
+[sub_resource type="Animation" id="Animation_7xkol"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_3tpkl"]
+resource_name = "shoot_projectile"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6dx0n"]
+_data = {
+&"RESET": SubResource("Animation_7xkol"),
+&"shoot_projectile": SubResource("Animation_3tpkl")
+}
 
 [node name="Projectile" type="RigidBody2D" unique_id=171391029]
+collision_layer = 2
+collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_m12d2")
 gravity_scale = 0.0
-contact_monitor = true
-max_contacts_reported = 1
 script = ExtResource("1_jobfh")
 speed = 500.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1999801302]
+scale = Vector2(1e-05, 1e-05)
 texture = SubResource("PlaceholderTexture2D_7xkol")
 script = ExtResource("2_jobfh")
 sprites = Array[Texture]([ExtResource("3_7xkol"), ExtResource("4_3tpkl"), ExtResource("5_6dx0n")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1086263449]
-shape = SubResource("CircleShape2D_3tpkl")
+shape = SubResource("RectangleShape2D_dsciy")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=241285333]
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=369552616]
-shape = SubResource("CircleShape2D_7xkol")
-debug_color = Color(0.8404786, 0, 0.28890193, 0.41960785)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=367339263]
+libraries/ = SubResource("AnimationLibrary_6dx0n")
