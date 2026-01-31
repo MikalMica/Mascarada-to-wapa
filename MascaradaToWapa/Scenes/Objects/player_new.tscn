@@ -135,10 +135,10 @@ scale = Vector2(0.14623876, 0.14623876)
 script = ExtResource("3_6dlr3")
 movementNode = NodePath("..")
 
-[node name="PlayerHitbox" type="Area2D" parent="." unique_id=97422374 node_paths=PackedStringArray("player_node")]
+[node name="PlayerHitbox" type="Area2D" parent="." unique_id=97422374 node_paths=PackedStringArray("player_parent_node")]
 collision_mask = 2
 script = ExtResource("4_m4g67")
-player_node = NodePath("..")
+player_parent_node = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox" unique_id=899700171]
 shape = SubResource("RectangleShape2D_n3sv7")
