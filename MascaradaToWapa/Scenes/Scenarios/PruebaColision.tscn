@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://1engu3nt6sut"]
 
 [ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="1_n3sv7"]
+[ext_resource type="PackedScene" uid="uid://do2iq72ya3lyt" path="res://Scenes/Objects/player_hitbox.tscn" id="2_t75o8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t75o8"]
 size = Vector2(127, 127)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3sv7"]
-size = Vector2(123.75, 127.26)
-
 [node name="PruebaColision" type="Node2D" unique_id=1104898573]
 
 [node name="Enemy" type="RigidBody2D" parent="." unique_id=795620916]
+collision_layer = 3
+collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=946706144]
 texture = ExtResource("1_n3sv7")
@@ -18,11 +18,14 @@ texture = ExtResource("1_n3sv7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=561674813]
 shape = SubResource("RectangleShape2D_t75o8")
 
-[node name="Player" type="Area2D" parent="." unique_id=428593078]
+[node name="Area2D" type="Area2D" parent="Enemy" unique_id=1207164433]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D" unique_id=1595690403]
+shape = SubResource("RectangleShape2D_t75o8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=921224037]
 position = Vector2(-1, 257)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1677016131]
-shape = SubResource("RectangleShape2D_n3sv7")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=921224037]
 texture = ExtResource("1_n3sv7")
+
+[node name="PlayerHitbox" parent="Sprite2D" unique_id=97422374 instance=ExtResource("2_t75o8")]
