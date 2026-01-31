@@ -7,3 +7,4 @@ script = ExtResource("1_7vwvf")
 timer = NodePath("Timer")
 
 [node name="Timer" type="Timer" parent="." unique_id=380966350]
+wait_time = 0.5
