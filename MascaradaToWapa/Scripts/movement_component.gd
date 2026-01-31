@@ -12,7 +12,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	
-	apply_force(_dir * force)
+	apply_central_force(_dir * force)
 	if linear_velocity.length() > maxSpeed:
 		linear_velocity = _dir * maxSpeed
 	

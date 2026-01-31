@@ -115,6 +115,7 @@ position = Vector2(0, -1)
 collision_layer = 129
 gravity_scale = 0.0
 script = ExtResource("1_n4sih")
+maxSpeed = 400.0
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=973427504]
 texture = ExtResource("2_n4sih")
