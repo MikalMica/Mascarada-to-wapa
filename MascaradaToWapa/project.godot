@@ -61,6 +61,11 @@ object_mask={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Default"
+2d_physics/layer_2="Enemy"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

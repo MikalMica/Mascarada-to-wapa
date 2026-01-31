@@ -5,6 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t75o8"]
 size = Vector2(127, 127)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3sv7"]
+size = Vector2(123.75, 127.26)
+
 [node name="PruebaColision" type="Node2D" unique_id=1104898573]
 
 [node name="Enemy" type="RigidBody2D" parent="." unique_id=795620916]
@@ -14,3 +17,12 @@ texture = ExtResource("1_n3sv7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=561674813]
 shape = SubResource("RectangleShape2D_t75o8")
+
+[node name="Player" type="Area2D" parent="." unique_id=428593078]
+position = Vector2(-1, 257)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1677016131]
+shape = SubResource("RectangleShape2D_n3sv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=921224037]
+texture = ExtResource("1_n3sv7")
