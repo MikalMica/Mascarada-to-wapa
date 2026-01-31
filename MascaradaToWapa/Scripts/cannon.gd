@@ -9,6 +9,7 @@ func _ready() -> void:
 	while(true):
 		var p:Node2D = projectile.instantiate()
 		p.shoot(Vector2.UP.rotated(rotation))
+		$AnimationPlayer.play("shoot")
 		add_child(p)
 		p.global_rotation = 0.
 		await get_tree().create_timer(shooting_cd).timeout
