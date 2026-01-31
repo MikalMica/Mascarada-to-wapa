@@ -24,6 +24,10 @@ LevelManager="*uid://b6cwot4ilk8sh"
 
 enabled=PackedStringArray("res://addons/scene_manager/plugin.cfg")
 
+[global_group]
+
+checkpoint=""
+
 [input]
 
 Up={

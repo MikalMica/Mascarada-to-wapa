@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="1_n3sv7"]
 [ext_resource type="PackedScene" uid="uid://do2iq72ya3lyt" path="res://Scenes/Objects/player_hitbox.tscn" id="2_t75o8"]
+[ext_resource type="PackedScene" uid="uid://dskniwiorige4" path="res://Scenes/Scenarios/last_checkpoint_node.tscn" id="3_e2wtl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t75o8"]
 size = Vector2(127, 127)
@@ -29,3 +30,5 @@ position = Vector2(-1, 257)
 texture = ExtResource("1_n3sv7")
 
 [node name="PlayerHitbox" parent="Sprite2D" unique_id=97422374 instance=ExtResource("2_t75o8")]
+
+[node name="LastCheckpointNode" parent="." unique_id=2098861267 instance=ExtResource("3_e2wtl")]

@@ -24,6 +24,7 @@ animations = [{
 position = Vector2(544, 167)
 collision_mask = 128
 script = ExtResource("1_q3fj2")
+levelID = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal" unique_id=892255306]
 shape = SubResource("RectangleShape2D_tfdy1")
