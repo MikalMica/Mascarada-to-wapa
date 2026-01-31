@@ -4,6 +4,7 @@ uniform float timeDelay = 0.0; // use it if you don't want all the sprites to mo
 uniform float intensityX = 20.0; // X axis force of movement
 uniform float intensityY = 20.0; // Y axis force of movement
 uniform float seed = 42.0; // seed to randomize movement
+uniform sampler2D screen_texture : hint_screen_texture;
 
 void vertex() {
 	float chunk = floor((TIME + timeDelay) / interval);

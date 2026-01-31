@@ -12,10 +12,12 @@ func _process(delta: float) -> void:
 	if playerRB.linear_velocity == Vector2.ZERO && !hasStopped:
 		hasStopped = true
 		timer.start(timer.wait_time)
+		SignalBus.mask_timer_started.emit()
 		
 	if playerRB.linear_velocity != Vector2.ZERO:
 		hasStopped = false
 		timer.stop()
+		SignalBus.mask_timer_stopped.emit()
 		if(maskIsOn): 
 			maskIsOn = false
 			SignalBus.mask_off.emit()
