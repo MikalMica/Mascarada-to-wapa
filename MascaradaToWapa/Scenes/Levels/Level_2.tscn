@@ -30,7 +30,7 @@ position = Vector2(712, 894)
 position = Vector2(-72, 952)
 
 [node name="Cannon" parent="." index="13" unique_id=616283611 instance=ExtResource("5_n6t8q")]
-position = Vector2(858, 703)
+position = Vector2(833, 703)
 rotation = -1.5707964
 shooting_cd = 5.0
 
