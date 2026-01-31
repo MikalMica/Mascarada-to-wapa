@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://bpkfdtxuljsk1" path="res://Scripts/movement_component.gd" id="1_n4sih"]
 [ext_resource type="Texture2D" uid="uid://b2l3slpiahih5" path="res://Assets/Images/Player/player_spritesheet.png" id="2_n4sih"]
 [ext_resource type="Script" uid="uid://do3bcxekdkuln" path="res://Scripts/input_component.gd" id="3_6dlr3"]
-[ext_resource type="PackedScene" uid="uid://do2iq72ya3lyt" path="res://Scenes/Objects/player_hitbox.tscn" id="4_m4g67"]
+[ext_resource type="Script" uid="uid://cq2xhal270ups" path="res://Scripts/player_on_hit.gd" id="4_m4g67"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81akd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3sv7"]
 
 [sub_resource type="Animation" id="Animation_m4g67"]
 length = 0.001
@@ -118,7 +120,13 @@ scale = Vector2(0.14623876, 0.14623876)
 script = ExtResource("3_6dlr3")
 movementNode = NodePath("..")
 
-[node name="PlayerHitbox" parent="." unique_id=97422374 instance=ExtResource("4_m4g67")]
+[node name="PlayerHitbox" type="Area2D" parent="." unique_id=97422374 node_paths=PackedStringArray("player_node")]
+collision_mask = 2
+script = ExtResource("4_m4g67")
+player_node = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox" unique_id=899700171]
+shape = SubResource("RectangleShape2D_n3sv7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=163794158]
 libraries/ = SubResource("AnimationLibrary_81akd")

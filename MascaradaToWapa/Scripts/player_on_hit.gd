@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var player_node: Node2D
+@export var player_node: RigidBody2D
 var last_checkpoint_node: LastCheckpointPosition
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

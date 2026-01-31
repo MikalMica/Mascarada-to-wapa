@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://dskniwiorige4"]
 
+[ext_resource type="Script" uid="uid://beem5qlmio8uq" path="res://Scripts/last_checkpoint_position.gd" id="1_vr44s"]
+
 [node name="LastCheckpointNode" type="Node2D" unique_id=2098861267 groups=["checkpoint"]]
+script = ExtResource("1_vr44s")
