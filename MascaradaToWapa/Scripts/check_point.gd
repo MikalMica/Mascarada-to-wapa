@@ -9,6 +9,6 @@ func _ready() -> void:
 func checkpointFunctionality(other):
 	if used: pass
 	
-	CheckpointHandler.last_checkpoint_pos = position
+	CheckpointHandler.set_last_position(position)
 	print("Updated sheckpoint")
 	used = true

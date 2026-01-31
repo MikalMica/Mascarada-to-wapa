@@ -14,7 +14,7 @@
 y_sort_enabled = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=657622213]
-z_index = -1
+z_index = -2
 tile_set = ExtResource("1_aibml")
 
 [node name="CollisionLayer" type="TileMapLayer" parent="." unique_id=159347708]
@@ -46,3 +46,5 @@ environment = SubResource("Environment_6epvh")
 color = Color(0, 0, 0, 1)
 
 [node name="Point_B" parent="." unique_id=1092435603 instance=ExtResource("7_aibml")]
+
+[editable path="Point_B"]

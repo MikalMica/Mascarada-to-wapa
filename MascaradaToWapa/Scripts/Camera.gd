@@ -11,7 +11,7 @@ var shake_recov_factor:float = 1.0
 var zoom_recov_factor:float = 2.0
 
 @export var _follow:bool = false
-@export var vertical_margin:float = 80.0
+@export var vertical_margin:float = 0
 @export var follow_speed:float = 5.0
 
 @export var GROUP_NAME:StringName = &"player"

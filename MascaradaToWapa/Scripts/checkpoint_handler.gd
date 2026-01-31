@@ -11,3 +11,6 @@ func instantiate_player_last_checkpoint():
 	player.position = last_checkpoint_pos
 	print("Player instantiated on last checkpint")
 	
+
+func set_last_position(last_pos: Vector2) -> void:
+	last_checkpoint_pos = last_pos
