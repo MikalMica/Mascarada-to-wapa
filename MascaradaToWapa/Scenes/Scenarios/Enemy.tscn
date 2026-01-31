@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dhd077ifk8b8g"]
 
-[ext_resource type="Script" uid="uid://ch4rtpxyrv28x" path="res://Scenes/Scenarios/path_component.gd" id="1_7uedo"]
+[ext_resource type="Script" uid="uid://ch4rtpxyrv28x" path="res://Scripts/path_component.gd" id="1_7uedo"]
 
 [node name="Enemy" type="Node2D" unique_id=1710664301]
 

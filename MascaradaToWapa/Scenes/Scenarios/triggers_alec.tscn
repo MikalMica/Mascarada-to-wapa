@@ -5,9 +5,9 @@
 [ext_resource type="Script" uid="uid://bgbcts1jgip3a" path="res://Scripts/timer_button.gd" id="3_oxvwj"]
 [ext_resource type="Script" uid="uid://cspa0cnbngf10" path="res://Scripts/door.gd" id="4_gybfd"]
 [ext_resource type="Script" uid="uid://dqh8eov60sjek" path="res://Scripts/hold_button.gd" id="4_ow35p"]
-[ext_resource type="Script" uid="uid://b3qn1dmcs0d7u" path="res://Scripts/playerTest.gd" id="5_fkiym"]
 [ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="6_dy3vq"]
-[ext_resource type="PackedScene" uid="uid://cnbggcpyxrnch" path="res://Scenes/Objects/player.tscn" id="8_ow35p"]
+[ext_resource type="Script" uid="uid://dhaxcrd4702ts" path="res://Scripts/draggable.gd" id="7_ow35p"]
+[ext_resource type="PackedScene" uid="uid://dqwdl6kchp78b" path="res://Scenes/Objects/player_new.tscn" id="7_oxvwj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xphxm"]
 atlas = ExtResource("2_oxvwj")
@@ -34,20 +34,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_314ca"]
 size = Vector2(32, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_1rvia"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_dy3vq")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgsdk"]
-size = Vector2(26, 26)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ow35p"]
 atlas = ExtResource("2_oxvwj")
 region = Rect2(6, 0, 32, 16)
@@ -67,6 +53,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbloj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ow35p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_dy3vq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mktxh"]
 
 [node name="TriggersAlec" type="Node2D" unique_id=1541308786]
 
@@ -109,25 +108,8 @@ animation = &"Click"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HoldButton" unique_id=1933613162]
 shape = SubResource("RectangleShape2D_314ca")
 
-[node name="TestCharacter" type="Area2D" parent="." unique_id=1046774810]
-visible = false
-position = Vector2(78, 96)
-script = ExtResource("5_fkiym")
-metadata/_edit_group_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TestCharacter" unique_id=1587026667]
-scale = Vector2(0.2, 0.2)
-sprite_frames = SubResource("SpriteFrames_1rvia")
-frame_progress = 0.98888505
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TestCharacter" unique_id=1697949578]
-shape = SubResource("RectangleShape2D_hgsdk")
-
-[node name="Player" parent="." unique_id=1989580064 instance=ExtResource("8_ow35p")]
-position = Vector2(52, 111)
-speed = 5000.0
-
 [node name="Door" type="RigidBody2D" parent="." unique_id=994180869]
+visible = false
 gravity_scale = 0.0
 script = ExtResource("4_gybfd")
 
@@ -139,6 +121,40 @@ sprite_frames = SubResource("SpriteFrames_pfren")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1148402095]
 position = Vector2(50, 25)
 shape = SubResource("RectangleShape2D_jbloj")
+
+[node name="Box" type="RigidBody2D" parent="." unique_id=1728117386]
+position = Vector2(141, 112)
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("7_ow35p")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Box" unique_id=1779559505]
+scale = Vector2(0.16, 0.16)
+sprite_frames = SubResource("SpriteFrames_ow35p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box" unique_id=1554646952]
+shape = SubResource("RectangleShape2D_mktxh")
+
+[node name="Player" parent="." unique_id=1647835319 instance=ExtResource("7_oxvwj")]
+position = Vector2(45, 110)
+lock_rotation = true
+
+[node name="Key" type="RigidBody2D" parent="." unique_id=1978070907]
+position = Vector2(234, 113)
+rotation = 3.1415927
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("7_ow35p")
+friction = 0.05
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Key" unique_id=1608372748]
+scale = Vector2(0.16, 0.16)
+sprite_frames = SubResource("SpriteFrames_ow35p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key" unique_id=1941221018]
+shape = SubResource("RectangleShape2D_mktxh")
 
 [connection signal="area_entered" from="OneTimePressButton" to="OneTimePressButton" method="_on_area_entered"]
 [connection signal="area_entered" from="TimerButton" to="OneTimePressButton" method="_on_boton_tiempo_area_entered"]
