@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cq2xhal270ups" path="res://Scripts/player_on_hit.gd" id="4_m4g67"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81akd"]
+size = Vector2(79.943756, 72.02843)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3sv7"]
 
@@ -126,8 +127,7 @@ region_enabled = true
 region_rect = Rect2(80, 212, 60, 81)
 
 [node name="Shape" type="CollisionShape2D" parent="." unique_id=1132779650]
-visible = false
-position = Vector2(0, 2)
+position = Vector2(-0.85863495, 8.195063)
 scale = Vector2(0.3717273, 0.66098726)
 shape = SubResource("RectangleShape2D_81akd")
 
@@ -137,12 +137,15 @@ script = ExtResource("3_6dlr3")
 movementNode = NodePath("..")
 
 [node name="PlayerHitbox" type="Area2D" parent="." unique_id=97422374 node_paths=PackedStringArray("player_node")]
+position = Vector2(-0.99999976, 8)
+scale = Vector2(1.4972651, 2.4309714)
 collision_mask = 2
 script = ExtResource("4_m4g67")
 player_node = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox" unique_id=899700171]
 shape = SubResource("RectangleShape2D_n3sv7")
+debug_color = Color(0.9321408, 2.6375652e-05, 0.65197235, 0.41960785)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=163794158]
 libraries/ = SubResource("AnimationLibrary_81akd")
