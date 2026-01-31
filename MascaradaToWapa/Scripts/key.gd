@@ -18,5 +18,9 @@ func _door_enters_area(_area) -> void:
 	var parent = _area.get_parent()
 	if(parent is Door):
 		parent._activate()
+		_delete()
+		
 	else:
 		pass
+func _delete()->void:
+	queue_free()
