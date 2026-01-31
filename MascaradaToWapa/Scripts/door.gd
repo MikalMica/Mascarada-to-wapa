@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 func _activate() -> void:
 	#Cambia sprite y desactiva el collider
 	$CollisionShape2D.set_deferred("disabled", true)
-	$AnimatedSprite2D.frame = 1
+	$AnimationPlayer.play("open")
 	
 func _deactivate() -> void:
 	#Cambia sprite y activa el collidere

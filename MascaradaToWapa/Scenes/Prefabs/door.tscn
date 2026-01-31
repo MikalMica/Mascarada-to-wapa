@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cspa0cnbngf10" path="res://Scripts/door.gd" id="1_3c8rj"]
 [ext_resource type="Texture2D" uid="uid://me34nhou2rc" path="res://PlaceHolders/door_closed_ph.png" id="2_3c8rj"]
 [ext_resource type="Texture2D" uid="uid://bgdn4jtfnqv7p" path="res://PlaceHolders/door_open_ph.png" id="2_egjfl"]
+[ext_resource type="Texture2D" uid="uid://fsnppiq73tvh" path="res://Assets/Images/door_spritesheet.png" id="4_nxy12"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pfren"]
 animations = [{
@@ -24,6 +25,66 @@ size = Vector2(103, 110)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dy3vq"]
 size = Vector2(147, 153)
 
+[sub_resource type="Animation" id="Animation_nxy12"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(7, 27, 116, 101)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 12)]
+}
+
+[sub_resource type="Animation" id="Animation_wne60"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(7, 27, 116, 101), Rect2(132, 53, 116, 74), Rect2(3, 161, 114, 47), Rect2(146, 183, 99, 25), Rect2(89, 259, 78, 13)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 12), Vector2(0, 26), Vector2(0, 40), Vector2(0, 50), Vector2(0, 56)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l6qfy"]
+_data = {
+&"RESET": SubResource("Animation_nxy12"),
+&"open": SubResource("Animation_wne60")
+}
+
 [node name="Door" type="RigidBody2D" unique_id=1946632691]
 gravity_scale = 0.0
 lock_rotation = true
@@ -32,6 +93,7 @@ script = ExtResource("1_3c8rj")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1973397673]
+visible = false
 sprite_frames = SubResource("SpriteFrames_pfren")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=460961968]
@@ -44,3 +106,12 @@ shape = SubResource("RectangleShape2D_jbloj")
 position = Vector2(-4.5, 15.5)
 shape = SubResource("RectangleShape2D_dy3vq")
 debug_color = Color(0.7112458, 0.40015057, 0.7170498, 0.41960785)
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1572283670]
+position = Vector2(0, 12)
+texture = ExtResource("4_nxy12")
+region_enabled = true
+region_rect = Rect2(7, 27, 116, 101)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=196684028]
+libraries/ = SubResource("AnimationLibrary_l6qfy")
