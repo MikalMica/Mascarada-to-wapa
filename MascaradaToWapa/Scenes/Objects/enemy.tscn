@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://xumoqssj3r73"]
+
+[ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="1_7ifby"]
+
+[sub_resource type="Curve2D" id="Curve2D_dqui2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 819, 541, 0, 0, 0, 0, 171, 333, 0, 0, 0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggdqk"]
+size = Vector2(132, 129)
+
+[sub_resource type="Animation" id="Animation_0vd5f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_w7pa2"]
+resource_name = "patrol"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qmp1y"]
+_data = {
+&"RESET": SubResource("Animation_0vd5f"),
+&"patrol": SubResource("Animation_w7pa2")
+}
+
+[node name="Enemy" type="Path2D" unique_id=1299381547]
+curve = SubResource("Curve2D_dqui2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=733210764]
+rotates = false
+
+[node name="RigidBody2D" type="RigidBody2D" parent="PathFollow2D" unique_id=371129700]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/RigidBody2D" unique_id=259400183]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ggdqk")
+
+[node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/RigidBody2D" unique_id=1527395661]
+texture = ExtResource("1_7ifby")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PathFollow2D/RigidBody2D" unique_id=1913990509]
+libraries/ = SubResource("AnimationLibrary_qmp1y")
+
+[node name="Area2D" type="Area2D" parent="PathFollow2D/RigidBody2D" unique_id=724788736]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/RigidBody2D/Area2D" unique_id=1827544268]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ggdqk")

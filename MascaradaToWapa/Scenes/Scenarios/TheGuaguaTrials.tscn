@@ -9,6 +9,7 @@
 [node name="ColegonDefault" type="Node2D" parent="." unique_id=2112221870]
 position = Vector2(359, 344)
 script = ExtResource("1_6ft6m")
+default = true
 
 [node name="Sprite2D" type="Sprite2D" parent="ColegonDefault" unique_id=1303658684]
 texture = ExtResource("1_t84th")
