@@ -15,23 +15,19 @@ enum SONG {
 }
 
 func _ready() -> void:
-#	_create_players()
+	#_create_players()
 	pass
 
 func _play_song(songID : SONG):
 	_music.stream = tracks[songID]
 	_music.play(.0)
-	
-func _play_sound(sound : AudioStream):
-	var freePlayer : AudioStreamPlayer2D = _free_sfx_players.pop_back()
-	freePlayer.stream = sound
-	freePlayer.play(.0)
-	freePlayer.finished.connect(func() -> void: 
-		_free_sfx_players.push_back(freePlayer)
-	)
-	
-func _create_players() -> void:
-	for i in _sfx_limit:
-		var child = AudioStreamPlayer2D.new()
-		_sfx.add_child(child)
-		_free_sfx_players.push_back(child)
+
+func _play_sound(soundEffect : String):
+	var audioPlayer = _sfx.get_node(soundEffect)
+	audioPlayer.play()
+
+#func _create_players() -> void:
+#	for i in _sfx_limit:
+#		var child = AudioStreamPlayer2D.new()
+#		_sfx.add_child(child)
+#		_free_sfx_players.push_back(child)

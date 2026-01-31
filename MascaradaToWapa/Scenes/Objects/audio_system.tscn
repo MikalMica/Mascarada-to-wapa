@@ -1,10 +1,21 @@
-[gd_scene format=3 uid="uid://mrsssl14yp77"]
+[gd_scene format=3 uid="uid://cy6p3ftw2i0o"]
 
 [ext_resource type="Script" uid="uid://cf1r48ybwmoqq" path="res://Scripts/audio_system.gd" id="1_hf15j"]
+[ext_resource type="AudioStream" uid="uid://dj526mkfw2285" path="res://Assets/Audio/xylophon-loop-125-bpm-22-8964.mp3" id="2_87yli"]
+[ext_resource type="AudioStream" uid="uid://bj2jbqhukc0kb" path="res://Assets/Audio/hintergrund-bass-wave-11360.mp3" id="3_oef7a"]
 
-[node name="AudioSystem" type="Node2D" unique_id=880592922]
+[node name="AudioSystem" type="Node2D" unique_id=880592922 node_paths=PackedStringArray("_sfx")]
 script = ExtResource("1_hf15j")
+_sfx = NodePath("SFXs")
 
 [node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=997477350]
 
 [node name="SFXs" type="Node2D" parent="." unique_id=2061928492]
+
+[node name="Xilofono" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1008642173]
+stream = ExtResource("2_87yli")
+max_polyphony = 10
+
+[node name="Bajo" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1998270794]
+stream = ExtResource("3_oef7a")
+max_polyphony = 10
