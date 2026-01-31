@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://3xdvejjvv1hs" path="res://Scenes/Objects/player_new.tscn" id="1_7e6j3"]
 [ext_resource type="TileSet" uid="uid://dbigu3i4b0uvj" path="res://Tilemaps/bw_tilemap/tileset_bw_tilemap.tres" id="2_n0riu"]
 [ext_resource type="PackedScene" uid="uid://lf18byvqd0t4" path="res://Scenes/Prefabs/check_point.tscn" id="3_px83w"]
-[ext_resource type="PackedScene" uid="uid://s6xci46fm7ne" path="res://Scenes/Scenarios/key.tscn" id="4_eiqly"]
+[ext_resource type="PackedScene" uid="uid://y3no1pbf5mag" path="res://Scenes/Scenarios/key.tscn" id="4_eiqly"]
 [ext_resource type="PackedScene" uid="uid://dw2qj3cts27tn" path="res://Scenes/Prefabs/door.tscn" id="5_xoht4"]
 [ext_resource type="Script" uid="uid://cs6iustmvpqay" path="res://Scripts/MaskHandler.gd" id="6_jrgm3"]
 [ext_resource type="PackedScene" uid="uid://dyq8p3l4um33l" path="res://Scenes/Prefabs/camera_2d.tscn" id="7_qosk0"]

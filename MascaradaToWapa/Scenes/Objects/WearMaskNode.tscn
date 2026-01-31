@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bc44xqbagbdcj"]
+
+[ext_resource type="Script" uid="uid://bxvtkovtvjdwj" path="res://Scripts/wear_mask_node.gd" id="1_7vwvf"]
+
+[node name="WearMaskNode" type="Node2D" unique_id=1201761675 node_paths=PackedStringArray("timer")]
+script = ExtResource("1_7vwvf")
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="." unique_id=380966350]
