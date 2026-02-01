@@ -1,11 +1,8 @@
 [gd_resource type="TileSet" format=3 uid="uid://dvn12joef6sd7"]
 
-[ext_resource type="Texture2D" uid="uid://f43d8g3m6gdb" path="res://Tilemaps/wall_tilemap/WallTiles2.png" id="1_esd0t"]
-
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_esd0t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_25sxd"]
-texture = ExtResource("1_esd0t")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 1:0/0 = 0
