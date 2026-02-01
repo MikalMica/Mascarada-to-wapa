@@ -1,24 +1,27 @@
-[gd_scene format=3 uid="uid://mrsssl14yp77"]
+[gd_scene format=3 uid="uid://cy6p3ftw2i0o"]
 
 [ext_resource type="Script" uid="uid://cf1r48ybwmoqq" path="res://Scripts/audio_system.gd" id="1_hf15j"]
-[ext_resource type="AudioStream" uid="uid://lnb0j7xhnfgq" path="res://Assets/Audio/Music/Inicio_Menu.wav" id="2_d2v7i"]
-[ext_resource type="AudioStream" uid="uid://brfjxwhhb3wmp" path="res://Assets/Audio/hintergrund-bass-wave-11360.mp3" id="3_oef7a"]
-[ext_resource type="AudioStream" uid="uid://20y3wbl1yorr" path="res://Assets/Audio/Music/Inicio_Menu sin.wav" id="3_vqx4m"]
-[ext_resource type="AudioStream" uid="uid://dj526mkfw2285" path="res://Assets/Audio/SFX/xylophon-loop-125-bpm-22-8964.mp3" id="5_vqx4m"]
-[ext_resource type="AudioStream" uid="uid://bj2jbqhukc0kb" path="res://Assets/Audio/SFX/hintergrund-bass-wave-11360.mp3" id="7_ysntu"]
+[ext_resource type="AudioStream" uid="uid://uiufmyngxjgo" path="res://Assets/Audio/Music/main_menu_theme.wav" id="2_yxowh"]
+[ext_resource type="AudioStream" uid="uid://b3o441owgwfnr" path="res://Assets/Audio/Music/unmask_game_theme.wav" id="3_d2v7i"]
+[ext_resource type="AudioStream" uid="uid://cxth8n00qlafm" path="res://Assets/Audio/Music/pause_theme.wav" id="4_vqx4m"]
+[ext_resource type="AudioStream" uid="uid://dhx5mfyu7g7ou" path="res://Assets/Audio/Music/mask_game_theme.wav" id="4_yxowh"]
+[ext_resource type="AudioStream" uid="uid://bg6x8ss315jvw" path="res://Assets/Audio/SFX/trumpet0.wav" id="5_p4rr3"]
+[ext_resource type="AudioStream" uid="uid://cpe8pnw2lcyh7" path="res://Assets/Audio/SFX/trumpet1.wav" id="6_yxowh"]
+[ext_resource type="AudioStream" uid="uid://c6fjqdld7brie" path="res://Assets/Audio/SFX/trumpet2.wav" id="7_iefha"]
+[ext_resource type="AudioStream" uid="uid://bo2iu7jvv5myb" path="res://Assets/Audio/SFX/button.wav" id="8_6oksx"]
 
-[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_ysntu"]
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_yxowh"]
 stream_count = 3
-stream_0/stream = ExtResource("2_d2v7i")
+stream_0/stream = ExtResource("3_d2v7i")
 stream_0/volume = 0.0
-stream_1/stream = ExtResource("3_vqx4m")
-stream_1/volume = 0.0
-stream_2/stream = ExtResource("3_oef7a")
+stream_1/stream = ExtResource("4_yxowh")
+stream_1/volume = -16.65
+stream_2/stream = ExtResource("4_vqx4m")
 stream_2/volume = 0.0
 
 [node name="AudioSystem" type="Node2D" unique_id=880592922 node_paths=PackedStringArray("_music", "_sfx")]
 script = ExtResource("1_hf15j")
-tracks = Array[AudioStream]([SubResource("AudioStreamSynchronized_ysntu"), ExtResource("3_vqx4m")])
+tracks = Array[AudioStream]([ExtResource("2_yxowh"), SubResource("AudioStreamSynchronized_yxowh")])
 _music = NodePath("Music")
 _sfx = NodePath("SFXs")
 
@@ -26,12 +29,20 @@ _sfx = NodePath("SFXs")
 
 [node name="SFXs" type="Node2D" parent="." unique_id=2061928492]
 
-[node name="Xilofono" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1008642173]
-stream = ExtResource("5_vqx4m")
+[node name="Button" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1008642173]
+stream = ExtResource("8_6oksx")
 max_polyphony = 10
 
-[node name="Bajo" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1998270794]
-stream = ExtResource("7_ysntu")
+[node name="Trumpet0" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1998270794]
+stream = ExtResource("5_p4rr3")
+max_polyphony = 10
+
+[node name="Trumpet1" type="AudioStreamPlayer2D" parent="SFXs" unique_id=2040312042]
+stream = ExtResource("6_yxowh")
+max_polyphony = 10
+
+[node name="Trumpet2" type="AudioStreamPlayer2D" parent="SFXs" unique_id=987395350]
+stream = ExtResource("7_iefha")
 max_polyphony = 10
 
 [node name="Node" type="Node" parent="." unique_id=605068500]

@@ -12,6 +12,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Pause"):
 		get_tree().root.add_child(pause.instantiate())
 		get_tree().paused = true
+		AudioSystem._change_main_theme(AudioSystem.MAIN_THEME.PAUSE)
 		return
 	if disconnected: return
 		

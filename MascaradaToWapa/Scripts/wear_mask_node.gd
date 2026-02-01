@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 		hasStopped = true
 		timer.start(timer.wait_time)
 		SignalBus.mask_timer_started.emit()
+		AudioSystem._change_main_theme(AudioSystem.MAIN_THEME.MASK)
 		
 	if playerRB.linear_velocity != Vector2.ZERO:
 		hasStopped = false
@@ -21,6 +22,8 @@ func _process(delta: float) -> void:
 		if(maskIsOn): 
 			maskIsOn = false
 			SignalBus.mask_off.emit()
+			AudioSystem._change_main_theme(AudioSystem.MAIN_THEME.UNMASK)
+		
 		
 func on_timer_timeout():
 	if !hasStopped: pass

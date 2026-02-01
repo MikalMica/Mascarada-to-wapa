@@ -16,10 +16,12 @@ func _mask_timer_stopped() -> void:
 	mask_on = false
 	spread = 0.0
 	material.set("shader_parameter/spread", spread)
+	#_reverse_mask_aberration()
+
 
 func _mask_aberration() -> void:
 	for i in range(0, iterations):
 		if !mask_on: pass
-		spread += 0.05/iterations
+		spread += 0.025/iterations
 		material.set("shader_parameter/spread", spread)
 		await get_tree().create_timer(time/iterations).timeout

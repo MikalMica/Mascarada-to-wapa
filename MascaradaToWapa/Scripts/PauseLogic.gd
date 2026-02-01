@@ -14,6 +14,7 @@ func _input(event: InputEvent) -> void:
 		_continue_pressed()
 
 func _continue_pressed() -> void:
+	AudioSystem._change_main_theme(AudioSystem.MAIN_THEME.UNMASK)
 	get_tree().paused = false
 	get_tree().root.remove_child(self)
 

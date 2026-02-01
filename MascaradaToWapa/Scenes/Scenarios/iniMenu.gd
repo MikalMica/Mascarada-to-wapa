@@ -5,13 +5,15 @@ extends Control
 @onready var sfxVol = $Menu/SettingsContainer/MarginContainer2/VBoxContainer/SFX
 
 func _ready() -> void:
-	AudioSystem._play_song(AudioSystem.SONG.MAIN_THEME) #A futuro, cambiar por el nombre de la canción de menú
+	AudioSystem._play_song(AudioSystem.SONG.MENU_THEME)
+	
 
 func toggle_visibility(object)->void:
 	object.visible = !object.visible
 
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Levels/Level_1.tscn")
+	AudioSystem._play_song(AudioSystem.SONG.MAIN_THEME)
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
