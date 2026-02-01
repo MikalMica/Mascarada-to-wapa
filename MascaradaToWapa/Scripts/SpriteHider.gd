@@ -5,7 +5,14 @@ class_name SpriteHider
 @export var default: bool
 @export var object: bool
 
+var TWEEN_TIME = .1
+
+var tween:Tween
+
 func _ready() -> void:
+	tween = create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.set_ease(Tween.EASE_IN_OUT)
 	_turn_off()
 	if default:
 		SignalBus.connect("default_mask_on", _turn_on)
@@ -14,11 +21,11 @@ func _ready() -> void:
 	SignalBus.connect("mask_off", _turn_off)
 
 func _turn_on() -> void:
-	var children = get_children()
-	for i in children:
-		i.visible = true
+	tween.kill()
+	tween = create_tween()
+	tween.tween_property(self, "modulate:a", 1, TWEEN_TIME)
 
 func _turn_off() -> void:
-	var children = get_children()
-	for i in children:
-		i.visible = false
+	tween.kill()
+	tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0, TWEEN_TIME)
