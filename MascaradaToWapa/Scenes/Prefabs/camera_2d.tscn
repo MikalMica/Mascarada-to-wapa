@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dyq8p3l4um33l"]
 
 [ext_resource type="Script" uid="uid://ceemdxnx1inr" path="res://Scripts/Camera.gd" id="1_p763x"]
-[ext_resource type="Shader" uid="uid://bqtuoa1d58an" path="res://Shaders/AAA.gdshader" id="2_gcye7"]
+[ext_resource type="Shader" path="res://Shaders/AAA.gdshader" id="2_gcye7"]
 [ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="3_tw5aw"]
 [ext_resource type="Shader" path="res://Shaders/crt.gdshader" id="4_tw5aw"]
+[ext_resource type="Shader" uid="uid://bfr0164orvlao" path="res://Shaders/chromatic_aberration.gdshader" id="5_h7lba"]
+[ext_resource type="Script" uid="uid://6dcnclo4kajn" path="res://Scripts/mask_aberration_handler.gd" id="5_vmemt"]
 
 [sub_resource type="Gradient" id="Gradient_6dlr3"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -50,6 +52,11 @@ shader_parameter/color_quant_steps = 32.0
 shader_parameter/warble_amount = 0.0010000000475
 shader_parameter/warble_speed = 0.46800002223
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_veigb"]
+shader = ExtResource("5_h7lba")
+shader_parameter/levels = 3
+shader_parameter/spread = 0.0
+
 [node name="Camera2D" type="Camera2D" unique_id=1676999046]
 script = ExtResource("1_p763x")
 _follow = true
@@ -73,3 +80,14 @@ material = SubResource("ShaderMaterial_vmemt")
 position = Vector2(7, -91)
 scale = Vector2(11.96875, 9.7890625)
 texture = ExtResource("3_tw5aw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=557124269]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1497477335]
+material = SubResource("ShaderMaterial_veigb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_vmemt")
