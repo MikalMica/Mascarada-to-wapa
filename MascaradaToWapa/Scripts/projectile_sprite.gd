@@ -3,4 +3,6 @@ extends Sprite2D
 @export var sprites :Array[Texture]
 
 func _ready() -> void:
-	texture = sprites[randi() % sprites.size()]
+	var num:int = randi() % sprites.size()
+	texture = sprites[num]
+	AudioSystem._play_sound("Trumpet"+str(num))

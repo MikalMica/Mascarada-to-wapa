@@ -26,6 +26,7 @@ func _ready() -> void:
 	_music.stream = tracks[SONG.MAIN_THEME]
 	_change_main_theme(MAIN_THEME.UNMASK)
 	_music.play()
+	_music.stream = tracks[SONG.MENU_THEME]
 	for audioSP in _sfx.get_children():
 		audioSP.volume_linear = _sfx_volume
 	_music.volume_linear = _music_volume

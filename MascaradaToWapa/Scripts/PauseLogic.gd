@@ -15,10 +15,13 @@ func _input(event: InputEvent) -> void:
 
 func _continue_pressed() -> void:
 	AudioSystem._change_main_theme(AudioSystem.MAIN_THEME.UNMASK)
+	
 	get_tree().paused = false
 	get_tree().root.remove_child(self)
+	
 
 func _main_menu_pressed() -> void:
+	AudioSystem._music.stop()
 	get_tree().paused = false
 	LevelManager.resetLevelToZeroAndChangeScene("res://Scenes/Scenarios/Interfaz.tscn")
 	await get_tree().create_timer(1.0).timeout

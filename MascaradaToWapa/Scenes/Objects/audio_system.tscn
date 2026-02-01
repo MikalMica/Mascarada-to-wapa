@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://cpe8pnw2lcyh7" path="res://Assets/Audio/SFX/trumpet1.wav" id="6_yxowh"]
 [ext_resource type="AudioStream" uid="uid://c6fjqdld7brie" path="res://Assets/Audio/SFX/trumpet2.wav" id="7_iefha"]
 [ext_resource type="AudioStream" uid="uid://bo2iu7jvv5myb" path="res://Assets/Audio/SFX/button.wav" id="8_6oksx"]
+[ext_resource type="AudioStream" uid="uid://cqh40yokbron" path="res://Assets/Audio/SFX/death.wav" id="10_iefha"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_yxowh"]
 stream_count = 3
@@ -43,6 +44,10 @@ max_polyphony = 10
 
 [node name="Trumpet2" type="AudioStreamPlayer2D" parent="SFXs" unique_id=987395350]
 stream = ExtResource("7_iefha")
+max_polyphony = 10
+
+[node name="Death" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1845006078]
+stream = ExtResource("10_iefha")
 max_polyphony = 10
 
 [node name="Node" type="Node" parent="." unique_id=605068500]

@@ -1,8 +1,8 @@
 extends Control
 @export var iniMenu:Control
 @export var settingsMenu:Control
-@onready var musicVol = $Menu/SettingsContainer/MarginContainer2/VBoxContainer/Music
-@onready var sfxVol = $Menu/SettingsContainer/MarginContainer2/VBoxContainer/SFX
+@onready var musicVol = $Control/Music
+@onready var sfxVol = $Control/SFX
 
 func _ready() -> void:
 	AudioSystem._play_song(AudioSystem.SONG.MENU_THEME)
