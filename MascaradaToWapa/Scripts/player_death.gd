@@ -19,8 +19,9 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func applyRandomForce(body:RigidBody2D):
-	var randomDir:Vector2 = Vector2(randf_range(-1,1), randf_range(-1,1))
+	var randomAngle:float = randf_range(0, 360) * PI / 180.
 	
+	var randomDir:Vector2 = Vector2(sin(randomAngle), cos(randomAngle))
 	var randomForce = randf_range(MIN_FORCE, MAX_FORCE)
 	
 	body.apply_force(randomDir*randomForce)
