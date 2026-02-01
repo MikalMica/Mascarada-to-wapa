@@ -8,7 +8,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _on_enemy_hit(other):
-	var death = player_death.instantiate()
-	player_parent_node.get_parent().add_child(death)
+	var death:Node2D = player_death.instantiate()
+	player_parent_node.get_parent().add_child.call_deferred(death)
+	death.global_position = global_position
 	player_parent_node.queue_free()
 	# deberia reiniciar la posicion del jugador a la posicion del ultimo checkpoint
