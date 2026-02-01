@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://6an1vrbu70v5"]
 
-[ext_resource type="PackedScene" uid="uid://cy6p3ftw2i0o" path="res://Scenes/Scenarios/audio_system.tscn" id="1_u4xwu"]
+[ext_resource type="PackedScene" uid="uid://cy6p3ftw2i0o" path="res://Scenes/Objects/audio_system.tscn" id="1_u4xwu"]
 [ext_resource type="PackedScene" uid="uid://3xdvejjvv1hs" path="res://Scenes/Objects/player_new.tscn" id="2_xb8p0"]
 [ext_resource type="Script" uid="uid://ds6egkcrlyqci" path="res://Scenes/Scenarios/Jordi-luego-se-borra/pruba_audio_boton.gd" id="3_owmih"]
-[ext_resource type="AudioStream" uid="uid://bj2jbqhukc0kb" path="res://Assets/Audio/SFX/hintergrund-bass-wave-11360.mp3" id="4_8tvbi"]
-[ext_resource type="AudioStream" uid="uid://dj526mkfw2285" path="res://Assets/Audio/SFX/xylophon-loop-125-bpm-22-8964.mp3" id="5_0a34k"]
+[ext_resource type="AudioStream" path="res://Assets/Audio/SFX/hintergrund-bass-wave-11360.mp3" id="4_8tvbi"]
+[ext_resource type="AudioStream" path="res://Assets/Audio/SFX/xylophon-loop-125-bpm-22-8964.mp3" id="5_0a34k"]
 
 [node name="PruebasAudio" type="Node2D" unique_id=778931369]
 
