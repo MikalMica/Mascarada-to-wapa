@@ -12,7 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://xq7qp8dud2gp" path="res://Assets/Images/UI/5_cortina.png" id="7_wcsdy"]
 [ext_resource type="Texture2D" uid="uid://c4k8rrwairun3" path="res://Assets/Images/UI/6_cortina.png" id="8_ve2f8"]
 [ext_resource type="Texture2D" uid="uid://blursw2c31gfx" path="res://Assets/Images/UI/7_cortina.png" id="9_q1mx1"]
-[ext_resource type="Script" path="res://Scenes/Scenarios/CurtainOpensAtIni.gd" id="10_46aqs"]
+[ext_resource type="Script" uid="uid://3pw5s507aljx" path="res://Scenes/Scenarios/CurtainOpensAtIni.gd" id="10_46aqs"]
+[ext_resource type="Texture2D" uid="uid://cefi2ylh3n50k" path="res://Assets/Images/UI/gonzo_logo.png" id="14_cvhcd"]
+[ext_resource type="Script" uid="uid://ca8hxalgve4wg" path="res://Scenes/Scenarios/GonzoPlays.gd" id="15_wcsdy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ve2f8"]
 texture = ExtResource("4_bcgwr")
@@ -56,8 +58,6 @@ texture = ExtResource("4_bcgwr")
 region_rect = Rect2(73, 673, 455, 236)
 modulate_color = Color(0.6862745, 0.6862745, 0.6862745, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pkgns"]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_w1fe4"]
 animations = [{
 "frames": [{
@@ -86,6 +86,66 @@ animations = [{
 "name": &"curtainOpen",
 "speed": 10.0
 }]
+
+[sub_resource type="Animation" id="Animation_cvhcd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(550, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.01, 0.01)]
+}
+
+[sub_resource type="Animation" id="Animation_wcsdy"]
+resource_name = "reduce"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(550, 0), Vector2(550, 100), Vector2(550, 150)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.01, 0.01), Vector2(0.4, 0.4), Vector2(0.6, 0.6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ve2f8"]
+_data = {
+&"RESET": SubResource("Animation_cvhcd"),
+&"reduce": SubResource("Animation_wcsdy")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_smsqw"]
 bg_color = Color(1, 1, 1, 1)
@@ -117,43 +177,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_smsqw")
-iniMenu = NodePath("Menu/VBoxContainer")
-settingsMenu = NodePath("Menu/SettingsContainer")
+iniMenu = NodePath("inimenu")
+settingsMenu = NodePath("Control")
 
-[node name="Menu" type="MarginContainer" parent="." unique_id=1098587125]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -576.0
-offset_top = -324.0
-offset_right = 576.0
-offset_bottom = 324.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="inimenu" type="Control" parent="." unique_id=154675927]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="Menu" unique_id=2124380612]
-layer = -1
-
-[node name="TextureRect" type="TextureRect" parent="Menu/CanvasLayer2" unique_id=51213958]
+[node name="TextureRect" type="TextureRect" parent="inimenu" unique_id=51213958]
 custom_minimum_size = Vector2(1150, 650)
+layout_mode = 0
 offset_top = -1.0
 offset_right = 1152.0
 offset_bottom = 649.0
 texture = ExtResource("2_85h80")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Menu" unique_id=1116667440]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_constants/separation = 12
-
-[node name="Play" type="Button" parent="Menu/VBoxContainer" unique_id=1624836353]
+[node name="Play" type="Button" parent="inimenu" unique_id=1624836353]
 custom_minimum_size = Vector2(150, 50)
-layout_mode = 2
+layout_mode = 0
+offset_left = 501.0
+offset_top = 383.0
+offset_right = 651.0
+offset_bottom = 433.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_b18w2")
@@ -161,18 +208,26 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ve2f8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q1mx1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bcgwr")
 
-[node name="Settings" type="Button" parent="Menu/VBoxContainer" unique_id=359129957]
+[node name="Settings" type="Button" parent="inimenu" unique_id=359129957]
 custom_minimum_size = Vector2(170, 50)
-layout_mode = 2
+layout_mode = 0
+offset_left = 491.0
+offset_top = 445.0
+offset_right = 661.0
+offset_bottom = 495.0
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_b18w2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_cvhcd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_46aqs")
 theme_override_styles/hover = SubResource("StyleBoxTexture_w1fe4")
 
-[node name="Exit" type="Button" parent="Menu/VBoxContainer" unique_id=1165548948]
+[node name="Exit" type="Button" parent="inimenu" unique_id=1165548948]
 custom_minimum_size = Vector2(150, 50)
-layout_mode = 2
+layout_mode = 0
+offset_left = 501.0
+offset_top = 507.0
+offset_right = 651.0
+offset_bottom = 557.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_b18w2")
@@ -180,41 +235,59 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_wcsdy")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_6sp4k")
 theme_override_styles/hover = SubResource("StyleBoxTexture_yf075")
 
-[node name="HSeparator" type="HSeparator" parent="Menu/VBoxContainer" unique_id=286356503]
-layout_mode = 2
-theme_override_constants/separation = 80
-theme_override_styles/separator = SubResource("StyleBoxEmpty_pkgns")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Menu" unique_id=843772772]
-position = Vector2(575, 322)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="inimenu" unique_id=843772772]
+position = Vector2(575, 321)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_w1fe4")
 animation = &"curtainOpen"
 script = ExtResource("10_46aqs")
 
-[node name="Circo" type="TextureRect" parent="Menu" unique_id=1846038028]
+[node name="Circo" type="TextureRect" parent="inimenu" unique_id=1846038028]
 custom_minimum_size = Vector2(1150, 650)
-layout_mode = 2
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1151.0
+offset_bottom = 649.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 texture = ExtResource("3_tv5cc")
 expand_mode = 1
 
-[node name="SettingsContainer" type="MarginContainer" parent="Menu" unique_id=1776308353]
-visible = false
-layout_mode = 2
+[node name="Sprite2D" type="Sprite2D" parent="inimenu" unique_id=405729786]
+position = Vector2(550, 0)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("14_cvhcd")
+script = ExtResource("15_wcsdy")
 
-[node name="Fondo" type="Panel" parent="Menu/SettingsContainer" unique_id=160303200]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="inimenu/Sprite2D" unique_id=2126898523]
+libraries/ = SubResource("AnimationLibrary_ve2f8")
+
+[node name="Control" type="Control" parent="." unique_id=616938408]
+visible = false
+anchors_preset = 0
+offset_left = 300.0
+offset_top = 225.0
+offset_right = 340.0
+offset_bottom = 265.0
+
+[node name="Fondo" type="Panel" parent="Control" unique_id=160303200]
 custom_minimum_size = Vector2(500, 200)
-layout_mode = 2
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 200.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_smsqw")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Menu/SettingsContainer" unique_id=1347102329]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=1347102329]
 custom_minimum_size = Vector2(450, 175)
-layout_mode = 2
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 475.0
+offset_bottom = 200.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/default_color = Color(0.5529412, 0, 0, 1)
@@ -223,9 +296,13 @@ theme_override_font_sizes/normal_font_size = 25
 text = "Settings
 "
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Menu/SettingsContainer" unique_id=1027430473]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control" unique_id=1027430473]
 custom_minimum_size = Vector2(450, 100)
-layout_mode = 2
+layout_mode = 0
+offset_left = 25.0
+offset_top = 60.0
+offset_right = 475.0
+offset_bottom = 160.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/default_color = Color(0.5529412, 0, 0, 1)
@@ -235,45 +312,40 @@ text = "Music volume:
 
 SFX volume:"
 
-[node name="MarginContainer" type="MarginContainer" parent="Menu/SettingsContainer" unique_id=206552419]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/margin_top = 100
-
-[node name="SettingsExit" type="Button" parent="Menu/SettingsContainer/MarginContainer" unique_id=2053598410]
+[node name="SettingsExit" type="Button" parent="Control" unique_id=2053598410]
 custom_minimum_size = Vector2(150, 50)
-layout_mode = 2
+layout_mode = 0
+offset_left = 175.0
+offset_top = 138.0
+offset_right = 325.0
+offset_bottom = 188.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxTexture_hnfry")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4jvud")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bwmxu")
 
-[node name="MarginContainer2" type="MarginContainer" parent="Menu/SettingsContainer" unique_id=1078326123]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/margin_left = 600
-theme_override_constants/margin_right = 350
-theme_override_constants/margin_bottom = 40
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Menu/SettingsContainer/MarginContainer2" unique_id=516369852]
-layout_mode = 2
-theme_override_constants/separation = 12
-
-[node name="Music" type="HSlider" parent="Menu/SettingsContainer/MarginContainer2/VBoxContainer" unique_id=338702100]
-layout_mode = 2
+[node name="Music" type="HSlider" parent="Control" unique_id=338702100]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 60.0
+offset_right = 460.0
+offset_bottom = 76.0
 max_value = 10.0
 value = 8.0
 
-[node name="SFX" type="HSlider" parent="Menu/SettingsContainer/MarginContainer2/VBoxContainer" unique_id=1907870268]
-layout_mode = 2
+[node name="SFX" type="HSlider" parent="Control" unique_id=1907870268]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 95.0
+offset_right = 460.0
+offset_bottom = 111.0
 max_value = 10.0
 value = 8.0
 
-[connection signal="pressed" from="Menu/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Menu/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Menu/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="Menu/SettingsContainer/MarginContainer/SettingsExit" to="." method="_on_settings_exit_pressed"]
-[connection signal="drag_ended" from="Menu/SettingsContainer/MarginContainer2/VBoxContainer/Music" to="." method="_on_music_drag_ended"]
-[connection signal="drag_ended" from="Menu/SettingsContainer/MarginContainer2/VBoxContainer/SFX" to="." method="_on_sfx_drag_ended"]
+[connection signal="pressed" from="inimenu/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="inimenu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="inimenu/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Control/SettingsExit" to="." method="_on_settings_exit_pressed"]
+[connection signal="drag_ended" from="Control/Music" to="." method="_on_music_drag_ended"]
+[connection signal="drag_ended" from="Control/SFX" to="." method="_on_sfx_drag_ended"]

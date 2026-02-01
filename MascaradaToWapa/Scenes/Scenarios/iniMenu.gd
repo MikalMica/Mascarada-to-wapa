@@ -1,6 +1,6 @@
 extends Control
-@export var iniMenu:VBoxContainer
-@export var settingsMenu:MarginContainer
+@export var iniMenu:Control
+@export var settingsMenu:Control
 @onready var musicVol = $Menu/SettingsContainer/MarginContainer2/VBoxContainer/Music
 @onready var sfxVol = $Menu/SettingsContainer/MarginContainer2/VBoxContainer/SFX
 
