@@ -28,12 +28,10 @@ modulate_color = Color(0.6862745, 0.6862745, 0.6862745, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nhrof"]
 texture = ExtResource("5_gt76x")
 region_rect = Rect2(56, 359, 647, 227)
-modulate_color = Color(0.6862745, 0.6862745, 0.6862745, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o8xjl"]
 texture = ExtResource("5_gt76x")
 region_rect = Rect2(825, 29, 730, 227)
-modulate_color = Color(0.6862745, 0.6862745, 0.6862745, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7l5uh"]
 texture = ExtResource("5_gt76x")
