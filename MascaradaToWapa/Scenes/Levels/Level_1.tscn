@@ -4,86 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bbfx3d5nnbuw0" path="res://Scenes/Prefabs/door_button.tscn" id="2_7pr3o"]
 [ext_resource type="TileSet" uid="uid://idsagte2lv6w" path="res://Tilemaps/wall_tilemap/walls_tileset.tres" id="2_ybqp2"]
 [ext_resource type="PackedScene" uid="uid://b002m70456tiw" path="res://Scenes/Objects/box.tscn" id="3_q8yj7"]
-[ext_resource type="PackedScene" uid="uid://c7ftdk6b7fa80" path="res://Scenes/Prefabs/hold_button.tscn" id="4_87l2y"]
+[ext_resource type="PackedScene" uid="uid://by2guhi3332mv" path="res://Scenes/Prefabs/hold_button.tscn" id="4_87l2y"]
 [ext_resource type="Script" uid="uid://17gvb1y11qe5" path="res://Scripts/SpriteHider.gd" id="4_qpfou"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_esd0t"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_25sxd"]
-texture = ExtResource("2_ybqp2")
-texture_region_size = Vector2i(128, 128)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_iyh3f"]
-tile_size = Vector2i(128, 128)
-physics_layer_0/collision_layer = 1
-physics_layer_0/physics_material = SubResource("PhysicsMaterial_esd0t")
-terrain_set_0/mode = 0
-navigation_layer_0/layers = 1
-sources/0 = SubResource("TileSetAtlasSource_25sxd")
 
 [node name="LevelTemplate2" unique_id=1832597160 instance=ExtResource("1_cp10e")]
 
@@ -92,6 +14,7 @@ modulate = Color(0.51007515, 0.51007515, 0.51007515, 1)
 tile_map_data = PackedByteArray("AAAMAP3/AgABAAAAAAAMAP7/AgABAAAAAAAMAP//AgABAAAAAAAMAAAAAgABAAAAAAAMAAEAAgABAAAAAAAMAAIAAgABAAAAAAAMAAMAAgABAAAAAAANAP3/AgAAAAAAAAAOAP3/AgABAAAAAAANAP7/AgAAAAAAAAAOAP7/AgABAAAAAAANAP//AgAAAAAAAAAOAP//AgABAAAAAAANAAAAAgAAAAAAAAAOAAAAAgABAAAAAAANAAEAAgAAAAAAAAAOAAEAAgABAAAAAAANAAIAAgAAAAAAAAAOAAIAAgABAAAAAAANAAMAAgAAAAAAAAAOAAMAAgABAAAAAAAPAP3/AgAAAAAAAAAPAP7/AgAAAAAAAAAPAP//AgAAAAAAAAAPAAAAAgAAAAAAAAAPAAEAAgAAAAAAAAAPAAIAAgAAAAAAAAAPAAMAAgAAAAAAAAAQAAAAAgAAAAAAAAARAAAAAgABAAAAAAA=")
 
 [node name="CollisionLayer" parent="." index="1" unique_id=159347708]
+visibility_layer = 2
 tile_map_data = PackedByteArray("AAAQAAEAAAAAAAAAAAAQAAIAAAAAAAEAAAAQAAMAAAAAAAEAAAAQAP7/AAAAAAIAAAAQAPz/AAAAAAEAAAAQAP3/AAAAAAEAAAAQAP//AAAGAAIAAAALAPz/AAACAAEAAAAMAPz/AAAGAAIAAAANAPz/AAAGAAIAAAAOAPz/AAAGAAIAAAAPAPz/AAAGAAIAAAAMAAQAAAABAAAAAAANAAQAAAABAAAAAAAOAAQAAAABAAAAAAAPAAQAAAABAAAAAAARAP//AAAGAAIAAAASAP//AAAAAAEAAAASAAAAAAAAAAEAAAALAP3/AAACAAEAAAALAP7/AAACAAEAAAALAP//AAACAAEAAAALAAAAAAACAAEAAAALAAEAAAACAAEAAAALAAIAAAACAAEAAAALAAMAAAACAAEAAAARAAEAAAABAAAAAAAMAPv/AAABAAIAAAANAPv/AAABAAIAAAAOAPv/AAABAAIAAAAPAPv/AAABAAIAAAARAP7/AAABAAIAAAA=")
 tile_set = ExtResource("2_ybqp2")
 
