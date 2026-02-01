@@ -33,7 +33,7 @@ position = Vector2(46, -338)
 position = Vector2(1864, 235)
 
 [node name="ChangeLevelOnTrigger" parent="Point_B" index="0" unique_id=38857801]
-levelID = 0
+levelID = 4
 
 [node name="Enemy" parent="." index="11" unique_id=1299381547 instance=ExtResource("2_0bn43")]
 position = Vector2(490, 309)
