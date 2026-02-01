@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bi82efblvrfce"]
+
+[ext_resource type="Texture2D" uid="uid://c0ygyheucqb2j" path="res://Assets/Images/UI/fondo.png" id="1_nn8tr"]
+[ext_resource type="Texture2D" uid="uid://c8r1m2uxmbx8w" path="res://Assets/Images/UI/YOU_WON.png" id="2_01iap"]
+[ext_resource type="Texture2D" uid="uid://b0qqsx81yosl6" path="res://Assets/Images/UI/botones_ui.png" id="3_p5ssj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ay7ga"]
+texture = ExtResource("3_p5ssj")
+region_rect = Rect2(804.25867, 336.17084, 845.03503, 239.85016)
+
+[node name="VictoryScene" type="CanvasLayer" unique_id=1080327294]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1554819389]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nn8tr")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1632203248]
+offset_top = 85.0
+offset_right = 1153.0
+offset_bottom = 326.0
+texture = ExtResource("2_01iap")
+expand_mode = 1
+
+[node name="Button2" type="Button" parent="." unique_id=443681530]
+offset_left = 576.0
+offset_top = 400.0
+offset_right = 791.0
+offset_bottom = 468.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_ay7ga")
+
+[node name="Button" type="Button" parent="." unique_id=617528134]
+offset_left = 585.0
+offset_top = 544.0
+offset_right = 593.0
+offset_bottom = 552.0
