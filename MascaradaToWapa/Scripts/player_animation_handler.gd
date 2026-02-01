@@ -33,6 +33,6 @@ func _process(delta: float) -> void:
 
 func enter_state(new_state):
 	if current_state == STATES.IDLE:
-		animation.play(&"idle")
+		animation.play(&"mask_on")
 	elif current_state == STATES.MOVING:
 		animation.play(&"walk_d")
