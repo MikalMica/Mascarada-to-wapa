@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://cykgmdppx4coi"]
+
+[ext_resource type="Texture2D" uid="uid://b3hb41lr1wapx" path="res://Assets/Images/Player/explotar_spritesheet.png" id="1_40bht"]
+[ext_resource type="Script" uid="uid://chaa21wshi654" path="res://Scripts/player_death.gd" id="1_xar8b"]
+[ext_resource type="Texture2D" uid="uid://b118svy3s3yg3" path="res://Assets/Images/Player/new_atlas_texture.tres" id="2_xar8b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_40bht"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tg3l"]
+atlas = ExtResource("1_40bht")
+region = Rect2(19, 0, 121, 117)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvspq"]
+size = Vector2(607, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqui7"]
+atlas = ExtResource("1_40bht")
+region = Rect2(202, 169, 67, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0sok"]
+atlas = ExtResource("1_40bht")
+region = Rect2(197, 55, 69, 38)
+
+[node name="PlayerDeath" type="Node2D" unique_id=1991131315 node_paths=PackedStringArray("hatRB", "headRB", "torsoRB", "ribbonRB", "timer")]
+z_index = 24
+script = ExtResource("1_xar8b")
+MIN_FORCE = 100.0
+MAX_FORCE = 100.0
+hatRB = NodePath("rb")
+headRB = NodePath("rb2")
+torsoRB = NodePath("rb3")
+ribbonRB = NodePath("rb4")
+timer = NodePath("Timer")
+
+[node name="rb" type="RigidBody2D" parent="." unique_id=1257771969]
+position = Vector2(2, -95)
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rb" unique_id=2049967208]
+shape = SubResource("CircleShape2D_40bht")
+
+[node name="hat" type="Sprite2D" parent="rb" unique_id=514368495]
+z_index = -27
+texture = SubResource("AtlasTexture_5tg3l")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1828573822]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=637716562]
+position = Vector2(0.5, 42)
+shape = SubResource("RectangleShape2D_fvspq")
+
+[node name="rb2" type="RigidBody2D" parent="." unique_id=1796680967]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rb2" unique_id=13081834]
+shape = SubResource("CircleShape2D_40bht")
+
+[node name="torso" type="Sprite2D" parent="rb2" unique_id=1247761232]
+texture = SubResource("AtlasTexture_lqui7")
+
+[node name="rb3" type="RigidBody2D" parent="." unique_id=2051181632]
+position = Vector2(1, -59)
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rb3" unique_id=780334613]
+shape = SubResource("CircleShape2D_40bht")
+
+[node name="head" type="Sprite2D" parent="rb3" unique_id=832920757]
+texture = ExtResource("2_xar8b")
+
+[node name="rb4" type="RigidBody2D" parent="." unique_id=1899489503]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rb4" unique_id=1583922490]
+shape = SubResource("CircleShape2D_40bht")
+
+[node name="ribbon" type="Sprite2D" parent="rb4" unique_id=219462498]
+texture = SubResource("AtlasTexture_r0sok")
+
+[node name="Timer" type="Timer" parent="." unique_id=1007264751]

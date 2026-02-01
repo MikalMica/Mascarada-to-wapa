@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://f43d8g3m6gdb" path="res://Tilemaps/wall_tilemap/WallTiles2.png" id="1_esd0t"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_esd0t"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_25sxd"]
 texture = ExtResource("1_esd0t")
 texture_region_size = Vector2i(128, 128)
@@ -72,4 +74,8 @@ texture_region_size = Vector2i(128, 128)
 
 [resource]
 tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_esd0t")
+terrain_set_0/mode = 0
+navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_25sxd")

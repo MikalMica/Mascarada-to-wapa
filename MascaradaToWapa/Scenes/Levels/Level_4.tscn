@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dyq8p3l4um33l" path="res://Scenes/Prefabs/camera_2d.tscn" id="5_e558k"]
 [ext_resource type="PackedScene" uid="uid://3xdvejjvv1hs" path="res://Scenes/Objects/player_new.tscn" id="6_qb40t"]
 [ext_resource type="PackedScene" path="res://Scenes/Prefabs/door_button.tscn" id="7_f5hg0"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/point_b.tscn" id="7_qr356"]
+[ext_resource type="PackedScene" uid="uid://p6xq2mdjp2yk" path="res://Scenes/Objects/point_b.tscn" id="7_qr356"]
 [ext_resource type="PackedScene" path="res://Scenes/Prefabs/hold_button.tscn" id="9_e558k"]
 [ext_resource type="Script" uid="uid://17gvb1y11qe5" path="res://Scripts/SpriteHider.gd" id="10_e558k"]
 [ext_resource type="PackedScene" uid="uid://b002m70456tiw" path="res://Scenes/Objects/box.tscn" id="10_qb40t"]
@@ -83,6 +83,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAABAAAAAgABAAAAAAACAAAAAgAAAAA
 tile_set = ExtResource("1_31vnp")
 
 [node name="CollisionLayer" type="TileMapLayer" parent="." unique_id=159347708]
+position = Vector2(-1, 0)
 tile_map_data = PackedByteArray("AAAHAAAAAAAAAAQAAAAHAAEAAAAAAAQAAAAHAAIAAAAAAAQAAAAHAAUAAAAAAAQAAAAHAAYAAAAAAAQAAAAHAAcAAAAAAAQAAAAHAAgAAAAAAAQAAAAHAAkAAAAAAAQAAAAHAAoAAAAAAAQAAAAIAAsAAAAAAAQAAAAHAAsAAAAAAAQAAAAGAAsAAAAAAAQAAAAFAAsAAAAAAAQAAAAEAAsAAAAAAAQAAAADAAsAAAAAAAQAAAACAAsAAAAAAAQAAAABAAsAAAAAAAQAAAAAAAsAAAAAAAQAAAD//wsAAAAAAAQAAAD//woAAAAAAAQAAAD//wkAAAAAAAQAAAD//wgAAAAAAAQAAAD//wcAAAAAAAQAAAD//wYAAAAAAAQAAAD//wUAAAAAAAQAAAD//wQAAAAAAAQAAAD//wMAAAAAAAQAAAD//wIAAAAAAAQAAAD//wEAAAAAAAQAAAD//wAAAAAAAAQAAAD/////AAAAAAQAAAAAAP//AAAAAAQAAAABAP//AAAAAAQAAAACAP//AAAAAAQAAAADAP//AAAAAAQAAAAEAP//AAAAAAQAAAAFAP//AAAAAAQAAAAGAP//AAAAAAQAAAAHAP//AAAAAAQAAAAIAP//AAAAAAQAAAAJAP//AAAAAAQAAAAKAP//AAAAAAQAAAALAP//AAAAAAQAAAAMAP//AAAAAAQAAAANAP//AAAAAAQAAAAOAP//AAAAAAQAAAAPAP//AAAAAAQAAAAQAP//AAAAAAQAAAARAP//AAAAAAQAAAASAP//AAAAAAQAAAATAP//AAAAAAQAAAAUAP//AAAAAAQAAAAUAAsAAAAAAAQAAAATAAsAAAAAAAQAAAASAAsAAAAAAAQAAAARAAsAAAAAAAQAAAAQAAsAAAAAAAQAAAAPAAsAAAAAAAQAAAAOAAsAAAAAAAQAAAANAAsAAAAAAAQAAAAMAAsAAAAAAAQAAAALAAsAAAAAAAQAAAAKAAsAAAAAAAQAAAAJAAsAAAAAAAQAAAAHAAQAAAAAAAQAAAAMAAoAAAAAAAQAAAAMAAkAAAAAAAQAAAAMAAcAAAAAAAQAAAAMAAYAAAAAAAQAAAAMAAUAAAAAAAQAAAAMAAQAAAAAAAQAAAAMAAMAAAAAAAQAAAAMAAIAAAAAAAQAAAAMAAEAAAAAAAQAAAAMAAAAAAAAAAQAAAARAAAAAAAAAAQAAAARAAEAAAAAAAQAAAARAAIAAAAAAAQAAAARAAMAAAAAAAQAAAARAAUAAAAAAAQAAAARAAYAAAAAAAQAAAARAAcAAAAAAAQAAAARAAgAAAAAAAQAAAARAAkAAAAAAAQAAAARAAoAAAAAAAQAAAAVAP//AAAAAAQAAAAWAP//AAAAAAQAAAAWAAAAAAAAAAQAAAAWAAEAAAAAAAQAAAAXAAEAAAAAAAQAAAAYAAEAAAAAAAQAAAAZAAEAAAAAAAQAAAAZAAIAAAAAAAQAAAAZAAMAAAAAAAQAAAAYAAMAAAAAAAQAAAAXAAMAAAAAAAQAAAAWAAMAAAAAAAQAAAAWAAQAAAAAAAQAAAAWAAUAAAAAAAQAAAAWAAYAAAAAAAQAAAAWAAcAAAAAAAQAAAAWAAgAAAAAAAQAAAAWAAkAAAAAAAQAAAAWAAoAAAAAAAQAAAAWAAsAAAAAAAQAAAAVAAsAAAAAAAQAAAA=")
 tile_set = ExtResource("2_bqeum")
 
@@ -136,15 +137,15 @@ TriggeredObstacle = [NodePath("../Door1"), NodePath("../Light1")]
 
 [node name="HoldButton2" parent="." unique_id=1699639527 node_paths=PackedStringArray("TriggeredObstacle") instance=ExtResource("9_e558k")]
 position = Vector2(260, 1026)
-TriggeredObstacle = [NodePath("../Door2")]
+TriggeredObstacle = [NodePath("../Door2"), NodePath("../Light2")]
 
 [node name="HoldButton3" parent="." unique_id=174217527 node_paths=PackedStringArray("TriggeredObstacle") instance=ExtResource("9_e558k")]
 position = Vector2(664, 850)
-TriggeredObstacle = [NodePath("../Door3")]
+TriggeredObstacle = [NodePath("../Door3"), NodePath("../Light3")]
 
 [node name="HoldButton4" parent="." unique_id=1445851128 node_paths=PackedStringArray("TriggeredObstacle") instance=ExtResource("9_e558k")]
 position = Vector2(1319, 273)
-TriggeredObstacle = [NodePath("../Door4")]
+TriggeredObstacle = [NodePath("../Door4"), NodePath("../Light4")]
 
 [node name="SpriteHider4" type="Node2D" parent="." unique_id=1955474202]
 position = Vector2(4212, 4628)
