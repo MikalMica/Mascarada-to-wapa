@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://b002m70456tiw"]
 
 [ext_resource type="Script" uid="uid://dhaxcrd4702ts" path="res://Scripts/draggable.gd" id="1_kgpns"]
-[ext_resource type="Texture2D" uid="uid://by8np7a5xdc87" path="res://PlaceHolders/diego_cube.png" id="2_kgpns"]
+[ext_resource type="Texture2D" uid="uid://64qp1ic0vlnh" path="res://Assets/Images/jack_in_the_box.png" id="2_8s7be"]
 [ext_resource type="Shape2D" uid="uid://7rcj3sggs5a7" path="res://Scenes/Levels/new_convex_polygon_shape_2d.tres" id="3_8s7be"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ow35p"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_kgpns")
+"texture": ExtResource("2_8s7be")
 }],
 "loop": true,
 "name": &"default",
@@ -24,6 +24,8 @@ script = ExtResource("1_kgpns")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1452448819]
+position = Vector2(-6, -42)
+scale = Vector2(0.74, 0.74)
 sprite_frames = SubResource("SpriteFrames_ow35p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=333379510]
