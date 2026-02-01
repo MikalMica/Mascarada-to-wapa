@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bc35akbjpmdl0"]
+[gd_scene format=3 uid="uid://dy66uha0uqnu8"]
 
 [ext_resource type="Script" uid="uid://c5fstmcbo23br" path="res://Scenes/Scenarios/iniMenu.gd" id="1_smsqw"]
 [ext_resource type="Texture2D" uid="uid://c0ygyheucqb2j" path="res://Assets/Images/UI/fondo.png" id="2_85h80"]
@@ -12,9 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://xq7qp8dud2gp" path="res://Assets/Images/UI/5_cortina.png" id="7_wcsdy"]
 [ext_resource type="Texture2D" uid="uid://c4k8rrwairun3" path="res://Assets/Images/UI/6_cortina.png" id="8_ve2f8"]
 [ext_resource type="Texture2D" uid="uid://blursw2c31gfx" path="res://Assets/Images/UI/7_cortina.png" id="9_q1mx1"]
-[ext_resource type="Script" uid="uid://3pw5s507aljx" path="res://Scenes/Scenarios/CurtainOpensAtIni.gd" id="10_46aqs"]
+[ext_resource type="Script" path="res://Scenes/Scenarios/CurtainOpensAtIni.gd" id="10_46aqs"]
 [ext_resource type="Texture2D" uid="uid://cefi2ylh3n50k" path="res://Assets/Images/UI/gonzo_logo.png" id="14_cvhcd"]
-[ext_resource type="Script" uid="uid://ca8hxalgve4wg" path="res://Scenes/Scenarios/GonzoPlays.gd" id="15_wcsdy"]
+[ext_resource type="Script" path="res://Scenes/Scenarios/GonzoPlays.gd" id="15_wcsdy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ve2f8"]
 texture = ExtResource("4_bcgwr")

@@ -11,8 +11,8 @@ class_name Audio_System
 
 
 enum SONG {
+	MENU_THEME,
 	MAIN_THEME,
-	XILOFONO,
 }
 
 enum MAIN_THEME{
@@ -46,9 +46,9 @@ func _change_main_theme(theme: MAIN_THEME) -> void:
 		for i in range(0,3):
 			_music.stream.set_sync_stream_volume(i, -60)
 		if theme == MAIN_THEME.MASK:
-			_music.stream.set_sync_stream_volume(MAIN_THEME.UNMASK, 0)
-		elif theme == MAIN_THEME.UNMASK:
 			_music.stream.set_sync_stream_volume(MAIN_THEME.MASK, 0)
+		elif theme == MAIN_THEME.UNMASK:
+			_music.stream.set_sync_stream_volume(MAIN_THEME.UNMASK, -2)
 		elif theme == MAIN_THEME.PAUSE:
 			_music.stream.set_sync_stream_volume(MAIN_THEME.PAUSE, 0)
 
