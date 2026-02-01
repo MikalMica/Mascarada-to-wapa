@@ -2,9 +2,10 @@
 
 [ext_resource type="TileSet" uid="uid://dbfjxajsl464h" path="res://Tilemaps/circus_tilemap/circus_tilemap.tres" id="1_aibml"]
 [ext_resource type="PackedScene" uid="uid://3xdvejjvv1hs" path="res://Scenes/Objects/player_new.tscn" id="1_ebu0d"]
-[ext_resource type="TileSet" uid="uid://u0mmbyydawef" path="res://Tilemaps/briks_tilemap/floorbricks_tileset.tres" id="2_tvne3"]
+[ext_resource type="TileSet" uid="uid://t8istv0e48xu" path="res://Tilemaps/briks_tilemap/floorbricks_tileset.tres" id="2_tvne3"]
 [ext_resource type="PackedScene" uid="uid://lf18byvqd0t4" path="res://Scenes/Prefabs/check_point.tscn" id="3_aibml"]
 [ext_resource type="Texture2D" uid="uid://6xs51qqkgajo" path="res://Tilemaps/wall_tilemap/Tiles_Nuevas.png" id="3_tvne3"]
+[ext_resource type="Texture2D" uid="uid://q6ntvcr6jtu3" path="res://Tilemaps/wall_tilemap/Walls.png" id="4_ert0c"]
 [ext_resource type="Script" uid="uid://cs6iustmvpqay" path="res://Scripts/MaskHandler.gd" id="4_tvne3"]
 [ext_resource type="PackedScene" uid="uid://dyq8p3l4um33l" path="res://Scenes/Prefabs/camera_2d.tscn" id="5_ert0c"]
 [ext_resource type="PackedScene" uid="uid://p6xq2mdjp2yk" path="res://Scenes/Objects/point_b.tscn" id="7_aibml"]
@@ -55,10 +56,32 @@ texture_region_size = Vector2i(128, 128)
 4:4/0 = 0
 4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_08cxd"]
+texture = ExtResource("4_ert0c")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_08cxd"]
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ert0c")
+sources/1 = SubResource("TileSetAtlasSource_08cxd")
 
 [sub_resource type="Environment" id="Environment_6epvh"]
 
