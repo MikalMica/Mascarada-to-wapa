@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dy66uha0uqnu8"]
+[gd_scene format=3 uid="uid://coaro7b8ffifa"]
 
 [ext_resource type="Script" uid="uid://c5fstmcbo23br" path="res://Scenes/Scenarios/iniMenu.gd" id="1_smsqw"]
 [ext_resource type="Texture2D" uid="uid://c0ygyheucqb2j" path="res://Assets/Images/UI/fondo.png" id="2_85h80"]
@@ -15,6 +15,35 @@
 [ext_resource type="Script" path="res://Scenes/Scenarios/CurtainOpensAtIni.gd" id="10_46aqs"]
 [ext_resource type="Texture2D" uid="uid://cefi2ylh3n50k" path="res://Assets/Images/UI/gonzo_logo.png" id="14_cvhcd"]
 [ext_resource type="Script" path="res://Scenes/Scenarios/GonzoPlays.gd" id="15_wcsdy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w1fe4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pkgns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b18w2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bcgwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cvhcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wcsdy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ve2f8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q1mx1")
+}],
+"loop": false,
+"name": &"curtainOpen",
+"speed": 10.0
+}]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ve2f8"]
 texture = ExtResource("4_bcgwr")
@@ -58,35 +87,6 @@ texture = ExtResource("4_bcgwr")
 region_rect = Rect2(73, 673, 455, 236)
 modulate_color = Color(0.6862745, 0.6862745, 0.6862745, 1)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_w1fe4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_pkgns")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_b18w2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_bcgwr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_cvhcd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_wcsdy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_ve2f8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_q1mx1")
-}],
-"loop": false,
-"name": &"curtainOpen",
-"speed": 10.0
-}]
-
 [sub_resource type="Animation" id="Animation_cvhcd"]
 length = 0.001
 tracks/0/type = "value"
@@ -123,10 +123,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.26, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(550, 0), Vector2(550, 100), Vector2(550, 150)]
+"values": [Vector2(949, 255)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -169,7 +169,9 @@ texture = ExtResource("4_bcgwr")
 region_rect = Rect2(809, 347, 836, 228)
 modulate_color = Color(0.6862745, 0.6862745, 0.6862745, 1)
 
-[node name="UI" type="Control" unique_id=716059066 node_paths=PackedStringArray("iniMenu", "settingsMenu")]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=389114828]
+
+[node name="UI" type="Control" parent="." unique_id=716059066 node_paths=PackedStringArray("iniMenu", "settingsMenu")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -180,27 +182,54 @@ script = ExtResource("1_smsqw")
 iniMenu = NodePath("inimenu")
 settingsMenu = NodePath("Control")
 
-[node name="inimenu" type="Control" parent="." unique_id=154675927]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="inimenu" type="Control" parent="UI" unique_id=154675927]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="inimenu" unique_id=51213958]
+[node name="TextureRect" type="TextureRect" parent="UI/inimenu" unique_id=51213958]
 custom_minimum_size = Vector2(1150, 650)
-layout_mode = 0
-offset_top = -1.0
-offset_right = 1152.0
-offset_bottom = 649.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_85h80")
 expand_mode = 1
 
-[node name="Play" type="Button" parent="inimenu" unique_id=1624836353]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UI/inimenu" unique_id=843772772]
+position = Vector2(951, 538)
+scale = Vector2(0.99166673, 1.0018518)
+sprite_frames = SubResource("SpriteFrames_w1fe4")
+animation = &"curtainOpen"
+script = ExtResource("10_46aqs")
+
+[node name="Circo" type="TextureRect" parent="UI/inimenu" unique_id=1846038028]
+custom_minimum_size = Vector2(1150, 650)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("3_tv5cc")
+expand_mode = 1
+
+[node name="Play" type="Button" parent="UI/inimenu/Circo" unique_id=1624836353]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 0
-offset_left = 501.0
-offset_top = 383.0
-offset_right = 651.0
-offset_bottom = 433.0
+offset_left = 786.0
+offset_top = 498.0
+offset_right = 936.0
+offset_bottom = 548.0
+scale = Vector2(2.04, 2.04)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_b18w2")
@@ -208,26 +237,28 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ve2f8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q1mx1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bcgwr")
 
-[node name="Settings" type="Button" parent="inimenu" unique_id=359129957]
+[node name="Settings" type="Button" parent="UI/inimenu/Circo" unique_id=359129957]
 custom_minimum_size = Vector2(170, 50)
 layout_mode = 0
-offset_left = 491.0
-offset_top = 445.0
-offset_right = 661.0
-offset_bottom = 495.0
+offset_left = 767.0
+offset_top = 629.0
+offset_right = 937.0
+offset_bottom = 679.0
+scale = Vector2(2.04, 2.04)
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_b18w2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_cvhcd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_46aqs")
 theme_override_styles/hover = SubResource("StyleBoxTexture_w1fe4")
 
-[node name="Exit" type="Button" parent="inimenu" unique_id=1165548948]
+[node name="Exit" type="Button" parent="UI/inimenu/Circo" unique_id=1165548948]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 0
-offset_left = 501.0
-offset_top = 507.0
-offset_right = 651.0
-offset_bottom = 557.0
+offset_left = 788.0
+offset_top = 758.00006
+offset_right = 938.0
+offset_bottom = 808.00006
+scale = Vector2(2.04, 2.04)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_b18w2")
@@ -235,36 +266,16 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_wcsdy")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_6sp4k")
 theme_override_styles/hover = SubResource("StyleBoxTexture_yf075")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="inimenu" unique_id=843772772]
-position = Vector2(575, 321)
-scale = Vector2(0.6, 0.6)
-sprite_frames = SubResource("SpriteFrames_w1fe4")
-animation = &"curtainOpen"
-script = ExtResource("10_46aqs")
-
-[node name="Circo" type="TextureRect" parent="inimenu" unique_id=1846038028]
-custom_minimum_size = Vector2(1150, 650)
-layout_mode = 0
-offset_left = 1.0
-offset_top = -1.0
-offset_right = 1151.0
-offset_bottom = 649.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-texture = ExtResource("3_tv5cc")
-expand_mode = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="inimenu" unique_id=405729786]
+[node name="Sprite2D" type="Sprite2D" parent="UI/inimenu" unique_id=405729786]
 position = Vector2(550, 0)
 scale = Vector2(0.01, 0.01)
 texture = ExtResource("14_cvhcd")
 script = ExtResource("15_wcsdy")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="inimenu/Sprite2D" unique_id=2126898523]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/inimenu/Sprite2D" unique_id=2126898523]
 libraries/ = SubResource("AnimationLibrary_ve2f8")
 
-[node name="Control" type="Control" parent="." unique_id=616938408]
+[node name="Control" type="Control" parent="UI" unique_id=616938408]
 visible = false
 anchors_preset = 0
 offset_left = 300.0
@@ -272,7 +283,7 @@ offset_top = 225.0
 offset_right = 340.0
 offset_bottom = 265.0
 
-[node name="Fondo" type="Panel" parent="Control" unique_id=160303200]
+[node name="Fondo" type="Panel" parent="UI/Control" unique_id=160303200]
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 0
 offset_right = 500.0
@@ -281,7 +292,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_smsqw")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=1347102329]
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Control" unique_id=1347102329]
 custom_minimum_size = Vector2(450, 175)
 layout_mode = 0
 offset_left = 25.0
@@ -296,7 +307,7 @@ theme_override_font_sizes/normal_font_size = 25
 text = "Settings
 "
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Control" unique_id=1027430473]
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/Control" unique_id=1027430473]
 custom_minimum_size = Vector2(450, 100)
 layout_mode = 0
 offset_left = 25.0
@@ -312,7 +323,7 @@ text = "Music volume:
 
 SFX volume:"
 
-[node name="SettingsExit" type="Button" parent="Control" unique_id=2053598410]
+[node name="SettingsExit" type="Button" parent="UI/Control" unique_id=2053598410]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 0
 offset_left = 175.0
@@ -325,7 +336,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_hnfry")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4jvud")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bwmxu")
 
-[node name="Music" type="HSlider" parent="Control" unique_id=338702100]
+[node name="Music" type="HSlider" parent="UI/Control" unique_id=338702100]
 layout_mode = 0
 offset_left = 200.0
 offset_top = 60.0
@@ -334,7 +345,7 @@ offset_bottom = 76.0
 max_value = 10.0
 value = 8.0
 
-[node name="SFX" type="HSlider" parent="Control" unique_id=1907870268]
+[node name="SFX" type="HSlider" parent="UI/Control" unique_id=1907870268]
 layout_mode = 0
 offset_left = 200.0
 offset_top = 95.0
@@ -343,9 +354,9 @@ offset_bottom = 111.0
 max_value = 10.0
 value = 8.0
 
-[connection signal="pressed" from="inimenu/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="inimenu/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="inimenu/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="Control/SettingsExit" to="." method="_on_settings_exit_pressed"]
-[connection signal="drag_ended" from="Control/Music" to="." method="_on_music_drag_ended"]
-[connection signal="drag_ended" from="Control/SFX" to="." method="_on_sfx_drag_ended"]
+[connection signal="pressed" from="UI/inimenu/Circo/Play" to="UI" method="_on_play_pressed"]
+[connection signal="pressed" from="UI/inimenu/Circo/Settings" to="UI" method="_on_settings_pressed"]
+[connection signal="pressed" from="UI/inimenu/Circo/Exit" to="UI" method="_on_exit_pressed"]
+[connection signal="pressed" from="UI/Control/SettingsExit" to="UI" method="_on_settings_exit_pressed"]
+[connection signal="drag_ended" from="UI/Control/Music" to="UI" method="_on_music_drag_ended"]
+[connection signal="drag_ended" from="UI/Control/SFX" to="UI" method="_on_sfx_drag_ended"]
