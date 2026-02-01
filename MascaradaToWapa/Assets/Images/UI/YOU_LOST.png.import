@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4lq1x4gmnwco"
-path="res://.godot/imported/circus_tilemap.png-2467485a21ba64e7e5f1025344a5344d.ctex"
+uid="uid://tsq7e5s7sk12"
+path="res://.godot/imported/YOU_LOST.png-d232cfb3e16775be3348b296e6abdbf6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilemaps/circus_tilemap/circus_tilemap.png"
-dest_files=["res://.godot/imported/circus_tilemap.png-2467485a21ba64e7e5f1025344a5344d.ctex"]
+source_file="res://Assets/Images/UI/YOU_LOST.png"
+dest_files=["res://.godot/imported/YOU_LOST.png-d232cfb3e16775be3348b296e6abdbf6.ctex"]
 
 [params]
 
