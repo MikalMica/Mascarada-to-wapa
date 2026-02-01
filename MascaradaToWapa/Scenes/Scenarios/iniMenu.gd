@@ -6,6 +6,7 @@ extends Control
 
 func _ready() -> void:
 	AudioSystem._play_song(AudioSystem.SONG.MENU_THEME)
+	
 
 func toggle_visibility(object)->void:
 	object.visible = !object.visible
