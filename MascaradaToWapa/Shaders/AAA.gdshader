@@ -12,7 +12,7 @@ uniform float scale1 : hint_range(0.0, 100.0, 0.1) = 10.0; // 缩放1
 uniform float scale2 : hint_range(0.0, 10.0, 0.01) = 1.0; // 缩放2
 uniform vec2 offset = vec2(0); // 偏移
 uniform float intensity : hint_range(0.0, 4.0, 0.1) = 0.2; // 扭曲强度
-uniform float spin_speed : hint_range(0.0, 10.0, 0.1) = 0.2; // 旋转速度
+uniform float spin_speed : hint_range(-10.0, 10.0, 0.1) = 0.2; // 旋转速度
 uniform float spin_amount : hint_range(0.0, 10.0, 0.1) = 1.5; // 旋转量
 
 void fragment() {

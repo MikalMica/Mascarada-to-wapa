@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" format=3 uid="uid://u0mmbyydawef"]
+[gd_resource type="TileSet" format=3 uid="uid://t8istv0e48xu"]
 
 [ext_resource type="Texture2D" uid="uid://dsr7oyh47euj8" path="res://Tilemaps/briks_tilemap/FloorBricks.png" id="1_wqkl5"]
 [ext_resource type="Texture2D" uid="uid://6xs51qqkgajo" path="res://Tilemaps/wall_tilemap/Tiles_Nuevas.png" id="2_7gcqa"]
