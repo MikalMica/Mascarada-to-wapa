@@ -21,6 +21,7 @@ func _player_enters_area(_area) -> void:
 	_activate_obstacles()
 	HoldButtonON.emit();
 	$AnimatedSprite2D.frame = 1;
+	AudioSystem._play_sound("Button")
 
 
 func _player_exits_area(_area) -> void:

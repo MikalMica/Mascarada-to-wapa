@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cy6p3ftw2i0o"]
 
 [ext_resource type="Script" uid="uid://cf1r48ybwmoqq" path="res://Scripts/audio_system.gd" id="1_hf15j"]
-[ext_resource type="AudioStream" uid="uid://d21yl1i0184if" path="res://Assets/Audio/Music/hintergrund-bass-wave-11360.mp3" id="2_oef7a"]
+[ext_resource type="AudioStream" uid="uid://uiufmyngxjgo" path="res://Assets/Audio/Music/main_menu_theme.wav" id="2_yxowh"]
 [ext_resource type="AudioStream" uid="uid://b3o441owgwfnr" path="res://Assets/Audio/Music/unmask_game_theme.wav" id="3_d2v7i"]
 [ext_resource type="AudioStream" uid="uid://cxth8n00qlafm" path="res://Assets/Audio/Music/pause_theme.wav" id="4_vqx4m"]
 [ext_resource type="AudioStream" uid="uid://dhx5mfyu7g7ou" path="res://Assets/Audio/Music/mask_game_theme.wav" id="4_yxowh"]
@@ -21,7 +21,7 @@ stream_2/volume = 0.0
 
 [node name="AudioSystem" type="Node2D" unique_id=880592922 node_paths=PackedStringArray("_music", "_sfx")]
 script = ExtResource("1_hf15j")
-tracks = Array[AudioStream]([ExtResource("2_oef7a"), SubResource("AudioStreamSynchronized_yxowh")])
+tracks = Array[AudioStream]([ExtResource("2_yxowh"), SubResource("AudioStreamSynchronized_yxowh")])
 _music = NodePath("Music")
 _sfx = NodePath("SFXs")
 
