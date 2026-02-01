@@ -8,8 +8,10 @@ extends Node2D
 @export var torsoRB : RigidBody2D
 @export var ribbonRB : RigidBody2D
 @export var timer:Timer
+@export var gpuParticles:GPUParticles2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	gpuParticles.emitting = true
 	applyRandomForce(hatRB)
 	applyRandomForce(headRB)
 	applyRandomForce(torsoRB)
