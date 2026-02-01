@@ -63,8 +63,8 @@ script = ExtResource("1_p763x")
 _follow = true
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1158776605]
-position = Vector2(-10.5, 7.9999847)
-scale = Vector2(18.453125, 10.531251)
+position = Vector2(-4.4999695, 2.0000305)
+scale = Vector2(30.015625, 17.15625)
 texture = SubResource("GradientTexture2D_p763x")
 
 [node name="background" type="Sprite2D" parent="." unique_id=754986564]
