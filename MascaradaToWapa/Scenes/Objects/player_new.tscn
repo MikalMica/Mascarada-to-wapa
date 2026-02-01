@@ -3,11 +3,12 @@
 [ext_resource type="Script" uid="uid://bpkfdtxuljsk1" path="res://Scripts/movement_component.gd" id="1_n4sih"]
 [ext_resource type="Texture2D" uid="uid://b2l3slpiahih5" path="res://Assets/Images/Player/player_spritesheet.png" id="2_n4sih"]
 [ext_resource type="Script" uid="uid://do3bcxekdkuln" path="res://Scripts/input_component.gd" id="3_6dlr3"]
-[ext_resource type="Script" uid="uid://buh1aqoi82x4i" path="res://Scripts/walk_particles.gd" id="4_80g1v"]
+[ext_resource type="Script" path="res://Scripts/walk_particles.gd" id="4_80g1v"]
 [ext_resource type="Script" uid="uid://cq2xhal270ups" path="res://Scripts/player_on_hit.gd" id="4_m4g67"]
-[ext_resource type="Script" uid="uid://ca6nd0axt7alj" path="res://Scripts/player_animation_handler.gd" id="5_6dlr3"]
+[ext_resource type="Script" path="res://Scripts/player_animation_handler.gd" id="5_6dlr3"]
 [ext_resource type="Material" uid="uid://dw8uvysv1vojn" path="res://Particles/walk_particles.tres" id="6_81akd"]
 [ext_resource type="Texture2D" uid="uid://ylof3qkqvinr" path="res://Assets/Images/smoke.png" id="6_hgy4n"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/WearMaskNode.tscn" id="9_2efxh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6dlr3"]
 friction = 0.0
@@ -177,8 +178,10 @@ collision_layer = 133
 physics_material_override = SubResource("PhysicsMaterial_6dlr3")
 gravity_scale = 0.0
 lock_rotation = true
+linear_damp = 4.0
 script = ExtResource("1_n4sih")
 maxSpeed = 400.0
+force = 80000.0
 
 [node name="walk_particles" type="GPUParticles2D" parent="." unique_id=2065340774 node_paths=PackedStringArray("movement")]
 position = Vector2(3, 37)
@@ -224,3 +227,6 @@ script = ExtResource("5_6dlr3")
 animation = NodePath("../AnimationPlayer")
 player_sprite = NodePath("../Sprite")
 player_rb = NodePath("..")
+
+[node name="WearMaskNode" parent="." unique_id=1201761675 node_paths=PackedStringArray("playerRB") instance=ExtResource("9_2efxh")]
+playerRB = NodePath("..")

@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://qb4lvft6bvq0"]
+
+[ext_resource type="Script" uid="uid://d78kjilpwhpr" path="res://Scripts/PauseLogic.gd" id="1_76vfl"]
+[ext_resource type="Shader" uid="uid://g0e1blos454q" path="res://Scripts/Shaders/rainbow.gdshader" id="1_kud7c"]
+[ext_resource type="Texture2D" uid="uid://qfqiv87acg88" path="res://PlaceHolders/circusBack.jpg" id="2_4o3s6"]
+[ext_resource type="FontFile" uid="uid://qdabb32dedsd" path="res://Assets/Fonts/KiriFont.otf" id="3_4o3s6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xg7my"]
+shader = ExtResource("1_kud7c")
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/speed = 0.2850000135375
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kud7c"]
+bg_color = Color(0.6156863, 0.05882353, 0.23137255, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.8625637, 0.53677195, 0.18762481, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 11
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76vfl"]
+bg_color = Color(0.44153345, 0.028680826, 0.15669301, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.65882355, 0.39607844, 0.101960786, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 11
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4o3s6"]
+bg_color = Color(0.6156863, 0.05882353, 0.23137255, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.8625637, 0.53677195, 0.18762481, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 11
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_4o3s6"]
+font = ExtResource("3_4o3s6")
+font_size = 160
+font_color = Color(0.8627451, 0.5372549, 0.1882353, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1973575900]
+process_mode = 2
+script = ExtResource("1_76vfl")
+
+[node name="PauseMenu" type="Control" parent="." unique_id=1764534411]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PauseMenu" unique_id=177534523]
+modulate = Color(0.9764706, 0.42352942, 0.28627452, 0.41960785)
+material = SubResource("ShaderMaterial_xg7my")
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+texture = ExtResource("2_4o3s6")
+expand_mode = 1
+
+[node name="Main_menu" type="Button" parent="PauseMenu" unique_id=1936350335]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 510.0
+offset_right = 766.0
+offset_bottom = 585.0
+theme_override_colors/font_color = Color(0.8627451, 0.5372549, 0.1882353, 1)
+theme_override_colors/font_focus_color = Color(0.8627451, 0.5372549, 0.1882353, 1)
+theme_override_colors/font_pressed_color = Color(0.65882355, 0.39607844, 0.101960786, 1)
+theme_override_colors/font_hover_color = Color(0.8627451, 0.5372549, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("3_4o3s6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kud7c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_76vfl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4o3s6")
+text = "Main Menu"
+
+[node name="Continue" type="Button" parent="PauseMenu" unique_id=2046929643]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 367.0
+offset_right = 766.0
+offset_bottom = 442.0
+theme_override_colors/font_color = Color(0.8627451, 0.5372549, 0.1882353, 1)
+theme_override_colors/font_focus_color = Color(0.8627451, 0.5372549, 0.1882353, 1)
+theme_override_colors/font_pressed_color = Color(0.65882355, 0.39607844, 0.101960786, 1)
+theme_override_colors/font_hover_color = Color(0.8627451, 0.5372549, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("3_4o3s6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kud7c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_76vfl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4o3s6")
+text = "Continue"
+
+[node name="Label" type="Label" parent="PauseMenu" unique_id=1639990265]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 148.0
+offset_right = 917.0
+offset_bottom = 348.0
+text = "PAUSE"
+label_settings = SubResource("LabelSettings_4o3s6")
+
+[connection signal="pressed" from="PauseMenu/Main_menu" to="." method="_main_menu_pressed"]
+[connection signal="pressed" from="PauseMenu/Continue" to="." method="_continue_pressed"]

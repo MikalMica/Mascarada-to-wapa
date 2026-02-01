@@ -13,6 +13,7 @@ uniform float strength = 1.0;
 */
 uniform float fps = 6.0;
 uniform sampler2D noise : filter_linear, repeat_enable;
+uniform sampler2D screen_texture : hint_screen_texture;
 group_uniforms;
 
 varying vec4 modulate;
@@ -33,6 +34,6 @@ void fragment() {
 	float noise_sample = texture(noise, noise_uv + noise_offset).r * 4.0 * PI;
 	vec2 direction = vec2(cos(noise_sample), sin(noise_sample));
 	vec2 squiggle_uv = UV + direction * strength * 0.005;
-
-	COLOR = texture(TEXTURE, squiggle_uv) * modulate;
+	
+	COLOR = texture(screen_texture, squiggle_uv) * modulate;
 }
