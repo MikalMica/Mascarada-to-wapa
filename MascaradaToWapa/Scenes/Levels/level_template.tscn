@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://lf18byvqd0t4" path="res://Scenes/Prefabs/check_point.tscn" id="3_aibml"]
 [ext_resource type="Texture2D" uid="uid://6xs51qqkgajo" path="res://Tilemaps/wall_tilemap/Tiles_Nuevas.png" id="3_tvne3"]
 [ext_resource type="Texture2D" uid="uid://q6ntvcr6jtu3" path="res://Tilemaps/wall_tilemap/Walls.png" id="4_ert0c"]
-[ext_resource type="Script" uid="uid://cs6iustmvpqay" path="res://Scripts/MaskHandler.gd" id="4_tvne3"]
 [ext_resource type="PackedScene" uid="uid://dyq8p3l4um33l" path="res://Scenes/Prefabs/camera_2d.tscn" id="5_ert0c"]
 [ext_resource type="PackedScene" uid="uid://p6xq2mdjp2yk" path="res://Scenes/Objects/point_b.tscn" id="7_aibml"]
 
@@ -115,10 +114,6 @@ tile_set = SubResource("TileSet_08cxd")
 
 [node name="cam_target" type="Node2D" parent="." unique_id=135716586 groups=["cam_target"]]
 position = Vector2(1096, -36)
-
-[node name="MaskHandler" type="Node" parent="." unique_id=1928626854]
-script = ExtResource("4_tvne3")
-metadata/_custom_type_script = "uid://cs6iustmvpqay"
 
 [node name="Camera2D" parent="." unique_id=1676999046 instance=ExtResource("5_ert0c")]
 position = Vector2(1200, -97)
