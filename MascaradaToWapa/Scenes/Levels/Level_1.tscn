@@ -9,32 +9,28 @@
 
 [node name="LevelTemplate2" unique_id=1832597160 instance=ExtResource("1_cp10e")]
 
-[node name="TileMapLayer" parent="." index="0" unique_id=657622213]
+[node name="floor_TileMapLayer" parent="." index="0" unique_id=657622213]
 modulate = Color(0.51007515, 0.51007515, 0.51007515, 1)
 tile_map_data = PackedByteArray("AAAMAP3/AgABAAAAAAAMAP7/AgABAAAAAAAMAP//AgABAAAAAAAMAAAAAgABAAAAAAAMAAEAAgABAAAAAAAMAAIAAgABAAAAAAAMAAMAAgABAAAAAAANAP3/AgAAAAAAAAAOAP3/AgABAAAAAAANAP7/AgAAAAAAAAAOAP7/AgABAAAAAAANAP//AgAAAAAAAAAOAP//AgABAAAAAAANAAAAAgAAAAAAAAAOAAAAAgABAAAAAAANAAEAAgAAAAAAAAAOAAEAAgABAAAAAAANAAIAAgAAAAAAAAAOAAIAAgABAAAAAAANAAMAAgAAAAAAAAAOAAMAAgABAAAAAAAPAP3/AgAAAAAAAAAPAP7/AgAAAAAAAAAPAP//AgAAAAAAAAAPAAAAAgAAAAAAAAAPAAEAAgAAAAAAAAAPAAIAAgAAAAAAAAAPAAMAAgAAAAAAAAAQAAAAAgAAAAAAAAARAAAAAgABAAAAAAA=")
 
-[node name="CollisionLayer" parent="." index="1" unique_id=159347708]
-visibility_layer = 2
+[node name="floorBorder_TileMapLayer2" parent="." index="1" unique_id=1522695359]
+tile_map_data = PackedByteArray("AAANAP3/AAABAAAAAAAOAP3/AAABAAAAAAAMAP7/AAAAAAEAAAAMAP//AAAAAAEAAAAMAAAAAAAAAAEAAAAMAAEAAAAAAAEAAAAMAAIAAAAAAAEAAAAMAAMAAAAAAAEAAAAPAAMAAAACAAEAAAAPAAIAAAACAAEAAAAPAAEAAAACAAEAAAAPAP//AAACAAEAAAAPAP7/AAACAAEAAAAPAP3/AAACAAAAAAAMAP3/AAAAAAAAAAA=")
+
+[node name="CollisionLayer" parent="." index="2" unique_id=159347708]
 tile_map_data = PackedByteArray("AAAQAAEAAAAAAAAAAAAQAAIAAAAAAAEAAAAQAAMAAAAAAAEAAAAQAP7/AAAAAAIAAAAQAPz/AAAAAAEAAAAQAP3/AAAAAAEAAAAQAP//AAAGAAIAAAALAPz/AAACAAEAAAAMAPz/AAAGAAIAAAANAPz/AAAGAAIAAAAOAPz/AAAGAAIAAAAPAPz/AAAGAAIAAAAMAAQAAAABAAAAAAANAAQAAAABAAAAAAAOAAQAAAABAAAAAAAPAAQAAAABAAAAAAARAP//AAAGAAIAAAASAP//AAAAAAEAAAASAAAAAAAAAAEAAAALAP3/AAACAAEAAAALAP7/AAACAAEAAAALAP//AAACAAEAAAALAAAAAAACAAEAAAALAAEAAAACAAEAAAALAAIAAAACAAEAAAALAAMAAAACAAEAAAARAAEAAAABAAAAAAAMAPv/AAABAAIAAAANAPv/AAABAAIAAAAOAPv/AAABAAIAAAAPAPv/AAABAAIAAAARAP7/AAABAAIAAAA=")
 tile_set = ExtResource("2_ybqp2")
 
-[node name="check_point" parent="." index="2" unique_id=1018906685]
+[node name="check_point" parent="." index="3" unique_id=1018906685]
 position = Vector2(1624, 81)
-
-[node name="Player" parent="." index="6" unique_id=1647835319]
-position = Vector2(1614, 72)
 
 [node name="Door" parent="." index="7" unique_id=1946632691 instance=ExtResource("2_7pr3o")]
 position = Vector2(2021, 55)
 
-[node name="DirectionalLight2D" parent="." index="9" unique_id=899447024]
+[node name="Player" parent="." index="8" unique_id=1647835319]
+position = Vector2(1614, 72)
+
+[node name="DirectionalLight2D" parent="." index="10" unique_id=899447024]
 energy = 0.5
-
-[node name="Point_B" parent="." index="11" unique_id=1092435603]
-position = Vector2(2204, 66)
-
-[node name="ChangeLevelOnTrigger" parent="Point_B" index="0" unique_id=38857801]
-levelID = 2
 
 [node name="HoldButton" parent="." index="12" unique_id=1666575160 node_paths=PackedStringArray("TriggeredObstacle") instance=ExtResource("4_87l2y")]
 position = Vector2(1783, -140)
@@ -48,5 +44,11 @@ metadata/_custom_type_script = "uid://17gvb1y11qe5"
 
 [node name="Box" parent="SpriteHider" index="0" unique_id=161731881 instance=ExtResource("3_q8yj7")]
 position = Vector2(1389, 339)
+
+[node name="Point_B" parent="." index="14" unique_id=1092435603]
+position = Vector2(2204, 66)
+
+[node name="ChangeLevelOnTrigger" parent="Point_B" index="0" unique_id=38857801]
+levelID = 2
 
 [editable path="Point_B"]

@@ -3,21 +3,29 @@
 [ext_resource type="TileSet" uid="uid://dbfjxajsl464h" path="res://Tilemaps/circus_tilemap/circus_tilemap.tres" id="1_aibml"]
 [ext_resource type="PackedScene" uid="uid://3xdvejjvv1hs" path="res://Scenes/Objects/player_new.tscn" id="1_ebu0d"]
 [ext_resource type="TileSet" uid="uid://dbigu3i4b0uvj" path="res://Tilemaps/bw_tilemap/tileset_bw_tilemap.tres" id="2_6epvh"]
+[ext_resource type="TileSet" uid="uid://u0mmbyydawef" path="res://Tilemaps/briks_tilemap/floorbricks_tileset.tres" id="2_tvne3"]
 [ext_resource type="PackedScene" uid="uid://lf18byvqd0t4" path="res://Scenes/Prefabs/check_point.tscn" id="3_aibml"]
 [ext_resource type="Script" uid="uid://cs6iustmvpqay" path="res://Scripts/MaskHandler.gd" id="4_tvne3"]
 [ext_resource type="PackedScene" uid="uid://dyq8p3l4um33l" path="res://Scenes/Prefabs/camera_2d.tscn" id="5_ert0c"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/point_b.tscn" id="7_aibml"]
+[ext_resource type="PackedScene" uid="uid://p6xq2mdjp2yk" path="res://Scenes/Objects/point_b.tscn" id="7_aibml"]
 
 [sub_resource type="Environment" id="Environment_6epvh"]
 
 [node name="LevelTemplate" type="Node2D" unique_id=1832597160 groups=["Level"]]
 y_sort_enabled = true
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=657622213]
+[node name="floor_TileMapLayer" type="TileMapLayer" parent="." unique_id=657622213]
 z_index = -2
 tile_set = ExtResource("1_aibml")
 
+[node name="floorBorder_TileMapLayer2" type="TileMapLayer" parent="." unique_id=1522695359]
+z_index = -1
+tile_set = ExtResource("2_tvne3")
+collision_enabled = false
+physics_quadrant_size = 128
+
 [node name="CollisionLayer" type="TileMapLayer" parent="." unique_id=159347708]
+z_index = -1
 tile_set = ExtResource("2_6epvh")
 
 [node name="check_point" parent="." unique_id=1018906685 instance=ExtResource("3_aibml")]

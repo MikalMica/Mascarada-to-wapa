@@ -102,7 +102,7 @@ metadata/_custom_type_script = "uid://cs6iustmvpqay"
 position = Vector2(1200, -97)
 
 [node name="Player" parent="." unique_id=1647835319 instance=ExtResource("6_qb40t")]
-position = Vector2(160, 680)
+position = Vector2(152, 688)
 collision_layer = 1
 maxSpeed = 500.0
 
