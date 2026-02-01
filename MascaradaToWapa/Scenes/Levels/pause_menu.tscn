@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://d78kjilpwhpr" path="res://Scripts/PauseLogic.gd" id="1_76vfl"]
 [ext_resource type="Shader" uid="uid://g0e1blos454q" path="res://Scripts/Shaders/rainbow.gdshader" id="1_kud7c"]
+[ext_resource type="Texture2D" uid="uid://c6c0vejohcmna" path="res://Assets/Images/UI/PAUSE.png" id="2_0sdvu"]
 [ext_resource type="Texture2D" uid="uid://qfqiv87acg88" path="res://PlaceHolders/circusBack.jpg" id="2_4o3s6"]
 [ext_resource type="FontFile" uid="uid://qdabb32dedsd" path="res://Assets/Fonts/KiriFont.otf" id="3_4o3s6"]
 [ext_resource type="Texture2D" uid="uid://b0qqsx81yosl6" path="res://Assets/Images/UI/botones_ui.png" id="5_gt76x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_02n6w"]
+texture = ExtResource("2_0sdvu")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xg7my"]
 shader = ExtResource("1_kud7c")
@@ -37,13 +41,6 @@ region_rect = Rect2(825, 29, 730, 227)
 texture = ExtResource("5_gt76x")
 region_rect = Rect2(825, 29, 730, 227)
 modulate_color = Color(0.34509805, 0.34509805, 0.34509805, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_4o3s6"]
-font = ExtResource("3_4o3s6")
-font_size = 160
-font_color = Color(0.88235295, 0.043137256, 0.11372549, 1)
-outline_size = 30
-outline_color = Color(0.5529412, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gt76x"]
 bg_color = Color(1, 1, 1, 1)
@@ -79,6 +76,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PauseMenu" unique_id=2022082211]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 75.0
+offset_right = 825.0
+offset_bottom = 275.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_02n6w")
 
 [node name="TextureRect" type="TextureRect" parent="PauseMenu" unique_id=177534523]
 modulate = Color(0.9764706, 0.42352942, 0.28627452, 0.41960785)
@@ -128,15 +133,6 @@ theme_override_fonts/font = ExtResource("3_4o3s6")
 theme_override_styles/normal = SubResource("StyleBoxTexture_o8xjl")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7l5uh")
 theme_override_styles/hover = SubResource("StyleBoxTexture_o8xjl")
-
-[node name="Label" type="Label" parent="PauseMenu" unique_id=1639990265]
-layout_mode = 0
-offset_left = 276.0
-offset_top = 148.0
-offset_right = 917.0
-offset_bottom = 348.0
-text = "PAUSE"
-label_settings = SubResource("LabelSettings_4o3s6")
 
 [node name="Control" type="Control" parent="PauseMenu" unique_id=1539871424]
 visible = false
