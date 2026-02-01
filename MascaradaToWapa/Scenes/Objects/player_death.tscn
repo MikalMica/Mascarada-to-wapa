@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cykgmdppx4coi"]
 
 [ext_resource type="Texture2D" uid="uid://b3hb41lr1wapx" path="res://Assets/Images/Player/explotar_spritesheet.png" id="1_40bht"]
-[ext_resource type="Script" uid="uid://chaa21wshi654" path="res://Scripts/player_death.gd" id="1_xar8b"]
+[ext_resource type="Script" path="res://Scripts/player_death.gd" id="1_xar8b"]
 [ext_resource type="Texture2D" uid="uid://b118svy3s3yg3" path="res://Assets/Images/Player/new_atlas_texture.tres" id="2_xar8b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_40bht"]
@@ -33,7 +33,7 @@ ribbonRB = NodePath("rb4")
 timer = NodePath("Timer")
 
 [node name="rb" type="RigidBody2D" parent="." unique_id=1257771969]
-position = Vector2(2, -95)
+position = Vector2(1, -44)
 collision_layer = 0
 collision_mask = 32
 
@@ -42,6 +42,7 @@ shape = SubResource("CircleShape2D_40bht")
 
 [node name="hat" type="Sprite2D" parent="rb" unique_id=514368495]
 z_index = -27
+scale = Vector2(0.5, 0.5)
 texture = SubResource("AtlasTexture_5tg3l")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1828573822]
@@ -60,10 +61,11 @@ collision_mask = 32
 shape = SubResource("CircleShape2D_40bht")
 
 [node name="torso" type="Sprite2D" parent="rb2" unique_id=1247761232]
+scale = Vector2(0.5, 0.5)
 texture = SubResource("AtlasTexture_lqui7")
 
 [node name="rb3" type="RigidBody2D" parent="." unique_id=2051181632]
-position = Vector2(1, -59)
+position = Vector2(-2, -33)
 collision_layer = 0
 collision_mask = 32
 
@@ -71,9 +73,11 @@ collision_mask = 32
 shape = SubResource("CircleShape2D_40bht")
 
 [node name="head" type="Sprite2D" parent="rb3" unique_id=832920757]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_xar8b")
 
 [node name="rb4" type="RigidBody2D" parent="." unique_id=1899489503]
+position = Vector2(-1, -11)
 collision_layer = 0
 collision_mask = 32
 
@@ -81,6 +85,7 @@ collision_mask = 32
 shape = SubResource("CircleShape2D_40bht")
 
 [node name="ribbon" type="Sprite2D" parent="rb4" unique_id=219462498]
+scale = Vector2(0.5, 0.5)
 texture = SubResource("AtlasTexture_r0sok")
 
 [node name="Timer" type="Timer" parent="." unique_id=1007264751]

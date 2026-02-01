@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://d24st4uf34lmu"]
 
 [ext_resource type="PackedScene" uid="uid://cnthefjt8adju" path="res://Scenes/Levels/level_template.tscn" id="1_dt10j"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/enemy.tscn" id="2_0bn43"]
+[ext_resource type="PackedScene" uid="uid://cp71uwds2f7k2" path="res://Scenes/Objects/enemy.tscn" id="2_0bn43"]
 [ext_resource type="TileSet" uid="uid://idsagte2lv6w" path="res://Tilemaps/wall_tilemap/walls_tileset.tres" id="2_pcf11"]
 
 [sub_resource type="Curve2D" id="Curve2D_pcf11"]
