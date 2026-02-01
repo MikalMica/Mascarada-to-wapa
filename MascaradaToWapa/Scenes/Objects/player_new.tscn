@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://bpkfdtxuljsk1" path="res://Scripts/movement_component.gd" id="1_n4sih"]
 [ext_resource type="Texture2D" uid="uid://b2l3slpiahih5" path="res://Assets/Images/Player/player_spritesheet.png" id="2_n4sih"]
 [ext_resource type="Script" uid="uid://do3bcxekdkuln" path="res://Scripts/input_component.gd" id="3_6dlr3"]
-[ext_resource type="Script" path="res://Scripts/walk_particles.gd" id="4_80g1v"]
+[ext_resource type="Script" uid="uid://buh1aqoi82x4i" path="res://Scripts/walk_particles.gd" id="4_80g1v"]
 [ext_resource type="Script" uid="uid://cq2xhal270ups" path="res://Scripts/player_on_hit.gd" id="4_m4g67"]
+[ext_resource type="Texture2D" uid="uid://br65vo1gamps4" path="res://Assets/Images/Player/mascara_spritesheet.png" id="5_2efxh"]
 [ext_resource type="Script" uid="uid://ca6nd0axt7alj" path="res://Scripts/player_animation_handler.gd" id="5_6dlr3"]
 [ext_resource type="Material" uid="uid://dw8uvysv1vojn" path="res://Particles/walk_particles.tres" id="6_81akd"]
 [ext_resource type="Texture2D" uid="uid://ylof3qkqvinr" path="res://Assets/Images/smoke.png" id="6_hgy4n"]
@@ -69,7 +70,19 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-0.12898421]
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_2efxh")]
 }
 
 [sub_resource type="Animation" id="Animation_6dlr3"]
@@ -123,6 +136,82 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_n4sih")]
+}
+
+[sub_resource type="Animation" id="Animation_kgo3p"]
+resource_name = "mask_on"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_2efxh")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(203, 77, 154, 207), Rect2(628, 76, 178, 207), Rect2(1093, 76, 154, 207), Rect2(1529, 76, 154, 207)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0.9999999), Vector2(0, -1.0097446), Vector2(0, 0.9999999)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.20000002, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.37662336, 0.3766233), Vector2(0.41558444, 0.36222467), Vector2(0.3766234, 0.3960411), Vector2(0.37662336, 0.3766233)]
+}
 
 [sub_resource type="Animation" id="Animation_81akd"]
 resource_name = "walk_d"
@@ -164,11 +253,36 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0, -0.12898421, 0.0, 0.12915436464757998, 0.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_n4sih")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_81akd"]
 _data = {
 &"RESET": SubResource("Animation_m4g67"),
 &"idle": SubResource("Animation_6dlr3"),
+&"mask_on": SubResource("Animation_kgo3p"),
 &"walk_d": SubResource("Animation_81akd")
 }
 
@@ -193,8 +307,7 @@ movement = NodePath("..")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=973427504]
 material = SubResource("ShaderMaterial_hgy4n")
-rotation = -0.12898421
-texture = ExtResource("2_n4sih")
+texture = ExtResource("5_2efxh")
 region_enabled = true
 region_rect = Rect2(80, 212, 60, 81)
 
