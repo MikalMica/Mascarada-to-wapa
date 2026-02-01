@@ -22,6 +22,7 @@ enum MAIN_THEME{
 }
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	_music.stream = tracks[SONG.MAIN_THEME]
 	_change_main_theme(MAIN_THEME.UNMASK)
 	_music.play()
@@ -52,8 +53,16 @@ func _change_main_theme(theme: MAIN_THEME) -> void:
 			_music.stream.set_sync_stream_volume(MAIN_THEME.PAUSE, 0)
 
 func _change_sfx_volume(volume: float):
+	_sfx_volume = volume
 	for audioSP in _sfx.get_children():
 		audioSP.volume_linear = volume
 
 func _change_music_volume(volume: float):
+	_music_volume = volume
 	_music.volume_linear = volume
+	
+func _get_music_volume() -> float:
+	return _music_volume
+
+func _get_sfx_volume() -> float:
+	return _sfx_volume

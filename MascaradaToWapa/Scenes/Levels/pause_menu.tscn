@@ -4,67 +4,75 @@
 [ext_resource type="Shader" uid="uid://g0e1blos454q" path="res://Scripts/Shaders/rainbow.gdshader" id="1_kud7c"]
 [ext_resource type="Texture2D" uid="uid://qfqiv87acg88" path="res://PlaceHolders/circusBack.jpg" id="2_4o3s6"]
 [ext_resource type="FontFile" uid="uid://qdabb32dedsd" path="res://Assets/Fonts/KiriFont.otf" id="3_4o3s6"]
+[ext_resource type="Texture2D" uid="uid://b0qqsx81yosl6" path="res://Assets/Images/UI/botones_ui.png" id="5_gt76x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xg7my"]
 shader = ExtResource("1_kud7c")
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/speed = 0.2850000135375
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kud7c"]
-bg_color = Color(0.6156863, 0.05882353, 0.23137255, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.8625637, 0.53677195, 0.18762481, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-corner_detail = 11
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gt76x"]
+texture = ExtResource("5_gt76x")
+region_rect = Rect2(809, 346, 833, 227)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76vfl"]
-bg_color = Color(0.44153345, 0.028680826, 0.15669301, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.65882355, 0.39607844, 0.101960786, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-corner_detail = 11
-expand_margin_left = 10.0
-expand_margin_top = 10.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0sdvu"]
+texture = ExtResource("5_gt76x")
+region_rect = Rect2(809, 346, 833, 227)
+modulate_color = Color(0.34509805, 0.34509805, 0.34509805, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4o3s6"]
-bg_color = Color(0.6156863, 0.05882353, 0.23137255, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.8625637, 0.53677195, 0.18762481, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-corner_detail = 11
-expand_margin_left = 10.0
-expand_margin_top = 10.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dvtw4"]
+texture = ExtResource("5_gt76x")
+region_rect = Rect2(809, 346, 833, 227)
+modulate_color = Color(0.6862745, 0.6862745, 0.6862745, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nhrof"]
+texture = ExtResource("5_gt76x")
+region_rect = Rect2(56, 359, 647, 227)
+modulate_color = Color(0.6862745, 0.6862745, 0.6862745, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o8xjl"]
+texture = ExtResource("5_gt76x")
+region_rect = Rect2(825, 29, 730, 227)
+modulate_color = Color(0.6862745, 0.6862745, 0.6862745, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7l5uh"]
+texture = ExtResource("5_gt76x")
+region_rect = Rect2(825, 29, 730, 227)
+modulate_color = Color(0.34509805, 0.34509805, 0.34509805, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4o3s6"]
 font = ExtResource("3_4o3s6")
 font_size = 160
-font_color = Color(0.8627451, 0.5372549, 0.1882353, 1)
+font_color = Color(0.88235295, 0.043137256, 0.11372549, 1)
+outline_size = 30
+outline_color = Color(0.5529412, 0, 0, 1)
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=1973575900]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gt76x"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.050980393, 0.30980393, 0.3882353, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_26npv"]
+texture = ExtResource("5_gt76x")
+region_rect = Rect2(75, 676, 451, 231)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wijsk"]
+texture = ExtResource("5_gt76x")
+region_rect = Rect2(75, 676, 451, 231)
+modulate_color = Color(0.34509805, 0.34509805, 0.34509805, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6fdwt"]
+texture = ExtResource("5_gt76x")
+region_rect = Rect2(75, 676, 451, 231)
+modulate_color = Color(0.6862745, 0.6862745, 0.6862745, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1973575900 node_paths=PackedStringArray("settings")]
 process_mode = 2
 script = ExtResource("1_76vfl")
+settings = NodePath("PauseMenu/Control")
 
 [node name="PauseMenu" type="Control" parent="." unique_id=1764534411]
 layout_mode = 3
@@ -86,34 +94,42 @@ expand_mode = 1
 [node name="Main_menu" type="Button" parent="PauseMenu" unique_id=1936350335]
 layout_mode = 0
 offset_left = 408.0
-offset_top = 510.0
+offset_top = 523.0
 offset_right = 766.0
-offset_bottom = 585.0
+offset_bottom = 598.0
 theme_override_colors/font_color = Color(0.8627451, 0.5372549, 0.1882353, 1)
 theme_override_colors/font_focus_color = Color(0.8627451, 0.5372549, 0.1882353, 1)
 theme_override_colors/font_pressed_color = Color(0.65882355, 0.39607844, 0.101960786, 1)
 theme_override_colors/font_hover_color = Color(0.8627451, 0.5372549, 0.1882353, 1)
 theme_override_fonts/font = ExtResource("3_4o3s6")
-theme_override_styles/normal = SubResource("StyleBoxFlat_kud7c")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_76vfl")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4o3s6")
-text = "Main Menu"
+theme_override_styles/normal = SubResource("StyleBoxTexture_gt76x")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0sdvu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dvtw4")
+
+[node name="Settings" type="Button" parent="PauseMenu" unique_id=1987401441]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 423.0
+offset_right = 766.0
+offset_bottom = 498.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_nhrof")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nhrof")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nhrof")
 
 [node name="Continue" type="Button" parent="PauseMenu" unique_id=2046929643]
 layout_mode = 0
 offset_left = 408.0
-offset_top = 367.0
+offset_top = 323.0
 offset_right = 766.0
-offset_bottom = 442.0
+offset_bottom = 398.0
 theme_override_colors/font_color = Color(0.8627451, 0.5372549, 0.1882353, 1)
 theme_override_colors/font_focus_color = Color(0.8627451, 0.5372549, 0.1882353, 1)
 theme_override_colors/font_pressed_color = Color(0.65882355, 0.39607844, 0.101960786, 1)
 theme_override_colors/font_hover_color = Color(0.8627451, 0.5372549, 0.1882353, 1)
 theme_override_fonts/font = ExtResource("3_4o3s6")
-theme_override_styles/normal = SubResource("StyleBoxFlat_kud7c")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_76vfl")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4o3s6")
-text = "Continue"
+theme_override_styles/normal = SubResource("StyleBoxTexture_o8xjl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7l5uh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_o8xjl")
 
 [node name="Label" type="Label" parent="PauseMenu" unique_id=1639990265]
 layout_mode = 0
@@ -124,5 +140,88 @@ offset_bottom = 348.0
 text = "PAUSE"
 label_settings = SubResource("LabelSettings_4o3s6")
 
+[node name="Control" type="Control" parent="PauseMenu" unique_id=1539871424]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Fondo" type="Panel" parent="PauseMenu/Control" unique_id=1945317827]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 0
+offset_left = 329.0
+offset_top = 250.0
+offset_right = 829.0
+offset_bottom = 450.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_gt76x")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PauseMenu/Control" unique_id=2143522392]
+custom_minimum_size = Vector2(450, 175)
+layout_mode = 0
+offset_left = 354.0
+offset_top = 262.0
+offset_right = 804.0
+offset_bottom = 437.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0.5529412, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_4o3s6")
+theme_override_font_sizes/normal_font_size = 25
+text = "Settings
+"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PauseMenu/Control" unique_id=1889740749]
+custom_minimum_size = Vector2(450, 100)
+layout_mode = 0
+offset_left = 354.0
+offset_top = 300.0
+offset_right = 804.0
+offset_bottom = 400.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0.5529412, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_4o3s6")
+theme_override_font_sizes/normal_font_size = 17
+text = "Music volume:
+
+SFX volume:"
+
+[node name="Music" type="HSlider" parent="PauseMenu/Control" unique_id=1272832157]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 300.0
+offset_right = 799.0
+offset_bottom = 316.0
+max_value = 10.0
+value = 8.0
+
+[node name="SFX" type="HSlider" parent="PauseMenu/Control" unique_id=1601291800]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 336.0
+offset_right = 798.0
+offset_bottom = 352.0
+max_value = 10.0
+value = 8.0
+
+[node name="SettingsExit" type="Button" parent="PauseMenu/Control" unique_id=857996780]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 0
+offset_left = 504.0
+offset_top = 373.0
+offset_right = 654.0
+offset_bottom = 423.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_26npv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wijsk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6fdwt")
+
 [connection signal="pressed" from="PauseMenu/Main_menu" to="." method="_main_menu_pressed"]
+[connection signal="pressed" from="PauseMenu/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="PauseMenu/Continue" to="." method="_continue_pressed"]
+[connection signal="drag_ended" from="PauseMenu/Control/Music" to="." method="_on_music_drag_ended"]
+[connection signal="drag_ended" from="PauseMenu/Control/SFX" to="." method="_on_sfx_drag_ended"]
+[connection signal="pressed" from="PauseMenu/Control/SettingsExit" to="." method="_on_settings_exit_pressed"]
