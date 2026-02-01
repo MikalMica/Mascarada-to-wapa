@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://dbfjxajsl464h"]
 
-[ext_resource type="Texture2D" uid="uid://bt1uap708rvmq" path="res://Tilemaps/circus_tilemap/circus_tilemap.png" id="1_78rxw"]
+[ext_resource type="Texture2D" uid="uid://4lq1x4gmnwco" path="res://Tilemaps/circus_tilemap/circus_tilemap.png" id="1_78rxw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_alkce"]
 friction = 0.0
