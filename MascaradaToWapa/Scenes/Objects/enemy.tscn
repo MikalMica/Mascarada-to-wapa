@@ -1,11 +1,19 @@
 [gd_scene format=3 uid="uid://xumoqssj3r73"]
 
 [ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="1_7ifby"]
-[ext_resource type="Script" uid="uid://dvd0qjmgf7j7k" path="res://Scripts/enemy.gd" id="1_i2hje"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_i2hje"]
+[ext_resource type="Script" uid="uid://17gvb1y11qe5" path="res://Scripts/SpriteHider.gd" id="2_osb2a"]
+[ext_resource type="Script" uid="uid://dvu38fjvuqphx" path="res://Scripts/EnemySkinRandomizer.gd" id="3_ink2j"]
+[ext_resource type="Texture2D" uid="uid://bpoe2pcd5kfhq" path="res://Assets/Images/Enemies/BUNNY MASK.png" id="4_vm7cc"]
+[ext_resource type="Texture2D" uid="uid://d1groajhpfduj" path="res://Assets/Images/Enemies/BUTTERFLY MASK.png" id="5_osb2a"]
+[ext_resource type="Texture2D" uid="uid://285xggqb4l4s" path="res://Assets/Images/Enemies/KABUKI.png" id="7_6cxka"]
+[ext_resource type="Texture2D" uid="uid://cs10cjfnc6k2g" path="res://Assets/Images/Enemies/JESTER MASK.png" id="8_6ucen"]
+[ext_resource type="Texture2D" uid="uid://bj5qxidkw5qi8" path="res://Assets/Images/Enemies/MOON MASK.png" id="9_h0663"]
+[ext_resource type="Texture2D" uid="uid://11c3tl1fmc0a" path="res://Assets/Images/Enemies/MANTISMASK.png" id="10_7sqod"]
 
 [sub_resource type="Curve2D" id="Curve2D_dqui2"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 819, 541, 0, 0, 0, 0, 171, 333, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -17, -572, 0, 0, 0, 0, 171, 333, 0, 0, 0, 0, 0, 0)
 }
 point_count = 4
 
@@ -53,18 +61,23 @@ size = Vector2(132, 129)
 [node name="Enemy" type="Path2D" unique_id=1299381547 node_paths=PackedStringArray("anim_player")]
 curve = SubResource("Curve2D_dqui2")
 script = ExtResource("1_i2hje")
-anim_player = NodePath("PathFollow2D/Node2D/AnimationPlayer")
+anim_player = NodePath("PathFollow2D/AnimationPlayer")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=733210764]
 rotates = false
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PathFollow2D" unique_id=1913990509]
+root_node = NodePath("../Node2D")
+libraries/ = SubResource("AnimationLibrary_qmp1y")
+
 [node name="Node2D" type="Node2D" parent="PathFollow2D" unique_id=1865544334]
+script = ExtResource("2_osb2a")
+default = true
 
 [node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/Node2D" unique_id=1527395661]
 texture = ExtResource("1_7ifby")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PathFollow2D/Node2D" unique_id=1913990509]
-libraries/ = SubResource("AnimationLibrary_qmp1y")
+script = ExtResource("3_ink2j")
+skins = Array[Texture2D]([ExtResource("5_osb2a"), ExtResource("4_vm7cc"), ExtResource("7_6cxka"), ExtResource("8_6ucen"), ExtResource("9_h0663"), ExtResource("10_7sqod")])
 
 [node name="Area2D" type="Area2D" parent="PathFollow2D/Node2D" unique_id=724788736]
 collision_layer = 2

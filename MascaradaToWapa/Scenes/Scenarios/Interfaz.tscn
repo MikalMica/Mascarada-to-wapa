@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://xq7qp8dud2gp" path="res://Assets/Images/UI/5_cortina.png" id="7_wcsdy"]
 [ext_resource type="Texture2D" uid="uid://c4k8rrwairun3" path="res://Assets/Images/UI/6_cortina.png" id="8_ve2f8"]
 [ext_resource type="Texture2D" uid="uid://blursw2c31gfx" path="res://Assets/Images/UI/7_cortina.png" id="9_q1mx1"]
-[ext_resource type="Script" uid="uid://3pw5s507aljx" path="res://Scenes/Scenarios/CurtainOpensAtIni.gd" id="10_46aqs"]
+[ext_resource type="Script" path="res://Scenes/Scenarios/CurtainOpensAtIni.gd" id="10_46aqs"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ve2f8"]
 texture = ExtResource("4_bcgwr")

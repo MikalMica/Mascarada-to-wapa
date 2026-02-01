@@ -8,6 +8,9 @@ func _ready() -> void:
 
 # Only player should collide with this since is the only object with collision layer 8
 func on_enter(body: Node2D) -> void:
+	if levelID == 0:
+		LevelManager.resetLevelToZeroAndChangeScene("res://Scenes/Scenarios/Interfaz.tscn")
+		return
 	var path = "res://Scenes/Levels/Level_" + str(levelID) + ".tscn"
 	LevelManager.changeLevel(path)
 	SignalBus.deactivate_input.emit()

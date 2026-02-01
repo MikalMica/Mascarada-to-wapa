@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://s6xci46fm7ne"]
+[gd_scene format=3 uid="uid://be3w7t1w5l6mt"]
 
 [ext_resource type="Script" uid="uid://17gvb1y11qe5" path="res://Scripts/SpriteHider.gd" id="1_c38dr"]
 [ext_resource type="Script" uid="uid://bi4jkqna36pbn" path="res://Scripts/key.gd" id="1_tw4fw"]
@@ -10,28 +10,28 @@ points = PackedVector2Array(-2.4090722, -6.1314664, 4.175725, -5.6474032, 6.9060
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3w12"]
 size = Vector2(160, 144)
 
-[node name="Llave" type="Node2D" unique_id=1405333240]
+[node name="Key" type="Node2D" unique_id=1405333240]
 script = ExtResource("1_c38dr")
 default = true
 
-[node name="Key" type="RigidBody2D" parent="." unique_id=1356946487]
+[node name="KeyBody" type="RigidBody2D" parent="." unique_id=1356946487]
 gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_tw4fw")
 
-[node name="Sprite2D" type="Sprite2D" parent="Key" unique_id=623073672]
+[node name="Sprite2D" type="Sprite2D" parent="KeyBody" unique_id=623073672]
 scale = Vector2(1.0041733, 0.9817276)
 texture = ExtResource("2_tw4fw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Key" unique_id=937241041]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyBody" unique_id=937241041]
 scale = Vector2(-6.226464, -6.197539)
 shape = SubResource("ConvexPolygonShape2D_c38dr")
 
-[node name="Area2D" type="Area2D" parent="Key" unique_id=66112114]
+[node name="Area2D" type="Area2D" parent="KeyBody" unique_id=66112114]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Key/Area2D" unique_id=1186148057]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyBody/Area2D" unique_id=1186148057]
 position = Vector2(-5, 0)
 shape = SubResource("RectangleShape2D_a3w12")
 debug_color = Color(0.62042415, 0.5648279, 0.27318573, 0.41960785)
 
-[connection signal="body_entered" from="Key" to="Key" method="_on_collision"]
+[connection signal="body_entered" from="KeyBody" to="KeyBody" method="_on_collision"]

@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cnthefjt8adju" path="res://Scenes/Levels/level_template.tscn" id="1_o3isv"]
 [ext_resource type="PackedScene" uid="uid://b002m70456tiw" path="res://Scenes/Objects/box.tscn" id="3_n6t8q"]
 [ext_resource type="PackedScene" path="res://Scenes/Prefabs/door.tscn" id="4_4ju3q"]
-[ext_resource type="PackedScene" uid="uid://s6xci46fm7ne" path="res://Scenes/Scenarios/key.tscn" id="5_4ju3q"]
-[ext_resource type="PackedScene" uid="uid://cd30xiqucx357" path="res://Scenes/Prefabs/cannon.tscn" id="5_n6t8q"]
+[ext_resource type="PackedScene" uid="uid://be3w7t1w5l6mt" path="res://Scenes/Scenarios/key.tscn" id="5_4ju3q"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/cannon.tscn" id="5_n6t8q"]
 
 [node name="LevelTemplate" unique_id=1832597160 instance=ExtResource("1_o3isv")]
 
@@ -34,12 +34,11 @@ shooting_cd = 5.0
 [node name="Point_B" parent="." index="13" unique_id=1092435603]
 position = Vector2(-71, 1203)
 
-[node name="Llave" parent="." index="14" unique_id=1405333240 instance=ExtResource("5_4ju3q")]
-position = Vector2(705, 520)
+[node name="ChangeLevelOnTrigger" parent="Point_B" index="0" unique_id=38857801]
+levelID = 3
 
-[node name="Key" parent="Llave" index="0" unique_id=1356946487 node_paths=PackedStringArray("doorObject")]
-doorObject = NodePath("../../Door")
+[node name="Key" parent="." index="14" unique_id=1405333240 instance=ExtResource("5_4ju3q")]
+position = Vector2(705, 520)
 
 [editable path="Cannon"]
 [editable path="Point_B"]
-[editable path="Llave"]
