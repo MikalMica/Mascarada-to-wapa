@@ -1,9 +1,10 @@
-[gd_scene format=3 uid="uid://xumoqssj3r73"]
+[gd_scene format=3 uid="uid://cp71uwds2f7k2"]
 
 [ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="1_7ifby"]
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_i2hje"]
 [ext_resource type="Script" uid="uid://17gvb1y11qe5" path="res://Scripts/SpriteHider.gd" id="2_osb2a"]
-[ext_resource type="Script" uid="uid://dvu38fjvuqphx" path="res://Scripts/EnemySkinRandomizer.gd" id="3_ink2j"]
+[ext_resource type="Shader" uid="uid://cul20ioh4lk1c" path="res://Shaders/burn.gdshader" id="3_6ucen"]
+[ext_resource type="Script" path="res://Scripts/EnemySkinRandomizer.gd" id="3_ink2j"]
 [ext_resource type="Texture2D" uid="uid://bpoe2pcd5kfhq" path="res://Assets/Images/Enemies/BUNNY MASK.png" id="4_vm7cc"]
 [ext_resource type="Texture2D" uid="uid://d1groajhpfduj" path="res://Assets/Images/Enemies/BUTTERFLY MASK.png" id="5_osb2a"]
 [ext_resource type="Texture2D" uid="uid://285xggqb4l4s" path="res://Assets/Images/Enemies/KABUKI.png" id="7_6cxka"]
@@ -55,6 +56,21 @@ _data = {
 &"patrol": SubResource("Animation_w7pa2")
 }
 
+[sub_resource type="Gradient" id="Gradient_6ucen"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_h0663"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7sqod"]
+noise = SubResource("FastNoiseLite_h0663")
+color_ramp = SubResource("Gradient_6ucen")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h0663"]
+shader = ExtResource("3_6ucen")
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_7sqod")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/burn_size = 0.23999999463552
+shader_parameter/burn_color = Color(0.5137255, 0.07058824, 0, 0.5372549)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ggdqk"]
 size = Vector2(132, 129)
 
@@ -75,6 +91,7 @@ script = ExtResource("2_osb2a")
 default = true
 
 [node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/Node2D" unique_id=1527395661]
+material = SubResource("ShaderMaterial_h0663")
 texture = ExtResource("1_7ifby")
 script = ExtResource("3_ink2j")
 skins = Array[Texture2D]([ExtResource("5_osb2a"), ExtResource("4_vm7cc"), ExtResource("7_6cxka"), ExtResource("8_6ucen"), ExtResource("9_h0663"), ExtResource("10_7sqod")])
