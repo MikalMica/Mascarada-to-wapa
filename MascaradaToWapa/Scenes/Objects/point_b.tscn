@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://duus7pk03e8q5" path="res://Shaders/black_hole.gdshader" id="2_siv5y"]
 [ext_resource type="Texture2D" uid="uid://b2l3slpiahih5" path="res://Assets/Images/Player/player_spritesheet.png" id="3_xqu6c"]
 [ext_resource type="Texture2D" uid="uid://b8kuer3e50nnx" path="res://icon.svg" id="4_pluc3"]
+[ext_resource type="Texture2D" uid="uid://b5rmfl5iiqg5o" path="res://Assets/Images/carpa_portal.png" id="5_pluc3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvne3"]
 size = Vector2(22, 21)
@@ -47,3 +48,9 @@ debug_color = Color(0.92291397, 0.54503924, 0.55607903, 0.41960785)
 z_index = 2
 material = SubResource("ShaderMaterial_ppm6g")
 texture = ExtResource("4_pluc3")
+
+[node name="Carpa" type="Sprite2D" parent="." unique_id=138359275]
+z_index = 3
+position = Vector2(0, -70)
+scale = Vector2(0.81, 0.81)
+texture = ExtResource("5_pluc3")
