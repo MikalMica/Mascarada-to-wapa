@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4lq1x4gmnwco"
-path="res://.godot/imported/circus_tilemap.png-2467485a21ba64e7e5f1025344a5344d.ctex"
+uid="uid://dsr7oyh47euj8"
+path="res://.godot/imported/FloorBricks.png-8c965ceba434b2ca3725bcbc932a0922.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilemaps/circus_tilemap/circus_tilemap.png"
-dest_files=["res://.godot/imported/circus_tilemap.png-2467485a21ba64e7e5f1025344a5344d.ctex"]
+source_file="res://Tilemaps/briks/FloorBricks.png"
+dest_files=["res://.godot/imported/FloorBricks.png-8c965ceba434b2ca3725bcbc932a0922.ctex"]
 
 [params]
 
